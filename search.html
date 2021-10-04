@@ -1,4 +1,4 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html lang="en-US">
 	<head>
 		<meta charset="UTF-8">
@@ -9,7 +9,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Main Page</title>
 		<!--styling to the main page-->
-		<link href="assets/css/mainStyle.css" rel="stylesheet"/>
+		<link href="../assets/css/mainStyle.css" rel="stylesheet"/>
 		<!--load icon library for search bar-->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	</head>
@@ -33,30 +33,41 @@
 				<span></span>
 			</label>
 		</header>
+
 		<!--Introduction to website-->
-		<div class="container-intro">
-			<img src="assets/images/house.jpg" alt="house" style="width:100%; height:100%; filter: blur(5px);">
+		<div class="main-container">
+			<img src="../assets/assets/images/house.jpg" alt="house" style="width:100%; height:100%; filter: blur(5px);">
 			<div class="content">
 				<h1>Looking for honest opinion on the "PERFECT HOME"?</h1>
 				<p>SCORE! This is the place where you find it and can give yours as well. Login to get started!</p>
 			</div>
+		
+            <div class="search">
+                    <p class="search-title" id="search-title"><u>Search Reviews</u></p>
+                    <form class="search-bar" id="search-bar" action="#">
+                        <input type="text" placeholder="Enter address, postal code, or city" name="search">
+                        <button type="submit"<i class="fa fa-search"></i></button>
+                    </form>
+                    <!-- <div class="search-filter"> -->
+                    <!-- </div> -->
+            </div>      
+        </div>		
+		<div class="map">
+			<img src="../assets/assets/images/dummymap.png" alt="dummymap">
 		</div>
-		<div class="container-search">
-			<div class="side">
-				<p class="search-title" id="search-title"><u>Search Reviews</u></p>
-				<form class="search-bar" id="search-bar" action="#">
-					<input type="text" placeholder="Enter address, postal code, or city" name="search">
-					<button type="submit"<i class="fa fa-search"></i></button>
-				</form>
-				<!-- <div class="search-filter"> -->
-				<!-- </div> -->
-			</div>
-			<div class="side">
-				<img src="assets/images/dummymap.png" alt="dummymap" style="width:100%; height: auto;">
-			</div>
-		</div>
-		<!-- <footer> -->
-			<!-- <p>Footer</p> -->
-		<!-- <footer> -->
+		
+        <div class="footer">
+            <ul>
+				<li>
+					© 2021 GitHub, Inc.
+				</li>
+                <li>
+                    Privacy Policy
+                </li>
+                <li>
+                    Sitemap
+                </li>
+            </ul>
+        </div>
 	</body>
 </html>
