@@ -269,11 +269,12 @@ form.search-bar::afrer {
 
 @media screen and (max-width: 600px) {
 	.map {
+		display: block;
 		width: 50%;
 		max-width: 50%;
 		padding-top: none;
 	}
-	
+
 	.search-title {
 		padding-top: 0%;
 	}
@@ -285,10 +286,13 @@ form.search-bar::afrer {
 /*end search bar */
 
 .map {
-    position: relative;
-    left: 300px;
+	position: relative;
+	width: 100%;
 }
 
+.map .image {
+	text-align: center;
+}
 /*start footer*/
 .footer {
     clear:both;
