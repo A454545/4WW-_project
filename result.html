@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="Rviewing estate listings">
+	<meta name="keywords" content="4WW3">
+	<meta name="author" content="Lin Rozenszajn">
+	<!--To make the view fit to screen of the device-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Main Page</title>
+	<!--styling to the main page-->
+	<link href="../assets/css/result.css" rel="stylesheet" />
+	<!--load icon library for search bar-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+	<!--Navigation bar-->
+	<header>
+		<h1 class="logo">True Roofs</h1>
+		<input type="checkbox" id="nav-toggle" class="nav-toggle">
+		<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Review</a></li>
+				<li><a href="#">New Listing</a></li>
+				<li><a href="#">Login | Sign In </a></li>
+			</ul>
+		</nav>
+		<label for="nav-toggle" class="nav-toggle-label">
+			<span></span>
+		</label>
+	</header>
+
+	<!--Dropdown buttons bar, each button is a search filter-->
+	<div class="filter-bar">
+		<a href="#home" style="border-right:0px;">Beds & Baths</a>
+		<a href="#news">Max Rent</a>
+		<div class="dropdown">
+			<button class="dropbtn" onclick="myFunction()">More
+				<i class="fa fa-caret-down"></i>
+			</button>
+			<div class="dropdown-content" id="myDropdown">
+				<a href="#">Link 1</a>
+				<a href="#">Link 2</a>
+				<a href="#">Link 3</a>
+			</div>
+		</div>
+	</div>
+	<!--Script for dropdown button behaviour-->
+	<script>
+		/* When the user clicks on the button, 
+		toggle between hiding and showing the dropdown content */
+			function myFunction() {
+				document.getElementById("myDropdown").classList.toggle("show");
+			}
+	
+			// Close the dropdown if the user clicks outside of it
+			window.onclick = function (e) {
+				if (!e.target.matches('.dropbtn')) {
+					var myDropdown = document.getElementById("myDropdown");
+					if (myDropdown.classList.contains('show')) {
+						myDropdown.classList.remove('show');
+					}
+				}
+			}
+		</script>
+	
+	<!--Results display table-->
+	<div class="clearfix">
+		<div class="img-container">
+		<img src="../assets/assets/images/dummymap.png" alt="Italy" style="width:100%">
+		</div>
+		<div class="img-container">
+		<img src="..//assets/assets/images/buildings.png" alt="Forest" style="width:100%">
+		</div>
+		<div class="img-container">
+		<img src="..//assets/assets/images/buildings.png" alt="Mountains" style="width:100%">
+		</div>
+	  </div>
+
+	<!--Footer-->
+	<div class="footer">
+		<ul>
+			<li>
+				© 2021 GitHub, Inc.
+			</li>
+			<li>
+				Privacy Policy
+			</li>
+			<li>
+				Sitemap
+			</li>
+		</ul>
+	</div>
+
+</body>
+</html>
