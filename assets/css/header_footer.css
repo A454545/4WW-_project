@@ -5,7 +5,6 @@
 	--background: rgb(0, 214, 170);
 }
 
-/*Beginning of nav bar*/
 *, *::before, *::after {
 	box-sizing: border-box;
 }
@@ -24,6 +23,7 @@ body {
     height: 100%;
 }
 
+/*Beginning of nav bar*/
 header {
 	background: var(--background);
 	text-align: center;
@@ -112,10 +112,6 @@ nav a:hover {
 	transform: scale(1,1);
 }
 
-.container-intro {
-    position:relative;
-    float:center;
-}
 
 /*code for nav bar on big screen https://www.youtube.com/watch?v=8QKOaTYvYUA*/
 @media screen and (min-width: 900px) {
@@ -185,6 +181,25 @@ nav a:hover {
 }
 /*End of nav bar*/
 
+.title {
+	position: relative;
+	width: 100%;
+	height: 20vh;
+	overflow: hidden;
+}
+
+.title h2 {
+	width: 80%;
+    position:absolute;
+    margin: 0;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	color: white; 
+	text-align: center; 
+	font-size: 5vh;
+}
+
 /*start footer*/
 
 .footer-container {
@@ -200,7 +215,7 @@ nav a:hover {
 
 .footer-container ul {
 	list-style: none;
-	/*to remove indents from the unordered list*/
+	/* to remove indents from the unordered list */
 	padding-left: 0;
 }
 
@@ -221,7 +236,7 @@ nav a:hover {
 	font-size: 18px;
 	color: white;
 	text-transform: capitalize;
-	margin-bottom: 30px;
+	margin-bottom: 35px;
 	font-weight: 600;
 	position: relative;
 }
