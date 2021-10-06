@@ -5,6 +5,7 @@
 	--background: rgb(0, 214, 170);
 }
 
+/*Beginning of nav bar*/
 *, *::before, *::after {
 	box-sizing: border-box;
 }
@@ -23,7 +24,6 @@ body {
     height: 100%;
 }
 
-/*Beginning of nav bar*/
 header {
 	background: var(--background);
 	text-align: center;
@@ -185,115 +185,6 @@ nav a:hover {
 }
 /*End of nav bar*/
 
-/*intro*/
-
-.main-container {
-	position: relative;
-	width: 100%;
-	height: 50vh;
-	overflow: hidden;
-}
-.content{
-	position: relative;
-	background: rgb(0,0,0);
-	background: rgba(0,0,0,0.5);
-	color: #f1f1f1;
-	width: 100%;
-	padding: 20px;
-}
-
-.search{
-	width: 80%;
-    position:absolute;
-    margin: 0;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-}
-
-.side {
-	float: left;
-	width: 50%;
-	padding: 10px;
-	max-width: 50%;
-	height: auto;
-	text-align: center;
-	position: relative;
-}
-
-/* .side:after {
-	content: "";
-	display: table;
-	clear: both;
-} */
-
-.search-title {
-	color: white; 
-	text-align: center; 
-	font-size: 5vh;
-}
-
-form.search-bar {
-	height: auto;
-    float:center;
-}
-
-form.search-bar input[type=text] {
-    width: 70%;
-	float: left;
-	padding: 10px;
-	font-size: 17px;
-	border: 1px solid grey;
-	background: #f1f1f1;
-}
-
-form.search-bar button {
-	width: 30%;
-	float: left;
-	padding: 12px;
-	background: var(--background);
-	color: white;
-	border: 1px solid grey;
-	border-left: none;
-	cursor: pointer;
-}
-
-form.search-bar button:hover {
-	background: #008080;
-}
-
-form.search-bar::afrer {
-	content: "";
-	clear: both;
-	display: table;
-}
-
-@media screen and (max-width: 600px) {
-	.map {
-		width: 50%;
-		max-width: 50%;
-		padding-top: none;
-	}
-	
-	.search-title {
-		padding-top: 0%;
-	}
-
-	form.search-bar {
-		padding-top: 0%;
-	}
-	
-	form.search-bar input[type=text]::placeholder {
-		font-size: 12px;
-	}
-}  */
-/*end search bar */
-
-.map {
-    position: relative;
-}
-
 /*start footer*/
 
 .footer-container {
@@ -309,7 +200,7 @@ form.search-bar::afrer {
 
 .footer-container ul {
 	list-style: none;
-	/* to remove indents from the unordered list */
+	/*to remove indents from the unordered list*/
 	padding-left: 0;
 }
 
@@ -330,7 +221,7 @@ form.search-bar::afrer {
 	font-size: 18px;
 	color: white;
 	text-transform: capitalize;
-	margin-bottom: 35px;
+	margin-bottom: 30px;
 	font-weight: 600;
 	position: relative;
 }
