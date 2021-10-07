@@ -2,12 +2,12 @@
 <html lang="en-US">
 	<head>
 		<meta charset="UTF-8">
-		<meta name="description" content="Submit Review">
+		<meta name="description" content="Submit Listing">
 		<meta name="keywords" content="4WW3">
 		<meta name="author" content="Abeer Al Yasiri">
 		<!--To make the view fit to screen of the device-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Submit Page</title>
+		<title>New Listing Page</title>
 		<!--styling to the main page-->
 		<link href="assets/css/header_footer.css" rel="stylesheet"/>
 		<link type="text/css" href="assets/css/submit.css" rel="stylesheet"/>
@@ -25,7 +25,7 @@
 			<nav>
 				<ul>
 					<li><a href="search.html">Home</a></li>
-					<li><a href="#">Review</a></li>
+					<li><a href="submit.html">Review</a></li>
 					<li><a href="#">New Listing</a></li>
 					<li><a href="#">Login | Sign In   </a></li>
 				</ul>
@@ -36,7 +36,7 @@
 		</header>	
 		
 		<div class="title">
-			<h2><u>Submit Review</u></h2>
+			<h2><u>Submit New Listing</u></h2>
 		</div> 
 		
 		<!--submission form for new object review with name, description, location as latitude longtitude coordinates, and upload-->
@@ -44,10 +44,10 @@
 			<form class="submission-form" action="#">
 				<div class="line-form">
 					<div class="title-line-form">
-						<label for="rname">Review Name</label>
+						<label for="rname">Listing Name</label>
 					</div>
 					<div class="field-line-form">
-						<input type="text" id="rname" name="reviewname" placeholder="review title.." required>
+						<input type="text" id="rname" name="reviewname" placeholder="listing title.." required>
 					</div>
 				</div>
 				<div class="line-form">
@@ -55,7 +55,7 @@
 						<label for="address">Address</label>
 					</div>
 					<div class="field-line-form">
-						<input type="text" id="address" name="address" placeholder="listing addrees (if known)">
+						<input type="text" id="address" name="address" placeholder="listing addrees..">
 					</div>
 				</div>
 				<div class="line-form">
@@ -76,19 +76,26 @@
 				</div>
 				<div class="line-form">
 					<div class="title-line-form">
-						<label for="description">Description</label>
+						<label for="price">Listing Price (CAD$)</label>
 					</div>
 					<div class="field-line-form">
-						<!--use textarea instead of input becuase we want a larger box-->
-						<textarea id="description" name="description" placeholder="what do you think??" style="height:5em" required></textarea>
+						<input type="text" id="price" name="price" placeholder="integer.." required>
 					</div>
 				</div>
 				<div class="line-form">
 					<div class="title-line-form">
-						<label for="pictures">Upload Images</label>
+						<label for="listinglink">Source Listing Link</label>
 					</div>
 					<div class="field-line-form">
-						<input type="file" id="pictures" name="pictures" accept="image/*" multiple required>
+						<input type="url" id="listinglink" name="link" placeholder="URL.." required>
+					</div>
+				</div>
+				<div class="line-form">
+					<div class="title-line-form">
+						<label for="picture">Upload Image</label>
+					</div>
+					<div class="field-line-form">
+						<input type="file" id="picture" name="picture" accept="image/*">
 					</div>
 				</div>
 				<br>

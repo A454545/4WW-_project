@@ -24,7 +24,7 @@
 	clear: both;
 }
 
-input[type=text], textarea, input[type=file] {
+input[type=text], textarea, input[type=file], input[type=url] {
 	width: 100%;
 	padding: 12px;
 	border: 0.5em solid #B0B0B0;
@@ -38,6 +38,14 @@ label {
 }
 
 input[type=text]:focus {
+	border: 0.5em solid #555;
+}
+
+textarea:focus {
+	border: 0.5em solid #555;
+}
+
+input[type=url]:focus {
 	border: 0.5em solid #555;
 }
 
