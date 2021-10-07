@@ -1,0 +1,21 @@
+:root {
+	--background: rgb(0, 214, 170);
+}
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+.main {
+	margin: 0;
+}
+
+body {
+    padding: 0;
+	margin: 0;
+	background: #222;
+	font-family: 'Work Sans', sans-serif;
+	font-weight: 400;
+    position: relative;
+    height: 100%;
+}
