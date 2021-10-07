@@ -10,7 +10,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Main Page</title>
 	<!--styling to the main page-->
-	<link href="assets/css/result.css" rel="stylesheet" />
+	<link href="../assets/css/result.css" rel="stylesheet" />
 	<!--load icon library for search bar-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -38,13 +38,16 @@
 		<a href="#home" style="border-right:0px;">Beds & Baths</a>
 		<a href="#news">Max Rent</a>
 		<div class="dropdown">
-			<button class="dropbtn" onclick="myFunction()">More
+			<button class="dropbtn" onclick="myFunction()">Bedrooms
 				<i class="fa fa-caret-down"></i>
 			</button>
 			<div class="dropdown-content" id="myDropdown">
-				<a href="#">Link 1</a>
-				<a href="#">Link 2</a>
-				<a href="#">Link 3</a>
+				<div class="btn-group">
+					<button class="button">Button</button>
+					<button class="button">Button</button>
+					<button class="button">Button</button>
+					<button class="button">Button</button>
+				  </div>
 			</div>
 		</div>
 	</div>
@@ -52,48 +55,70 @@
 	<script>
 		/* When the user clicks on the button, 
 		toggle between hiding and showing the dropdown content */
-			function myFunction() {
-				document.getElementById("myDropdown").classList.toggle("show");
-			}
-	
-			// Close the dropdown if the user clicks outside of it
-			window.onclick = function (e) {
-				if (!e.target.matches('.dropbtn')) {
-					var myDropdown = document.getElementById("myDropdown");
-					if (myDropdown.classList.contains('show')) {
-						myDropdown.classList.remove('show');
-					}
+		function myFunction() {
+			document.getElementById("myDropdown").classList.toggle("show");
+		}
+
+		// Close the dropdown if the user clicks outside of it
+		window.onclick = function (e) {
+			if (!e.target.matches('.dropbtn')) {
+				var myDropdown = document.getElementById("myDropdown");
+				if (myDropdown.classList.contains('show')) {
+					myDropdown.classList.remove('show');
 				}
 			}
-		</script>
-	
-	<!--Results display table-->
-	<div class="clearfix">
-		<div class="img-container">
-		<img src="assets/images/dummymap.png" alt="Italy" style="width:100%">
-		</div>
-		<div class="img-container">
-		<img src="assets/images/buildings.png" alt="Forest" style="width:100%">
-		</div>
-		<div class="img-container">
-		<img src="assets/images/buildings.png" alt="Mountains" style="width:100%">
-		</div>
-	  </div>
+		}
+	</script>
 
-	<!--Footer-->
-	<div class="footer">
-		<ul>
-			<li>
-				© 2021 GitHub, Inc.
-			</li>
-			<li>
-				Privacy Policy
-			</li>
-			<li>
-				Sitemap
-			</li>
-		</ul>
+	<!--Results display grid-->
+	<div class="grid-container">
+		<!--Interactive map search on left half of grid-->
+		<div id="map" class="cell">
+			<img src="../assets/images/dummymap.png" alt="map">
+		</div>
+		<!--Results on right half of grid: laid out in two columns, result1 and result2-->
+		<div id="result1" class="cell">
+			<div class="result-top-image">
+				<img src="../assets/images/house.jpg" alt="resultimage">
+			</div>
+			<div class="mls-number">
+				MLS#123456789
+			</div>
+			<div class="result-description">
+				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+				industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+				scrambled it to make a type specimen book.
+			</div>
+		</div>
+		<div id="result2" class="cell">
+			<div class="result-top-image">
+				<img src="../assets/assets/images/house.jpg" alt="resultimage">
+			</div>
+			<div class="mls-number">
+				MLS#123456789
+			</div>
+			<div class="result-description">
+				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+				industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+				scrambled it to make a type specimen book.
+			</div>
+		</div>
 	</div>
 
+		<!--Footer-->
+		<div class="footer">
+			<ul>
+				<li>
+					© 2021 GitHub, Inc.
+				</li>
+				<li>
+					Privacy Policy
+				</li>
+				<li>
+					Sitemap
+				</li>
+			</ul>
+		</div>
 </body>
+
 </html>
