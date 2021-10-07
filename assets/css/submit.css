@@ -1,21 +1,64 @@
-:root {
-	--background: rgb(0, 214, 170);
+.submission-container {
+	background-color: #E8E8E8;
+	margin: auto;
+	max-width: 85%;
+	padding: 20px;
 }
 
-*, *::before, *::after {
-	box-sizing: border-box;
+.title-line-form {
+	float: left;
+	width: 25%;
+	margin-top: 6px;
 }
 
-.main {
-	margin: 0;
+.field-line-form {
+	float: left;
+	width: 75%;
+	margin-top: 6px;
 }
 
-body {
-    padding: 0;
-	margin: 0;
-	background: #222;
-	font-family: 'Work Sans', sans-serif;
-	font-weight: 400;
-    position: relative;
-    height: 100%;
+/*clear the floats after the columns*/
+.line-form:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+input[type=text], textarea, input[type=file] {
+	width: 100%;
+	padding: 12px;
+	border: 0.5em solid #B0B0B0;
+	border-radius: 4px;
+	resize: vertical;
+}
+
+label {
+	padding: 12px 12px 12px 0;
+	display: inline-block;
+}
+
+input[type=text]:focus {
+	border: 0.5em solid #555;
+}
+
+input[type=submit] {
+	background-color: var(--background);
+	color: #ffffff;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	float: right;
+}
+
+.line-form input[type=submit]:hover {
+	background-color: #008080;
+}
+
+/*responsive screen to stack when small screen*/
+@media screen and (max-width: 600px) {
+	.title-line-form, .field-line-form, input[type=submit] {
+		width: 100%;
+		margin-top: 0;
+	}
 }

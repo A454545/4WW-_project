@@ -10,7 +10,7 @@
 		<title>Submit Page</title>
 		<!--styling to the main page-->
 		<link href="assets/css/header_footer.css" rel="stylesheet"/>
-		<link href="assets/css/submit.css" rel="stylesheet"/>
+		<link type="text/css" href="assets/css/submit.css" rel="stylesheet"/>
 		<!--load icon library for search bar-->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -24,7 +24,7 @@
 			
 			<nav>
 				<ul>
-					<li><a href="#">Home</a></li>
+					<li><a href="search.html">Home</a></li>
 					<li><a href="#">Review</a></li>
 					<li><a href="#">New Listing</a></li>
 					<li><a href="#">Login | Sign In   </a></li>
@@ -38,6 +38,65 @@
 		<div class="title">
 			<h2><u>Submit Review</u></h2>
 		</div> 
+		
+		<!--submission form for new object review with name, description, location as latitude longtitude coordinates, and upload-->
+		<div class="submission-container">
+			<form class="submission-form" action="#">
+				<div class="line-form">
+					<div class="title-line-form">
+						<label for="rname">Review Name</label>
+					</div>
+					<div class="field-line-form">
+						<input type="text" id="rname" name="reviewname" placeholder="review title..">
+					</div>
+				</div>
+				<div class="line-form">
+					<div class="title-line-form">
+						<label for="address">Address</label>
+					</div>
+					<div class="field-line-form">
+						<input type="text" id="address" name="address" placeholder="listing addrees (if known)">
+					</div>
+				</div>
+				<div class="line-form">
+					<div class="title-line-form">
+						<label for="locationl">Location Latitude</label>
+					</div>
+					<div class="field-line-form">
+						<input type="text" id="locationl" name="latitude" placeholder="float to 4 decimals..">
+					</div>
+				</div>
+				<div class="line-form">
+					<div class="title-line-form">
+						<label for="locationlo">Location Longtitde</label>
+					</div>
+					<div class="field-line-form">
+						<input type="text" id="locationlo" name="longtitude" placeholder="float to 4 decimals..">
+					</div>
+				</div>
+				<div class="line-form">
+					<div class="title-line-form">
+						<label for="description">Description</label>
+					</div>
+					<div class="field-line-form">
+						<!--use textarea instead of input becuase we want a larger box-->
+						<textarea id="description" name="description" placeholder="what do you think??" style="height:5em"></textarea>
+					</div>
+				</div>
+				<div class="line-form">
+					<div class="title-line-form">
+						<label for="pictures">Upload Images</label>
+					</div>
+					<div class="field-line-form">
+						<input type="file" id="pictures" name="pictures" accept="image/*" multiple>
+					</div>
+				</div>
+				<br>
+				<div class="line-form">
+					<input type="submit" value="Submit">
+				</div>
+			</form>
+		</div>
 		
 		<footer>
 			<div class="footer-container">
