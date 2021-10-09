@@ -1,0 +1,11 @@
+.registeration {
+	position: absolute; 
+	height: auto;
+	width: 100%;
+	/*to add a layer over the background image we will use gradient blurred*/
+	background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('../images/buildings.png');
+	background-position: center;
+	/* background-origin: content-box; */
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
