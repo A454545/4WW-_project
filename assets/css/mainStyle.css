@@ -207,7 +207,6 @@ nav a:hover {
 
 form.search-bar {
 	height: auto;
-    float:center;
 }
 
 form.search-bar input[type=text] {
@@ -234,17 +233,11 @@ form.search-bar button:hover {
 	background: #008080;
 }
 
-form.search-bar::afrer {
-	content: "";
-	display: table;
-	clear: both;
-}
-
 @media screen and (max-width: 600px) {
 	.map {
 		width: 50%;
 		max-width: 50%;
-		padding-top: none;
+		padding-top: 0%;
 	}
 	
 	.search-title {
@@ -387,7 +380,7 @@ form.map-filter button {
 	line-height: 40px;
 	border-radius: 50%;
 	color: #ffffff;
-	transition: all 0.3 ease;
+	transition: all 0.3s ease;
 }
 
 .footer-col .social-links a:hover {
