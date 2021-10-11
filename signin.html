@@ -43,10 +43,10 @@
 		<div class="registration">
 			<form class="reg-form" action="" method="POST">
 				<div class="reg-type">
-				Log In
+				Sign In
 				</div>
 				<div class="message">
-					Welcome Back!
+					Create New Account!
 				</div>
 				<div class="title-label">
 					<label for="username">Username</label>
@@ -55,22 +55,35 @@
 					<input type="text" name="username" placeholder="username" required>
 				</div>
 				<div class="title-label">
+					<label for="email">Email</label>
+				</div>
+				<div class="field-input">
+					<input type="text" name="email" placeholder="email" required>
+				</div>
+				<div class="title-label">
 					<label for="password">Password</label>
 				</div>
 				<div class="field-input">
 					<input type="password" name="password" placeholder="password" required>
 				</div>
-				
-				<div class="remember">
-					<label id="rem" for="rem">Remember me?</label>
-					<input name="rem" type="checkbox">
+				<div class="title-label">
+					<label>Looking to</label>
 				</div>
+				<div class="field-input">
+					<input type="radio" id="buying" name="reason" value="buy">
+					<label for="buying">buy</label>
+					<input type="radio" id="renting" name="reason" value="rent">
+					<label for="renting">rent</label>
+					<input type="radio" id="browsing" name="reason" value="browse">
+					<label for="browsing">browse</label>
+				</div>
+				
 				
 				<div class="submit-button">
-					<input type="submit" value="Log In">
+					<input type="submit" value="Sign In">
 				</div>
 				<div class="switch-type">
-					<a href="signin.html">New to True Roofs? Sign in newbie!</a>
+					<a href="userRegisteration.html">Already have an account? Log in!</a>
 				</div>
 			</form>
 		</div>
