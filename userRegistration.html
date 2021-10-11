@@ -2,15 +2,15 @@
 <html lang="en-US">
 	<head>
 		<meta charset="UTF-8">
-		<meta name="description" content="Submit Listing">
+		<meta name="description" content="User Registeration">
 		<meta name="keywords" content="4WW3">
 		<meta name="author" content="Abeer Al Yasiri">
 		<!--To make the view fit to screen of the device-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>New Listing Page</title>
+		<title>User Registeration</title>
 		<!--styling to the main page-->
 		<link href="4WW3_project/assets/css/header_footer.css" rel="stylesheet"/>
-		<link type="text/css" href="4WW3_project/assets/css/submit.css" rel="stylesheet"/>
+		<link href="4WW3_project/assets/css/userRegisteration.css" rel="stylesheet"/>
 		<!--load icon library for search bar-->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -26,9 +26,9 @@
 				<ul>
 					<li><a href="index.html">Home</a></li>
 					<li><a href="submit.html">Review</a></li>
-					<li><a href="#">New Listing</a></li>
+					<li><a href="submitListing.html">New Listing</a></li>
 					<li><a href="profile.html">Profile</a></li>
-					<li><a href="userRegisteration.html">Login | Sign In</a></li>
+					<li><a href="#">Login | Sign In</a></li>
 				</ul>
 			</nav>
 			<label for="nav-toggle" class="nav-toggle-label">
@@ -36,72 +36,41 @@
 			</label>
 		</header>	
 		
-		<div class="title">
-			<h2><u>Submit New Listing</u></h2>
+		<div class="title" style="background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('4WW3_project/assets/images/buildings.png'); background-position: bottom;">
+			<h2><u>User Registration</u></h2>
 		</div> 
-		
-		<!--submission form for new object review with name, description, location as latitude longtitude coordinates, and upload-->
-		<div class="submission-container">
-			<form class="submission-form" action="#">
-				<div class="line-form">
-					<div class="title-line-form">
-						<label for="rname">Listing Name</label>
-					</div>
-					<div class="field-line-form">
-						<input type="text" id="rname" name="reviewname" placeholder="listing title.." required>
-					</div>
+		<!--4 different HTML form elements text box, checkbox/radio item, email, search, date, password-->
+		<div class="registration">
+			<form class="reg-form" action="#" method="POST">
+				<div class="reg-type">
+					Log In
 				</div>
-				<div class="line-form">
-					<div class="title-line-form">
-						<label for="address">Address</label>
-					</div>
-					<div class="field-line-form">
-						<input type="text" id="address" name="address" placeholder="listing addrees..">
-					</div>
+				<div class="message">
+					Welcome Back!
 				</div>
-				<div class="line-form">
-					<div class="title-line-form">
-						<label for="locationl">Location Latitude</label>
-					</div>
-					<div class="field-line-form">
-						<input type="text" id="locationl" name="latitude" placeholder="float to 4 decimals.." required>
-					</div>
+				<div class="title-label">
+					<label for="username">Username</label>
 				</div>
-				<div class="line-form">
-					<div class="title-line-form">
-						<label for="locationlo">Location Longtitde</label>
-					</div>
-					<div class="field-line-form">
-						<input type="text" id="locationlo" name="longtitude" placeholder="float to 4 decimals.." required>
-					</div>
+				<div class="field-input">
+					<input type="text" id="username" name="username" placeholder="username" required>
 				</div>
-				<div class="line-form">
-					<div class="title-line-form">
-						<label for="price">Listing Price (CAD$)</label>
-					</div>
-					<div class="field-line-form">
-						<input type="text" id="price" name="price" placeholder="integer.." required>
-					</div>
+				<div class="title-label">
+					<label for="password">Password</label>
 				</div>
-				<div class="line-form">
-					<div class="title-line-form">
-						<label for="listinglink">Source Listing Link</label>
-					</div>
-					<div class="field-line-form">
-						<input type="url" id="listinglink" name="link" placeholder="URL.." required>
-					</div>
+				<div class="field-input">
+					<input type="password" id="password" name="password" placeholder="password" required>
 				</div>
-				<div class="line-form">
-					<div class="title-line-form">
-						<label for="picture">Upload Image</label>
-					</div>
-					<div class="field-line-form">
-						<input type="file" id="picture" name="picture" accept="image/*">
-					</div>
+				
+				<div class="remember">
+					<label for="rem">Remember me?</label>
+					<input id="rem" name="rem" type="checkbox">
 				</div>
-				<br>
-				<div class="line-form">
-					<input type="submit" value="Submit">
+				
+				<div class="submit-button">
+					<input type="submit" value="Log In" onclick="location.href = 'profile.html';">
+				</div>
+				<div class="switch-type">
+					<a href="signin.html">New to True Roofs? Sign in newbie!</a>
 				</div>
 			</form>
 		</div>
