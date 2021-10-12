@@ -6,7 +6,7 @@ Member 2: Lin Rozenszajin
 <br>  
 _____________________________________________  
 ### Project Link  
-Check out the project code at [True Roofs](http://3.130.249.183/index.html)  
+Check out the project page at [True Roofs](http://3.130.249.183/index.html)  
 <br>  
 
 _____________________________________________  
