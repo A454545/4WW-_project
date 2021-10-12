@@ -1,19 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:300,600');
 
-h3 h4 {
-	font-family: inherit;
-}
 
 /* Dropdown buttons bar (filter-bar) container */
 .filter-bar {
-	position: fixed;
+	background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('../images/buildings.png'); 
+	background-position: bottom;
+	position: relative;
 	width: 100%;
-	z-index: 999;
-	top: 8.5vh;
+	height: 25vh;
 	overflow: hidden;
-	background-color: #333;
-  }
-  
+}
 /* Links inside the filter-bar */
 .filter-bar a {
 	float: left;
@@ -24,13 +20,11 @@ h3 h4 {
 	text-decoration: none;
 	border: 1px solid rgb(0, 214, 170);
 }
-  
 /* The dropdown container */
 .dropdown {
 	float: left;
 	overflow: hidden;
 }
- 
 /* Dropdown button */
 .dropdown .dropbtn {
 	border-color:rgb(0, 214, 170);
@@ -45,12 +39,10 @@ h3 h4 {
 	font-family: inherit; /* Important for vertical align on mobile phones */
 	margin: 0; /* Important for vertical align on mobile phones */
 }
-  
 /* Add a teal background color to filter-bar links on hover */
 .filter-bar a:hover, .dropdown:hover .dropbtn:hover{
 	background-color: rgba(0, 214, 170, 0.5);
 }
-  
 /* Dropdown content (hidden by default) */
 .dropdown-content {
 	display: none;
@@ -59,8 +51,7 @@ h3 h4 {
 	/* min-width: 125.5px; */
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	z-index: 1;
-}
-  
+} 
 /* Links inside the dropdown */
 .dropdown-content .btn-group .button{
 	background-color: #333;
@@ -83,7 +74,7 @@ h3 h4 {
 } 
 /* Add a background color to dropdown links on hover */
 	.dropdown-content btn-group:hover {
-	background-color:rgba(0, 214, 170, 0.5)#ddd;
+	background-color:rgba(0, 214, 170, 0.5);
 }
 .show {
 	display: contents;
@@ -94,50 +85,108 @@ h3 h4 {
 /*Start main results container*/
 .content-container {
 	position: relative;
-	max-width: 85%;
-	margin: auto;
-	padding: 5px;
-	height: 70vh;
-	overflow: hidden;
+	margin: 0;
+	width: 100%;
+	height: 110vh;
+	padding: 0 0.5vw;
 }
 
 /*General styling of child containers: one column for interactive map, two for results*/
-.content-child{
-	box-sizing: border-box;
-	position: relative;
-	background-color: #e8e8e8c9;
-	top: 15.25vh;
+.content-child {
+	margin: 0 auto;
+	float: left;
 	width: 50%;
-	height: 500px;
-	float: left; 
-	padding: 5px;
+	max-width:50%;
+	max-height: 90%;
+	position: relative;
+	padding: 0 0.5vw;
 }
 
-/*Styling for interactive map container*/
-.content-child #map{
-	background: whitesmoke;
-	border-radius: 5px;
+/*Styling for interactive map*/
+#map.content-child{
+	height:100%;
+}
+.map-image {
+	height:100%;
 	background-image: url("../images/dummymap.png");
-	width: 100%;
-	height: 100%;
+	background-position: center;
 	background-repeat: no-repeat;
 	background-size:cover;
-	outline:whitesmoke;
 }
 
-/*Styling for result container*/
+/*Styling for results display grid*/
+#results.content-child {
+	--auto-grid-min-size: 48%;
+  
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
+	grid-gap: 1rem;
+	overflow: hidden;
+	height:100%;
+  }
 .content-grandchild {
-	max-width: 49.3%;
-	height: 100%;
-	float: left;
-	background: whitesmoke;
+	background-color: #e8e8e8c9;
+	font-size:1.15vw;
+	margin: 0;
 	padding: 5px;
-	border-radius: 5px;
+}
+
+/*Create a container for the listing image*/
+.result-top-image-container {
+	background-color: hotpink;
+	height: 40%;
+	max-width: 100%;
+}
+.result-top-image{
+	height:100%;
+	width:100%;
+	background-image: url("../images/house.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.mls-number {
+	font-weight: bolder;
+	margin-top: 1%;
+	background-color: rgb(0, 214, 170);
+	color: black;
+	padding: 1.75%;
+}
+
+.result-description {
+	padding: 0.5vh 0.5vw;
+	margin: 0;
+	max-height: 50%;
+	max-width:100%;
+	overflow: hidden;
+}
+.result-description > .address{
+	font-weight:bolder;
+	padding: 1vh 0;
+}
+
+.check-button{
+	text-align:center;
+	padding: 1em;
+}
+
+input[type=submit]{
+	font-size: inherit;
+	background-color: rgb(0, 214, 170);
+	color: white;
+	padding: 10px;
+	border: none;
+	cursor: pointer;
+	width: 60%;
+}
+
+input[type=submit]:hover{
+	background-color: #005c5c;
 }
 
 /*Hover behaviour*/
-.content-child #map:hover, .content-grandchild:hover{
-	padding: 3.5px;
+.map-image:hover, .content-grandchild:hover{
+	transform: scale(0.99);
 	border-radius: 5px;
 	box-shadow:
     0 2.8px 2.2px rgba(0, 0, 0, 0.034),
@@ -146,129 +195,22 @@ h3 h4 {
     0 12.3px 9px rgba(0, 0, 0, 0.072),
     0 12.8px 15px rgba(0, 0, 0, 0.086),
     0 50px 40px rgba(0, 0, 0, 0.12);
-	background-size: 105%;
 }
 
-/*Specific styling of interior of each results container*/
-.result-top-image-container {
-	max-width: 100%;
-	height: 15vh;
-	overflow: hidden;
-	box-sizing: border-box;
-}
-
-.image{
-	background-image: url("../images/house.jpg");
-	max-width: 100%;
-	height: 100%;
-	background-repeat: no-repeat;
-}
-.mls-number {
-	overflow: hidden;
-	margin-top: 0.5vh;
-	background-color: rgb(0, 214, 170);
-	color: black;
-	padding: 0.4vh;
-}
-.result-description {
-	padding: 2vh 0.4vh;
-	overflow: hidden;
-	max-height: 20vh;
-}
-
-.link {
-  background-color: rgb(0, 214, 170);
-  margin: 1.5vh auto;
-  border-radius: 5px;
-  padding: 2vh;
-  text-align: center;
-  position: relative;
-  width: 15vw;
-}
-
-a {
-	font-size: 22px;
-	text-decoration: none;
-}
-
-.link:hover {
-	box-shadow:
-    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-    0 6.7px 3px rgba(0, 0, 0, 0.048),
-    0 8px 5px rgba(0, 0, 0, 0.06),
-    0 12.3px 9px rgba(0, 0, 0, 0.072),
-    0 12.8px 15px rgba(0, 0, 0, 0.086),
-    0 50px 40px rgba(0, 0, 0, 0.12);
-	cursor: pointer;
-}
-
-/* Responsive styling for smaller screens */
 @media screen and (max-width: 800px) {
-	.filter-bar {
-		top: 12vh;
-	}
-
 	.content-container {
-		position: relative;
-		top: 20vh;
-		max-height: 80vh;
-		overflow: hidden;
-		font-size: 12px;
-		margin-bottom: 2vh;
+		max-height:80vh;
 	}
-
-	.result-top-image-container{
-		max-height: 30%;
-	}
-
-	.content-child {
-		top: 0;
-		width: 100%;
-		max-height: 40%;
-	}
-
 	#map.content-child {
-		background-size: none;
-		background-position: center;
+		min-width:100%;
+		max-height: 40%;
+		padding-bottom: 0.25rem;
+	}
+	.content-child {
+		min-width:100%;
+		max-height:60%;
 	}
 
-	.result-description {
-		margin: 0 auto;
-		padding: auto 0.5vh;
-		text-overflow: ellipsis;
-	}
-
-	p {
-		font-size: 10px;
-	}
-
-	a{
-		font-size: 12px;
-	}
-
-	.link {
-		position: relative;
-		margin: 0 auto;
-		padding: 0;
-		transform: translateX(0);
-		width: 95%;
-	}
-
-	.result-description h3, h4{
-		margin: 0 auto;
-		font-size: 10px;
-		white-space: nowrap;
-		text-overflow: ellipsis;
-	}
-	
-	.content-child #map:hover, .content-grandchild:hover .link:hover{
-		box-shadow:
-		0 1.5px 1px rgba(0, 0, 0, 0.034),
-		0 3.5px 1.5px rgba(0, 0, 0, 0.048),
-		0 4px 2.5px rgba(0, 0, 0, 0.06),
-		0 6px 4.5px rgba(0, 0, 0, 0.072),
-		0 4px 7.5px rgba(0, 0, 0, 0.086),
-		0 5px 10px rgba(0, 0, 0, 0.12);
-		cursor: pointer;
-	}
+	#results.content-child {
+		grid-gap: 0.25rem;
 }
