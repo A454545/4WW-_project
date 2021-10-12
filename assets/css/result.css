@@ -105,7 +105,7 @@ h3 h4 {
 .content-child{
 	box-sizing: border-box;
 	position: relative;
-	background-color: #E8E8E8;
+	background-color: #e8e8e8c9;
 	top: 15.25vh;
 	width: 50%;
 	height: 500px;
@@ -127,7 +127,7 @@ h3 h4 {
 
 /*Styling for result container*/
 .content-grandchild {
-	max-width: 50%;
+	max-width: 49.3%;
 	height: 100%;
 	float: left;
 	background: whitesmoke;
@@ -146,6 +146,7 @@ h3 h4 {
     0 12.3px 9px rgba(0, 0, 0, 0.072),
     0 12.8px 15px rgba(0, 0, 0, 0.086),
     0 50px 40px rgba(0, 0, 0, 0.12);
+	background-size: 105%;
 }
 
 /*Specific styling of interior of each results container*/
@@ -172,6 +173,7 @@ h3 h4 {
 .result-description {
 	padding: 2vh 0.4vh;
 	overflow: hidden;
+	max-height: 20vh;
 }
 
 .link {
@@ -180,10 +182,8 @@ h3 h4 {
   border-radius: 5px;
   padding: 2vh;
   text-align: center;
-  position: absolute;
+  position: relative;
   width: 15vw;
-  transform: translateX(2.15vw);
-  bottom: 1vh;
 }
 
 a {
@@ -233,7 +233,8 @@ a {
 	}
 
 	.result-description {
-		padding: 2.5vh 1vw 2.5vh 1vw;
+		margin: 0 auto;
+		padding: auto 0.5vh;
 		text-overflow: ellipsis;
 	}
 
@@ -248,7 +249,7 @@ a {
 	.link {
 		position: relative;
 		margin: 0 auto;
-		padding: none;
+		padding: 0;
 		transform: translateX(0);
 		width: 95%;
 	}
