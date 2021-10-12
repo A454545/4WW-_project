@@ -18,3 +18,4 @@ _____________________________________________
 ### Notes  
 1. All resources used to build the project are under references.txt
 2. Most of the dropdowns will be later changed using JS.
+3. WCAG that was followed for the project is https://www.w3.org/WAI/WCAG21/quickref/#text-alternatives.
