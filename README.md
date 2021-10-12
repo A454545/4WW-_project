@@ -19,3 +19,9 @@ _____________________________________________
 1. All resources used to build the project are under references.txt
 2. Most of the dropdowns will be later changed using JS.
 3. WCAG that was followed for the project is https://www.w3.org/WAI/WCAG21/quickref/#text-alternatives.
+
+_____________________________________________
+### Addon #2 Answes
+1. answer to Q1 here
+2. answer to Q2 here
+3. answer to Q3 here
