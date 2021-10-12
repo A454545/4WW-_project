@@ -3,15 +3,15 @@
 
 <head>
 	<meta charset="UTF-8">
-	<meta name="description" content="Search Results Page">
+	<meta name="description" content="Rviewing estate listings">
 	<meta name="keywords" content="4WW3">
 	<meta name="author" content="Lin Rozenszajn">
 	<!--To make the view fit to screen of the device-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Search Results</title>
+	<title>Main Page</title>
 	<!--styling to the main page-->
-	<link href="4WW3_project/assets/css/header_footer.css" rel="stylesheet" />
-	<link href="4WW3_project/assets/css/result.css" rel="stylesheet" />
+	<link href="../assets/css/header_footer.css" rel="stylesheet" />
+	<link href="../assets/css/result.css" rel="stylesheet" />
 	<!--load icon library for search bar-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css"
@@ -76,48 +76,79 @@
 	<!--Content container-->
 	<div class="content-container">
 		<!--Dynamic map-->
-		<div class="content-child">
-			<div id="map">
+		<div class="content-child" id="map">
+			<div class="map-image">
 			</div>
 		</div>
 		<!--Results display-->
 		<div class="content-child" id="results">
-			<div id="left" class="content-grandchild" style="margin-right: 0.5vw;">
+			<div class="content-grandchild">
 				<div class="result-top-image-container">
-					<div class="image">
+					<div class="result-top-image">
 					</div>
 				</div>
 				<div class="mls-number">
 					MLS#123456789
 				</div>
 				<div class="result-description">
-					<h3>123 Main St West, Toronto</h3>
-					<h4>Cozy three-bedroom , 1 bathroom apartment in the Main Street West neighborhood.</h4>
+					<div class="address">123 Main Street West</div>
+					<div class="listing-desc">Cozy three-bedroom , 1 bathroom apartment in the Main Street West neighborhood.</div>
 					<p class="beds-baths"><i class="fa fa-bed"></i> 3 Bed <i class="fa fa-bath"></i> 1 Bath</p>
+					<a href="individualResult.html">
+							Check listing
+					</a>
 				</div>
-				<a href="individualResult.html">
-					<div class="link">
-						Check listing
-					</div>
-				</a>
 			</div>
-			<div class="content-grandchild" id="right">
+			<div class="content-grandchild">
 				<div class="result-top-image-container">
-					<div class="image">
+					<div class="result-top-image">
 					</div>
 				</div>
 				<div class="mls-number">
 					MLS#123456789
 				</div>
 				<div class="result-description">
-					<h3>467 Bathurst St, Toronto</h3>
-					<h4>Detached 4 bedroom, 2 bathroom house on lively Bathurst Street.</h4>
-					<p class="beds-baths"><i class="fa fa-bed"></i> 4 Bed <i class="fa fa-bath"></i> 2 Bath</p>
-				</div>
-				<a href="individualResult.html">
-					<div class="link">
-						Check listing
+					<div class="address">123 Main Street West</div>
+					<div class="listing-desc">Cozy three-bedroom , 1 bathroom apartment in the Main Street West neighborhood.</div>
+					<p class="beds-baths"><i class="fa fa-bed"></i> 3 Bed <i class="fa fa-bath"></i> 1 Bath</p>
+					<div class="check-button">
+						<input type="submit" value="View listing" onclick="location.href = 'individualResult.html';">
 					</div>
+				</div>
+			</div>
+			<div class="content-grandchild">
+				<div class="result-top-image-container">
+					<div class="result-top-image">
+					</div>
+				</div>
+				<div class="mls-number">
+					MLS#123456789
+				</div>
+				<div class="result-description">
+					<div class="address">123 Main Street West</div>
+					<div class="listing-desc">Cozy three-bedroom , 1 bathroom apartment in the Main Street West neighborhood.</div>
+					<p class="beds-baths"><i class="fa fa-bed"></i> 3 Bed <i class="fa fa-bath"></i> 1 Bath</p>
+					<a href="individualResult.html">
+							Check listing
+					</a>
+				</div>
+			</div>
+			<div class="content-grandchild">
+				<div class="result-top-image-container">
+					<div class="result-top-image">
+					</div>
+				</div>
+				<div class="mls-number">
+					MLS#123456789
+				</div>
+				<div class="result-description">
+					<div class="address">123 Main Street West</div>
+					<div class="listing-desc">Cozy three-bedroom , 1 bathroom apartment in the Main Street West neighborhood.</div>
+					<p class="beds-baths"><i class="fa fa-bed"></i> 3 Bed <i class="fa fa-bath"></i> 1 Bath</p>
+					<a href="individualResult.html">
+							Check listing
+					</a>
+				</div>
 			</div>
 		</div>
 	</div>
