@@ -1,192 +1,212 @@
 <!DOCTYPE html>
 <html lang="en-US">
+	<head>
+		<!--Meta tag info-->
+		<meta charset="UTF-8">
+		<meta name="description" content="Search results">
+		<meta name="keywords" content="4WW3">
+		<meta name="author" content="Lin Rozenszajn">
+		<!--To make the view fit to screen of the device-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Individual Object</title>
+		<!--styling to the main page-->
+		<link href="4WW3_project/assets/css/header_footer.css" rel="stylesheet" />
+		<link href="4WW3_project/assets/css/individualResult.css" rel="stylesheet" />
+		<!--load icon library for search bar-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+		<!--Start of Add-on 1-->
+		<!--Task 1: Facebook open graph-->
+		<meta property="og:title" content="123 Main Street West, Toronto">
+		<meta property="og:type" content="Website">
+		<meta property="og:site_name" content="True Roofs">
+		<meta property="og:url" content="http://3.130.249.183/individualResult.html"><!--PUT THE LINK FOR THE Individual PAGE-->
+		<meta property="og:image" content="http://3.130.249.183/4WW3_project/assets/images/avatar.png"><!--PUT LINK TO THE IMAGE FROM THE SERVER TO -->
+		<meta property="og:description" content="house lisiting near McMaster University">
+		<!--Task 2: Twitter Card-->
+		<meta name="twitter:card" content="summary">
+		<meta property="twitter:title" content="123 Main Street West, Toronto">
+		<meta property="twitter:site" content="@True Roofs">
+		<meta property="twitter:description" content="house lisiting near McMaster University">
+		<meta property="twitter:image" content="http://18.222.242.154/home/images/kingwestbooks.jpg">
+		<!--Task 5: mobile saving page to home screen-->
+		<!--IOS-->
+		<link rel="apple-touch-icon-precomposed" href="4WW3_project/assets/images/avatar.png"/>
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="viewport" content="width = device-width, initial-scale = 1.0, minimum-scale = 1.0, maximum-scale = 5" />
+		<!--Android-->
+		<meta name="mobile-web-app-capable" content="yes">
+	</head>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="description" content="Rviewing estate listings">
-	<meta name="keywords" content="4WW3">
-	<meta name="author" content="Lin Rozenszajn">
-	<!--To make the view fit to screen of the device-->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Main Page</title>
-	<!--styling to the main page-->
-	<link href="4WW3_project/assets/css/header_footer.css" rel="stylesheet" />
-	<link href="4WW3_project/assets/css/individualResult.css" rel="stylesheet" />
-	<!--load icon library for search bar-->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css"
-		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-</head>
+	<body>
+		<!--Navigation bar-->
+		<header>
+			<h1 class="logo">True Roofs</h1>
 
-<body>
-	<!--Navigation bar-->
-	<header>
-		<h1 class="logo">True Roofs</h1>
+			<input type="checkbox" id="nav-toggle" class="nav-toggle">
 
-		<input type="checkbox" id="nav-toggle" class="nav-toggle">
+			<nav>
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="submit.html">Review</a></li>
+					<li><a href="submitListing.html">New Listing</a></li>
+					<li><a href="profile.html">Profile</a></li>
+					<li><a href="userRegistration.html">Login | Sign In </a></li>
+				</ul>
+			</nav>
+			<label for="nav-toggle" class="nav-toggle-label">
+				<span></span>
+			</label>
+		</header>
+		<!--Dropdown buttons bar, each button is a search filter-->>
+		<div class="filter-bar"></div>
 
-		<nav>
-			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="submit.html">Review</a></li>
-				<li><a href="submitListing.html">New Listing</a></li>
-				<li><a href="profile.html">Profile</a></li>
-				<li><a href="userRegistration.html">Login | Sign In </a></li>
-			</ul>
-		</nav>
-		<label for="nav-toggle" class="nav-toggle-label">
-			<span></span>
-		</label>
-	</header>
-	<!--Dropdown buttons bar, each button is a search filter-->>
-	<div class="filter-bar"></div>
-
-	<!--Individual result-object container-->
-	<div class="container">
-		<div class="object-photos">
-			<div class="main-photo">
-				<picture>
-					<source media="(max-width: 600px)" srcset="4WW3_project/assets/images/main-0.5x.png, main-0.5x.png 0.5x">
-					<source media="(max-width: 450px)" srcset="4WW3_project/assets/images/main-0.25x.png, main-0.25x.png 0.25x">
-					<img src="4WW3_project/assets/images/main-1x.jpg" alt="main listing photo">
-				</picture>
+		<!--Individual result-object container-->
+		<div class="container">
+			<div class="object-photos">
+				<div class="main-photo">
+					<picture>
+						<source media="(max-width: 600px)" srcset="4WW3_project/assets/images/main-0.5x.png, main-0.5x.png 0.5x">
+						<source media="(max-width: 450px)" srcset="4WW3_project/assets/images/main-0.25x.png, main-0.25x.png 0.25x">
+						<img src="4WW3_project/assets/images/main-1x.jpg" alt="main listing photo">
+					</picture>
+				</div>
+				<div class="top-photo"></div>
+				<div class="bottom-photo"></div>
 			</div>
-			<div class="top-photo"></div>
-			<div class="bottom-photo"></div>
-		</div>
-		<div class="object">
-			<div class="object-video"><video controls>
-					<source src="4WW3_project/assets/images/apartment-tour.mp4" type="video/mp4">
-					Your browser does not support the video tag.
-				</video></div>
-			<div class="object-content">
-				<h2 class="address">123 Main Street West, Toronto </h1>
-					<p class="listing-link"><a href='//realtor.ca'> Link to original listing </a></p>
-					Welcome To This Gorgeous Condo Townhouse Located In Tridal Built Gated Community. Spacious 2+1
-					Bedroom Town With 2 Full Bathrooms And Extra Powder room (Without Toilet), 1 Car Attached Garage,
-					$$$ Spent On Renos & Upgrades, Brand New Hardwood Floor On Main Level, Freshly Painted, Pot Lights
-					Through-Out, New Granite Counter Top In Kitchen, Bathroom And Powder Room, Backsplash, New Porcelain
-					Floor In Kitchen, Backsplash, Foyer And Basement Landing, Pets Permitted, Conveniently Located Near
-					401,Shopping, Grocery Stores, Schools And In Proximity To Uoft (Scarborough Campus), New Electric
-					Range-hood, Fridge, Stove, Dishwasher, New Washer & Dryer, Light Fixtures, Window Coverings, Hot
-					Water Tank Is Rental (63903719)
+			<div class="object">
+				<div class="object-video"><video controls>
+						<source src="4WW3_project/assets/images/apartment-tour.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video></div>
+				<div class="object-content">
+					<h2 class="address">123 Main Street West, Toronto </h2>
+						<p class="listing-link"><a href='//realtor.ca'> Link to original listing </a></p>
+						Welcome To This Gorgeous Condo Townhouse Located In Tridal Built Gated Community. Spacious 2+1
+						Bedroom Town With 2 Full Bathrooms And Extra Powder room (Without Toilet), 1 Car Attached Garage,
+						$$$ Spent On Renos & Upgrades, Brand New Hardwood Floor On Main Level, Freshly Painted, Pot Lights
+						Through-Out, New Granite Counter Top In Kitchen, Bathroom And Powder Room, Backsplash, New Porcelain
+						Floor In Kitchen, Backsplash, Foyer And Basement Landing, Pets Permitted, Conveniently Located Near
+						401,Shopping, Grocery Stores, Schools And In Proximity To Uoft (Scarborough Campus), New Electric
+						Range-hood, Fridge, Stove, Dishwasher, New Washer & Dryer, Light Fixtures, Window Coverings, Hot
+						Water Tank Is Rental (63903719)
+				</div>
 			</div>
-		</div>
-		<div class="object-reviews">
-			<div class="review">
-				<div class="reviewer-info">
-					<div class="avatar-image">
-						<picture>
-							<source media="(min-width: 1920px)" srcset="avatar-2x.png, avatar-2x.png 2x">
-							<img src="4WW3_project/assets/images/avatar-1x.png" alt="profile-avatar">
-						</picture>
+			<div class="object-reviews">
+				<div class="review">
+					<div class="reviewer-info">
+						<div class="avatar-image">
+							<picture>
+								<source media="(min-width: 1920px)" srcset="avatar-2x.png, avatar-2x.png 2x">
+								<img src="4WW3_project/assets/images/avatar-1x.png" alt="profile-avatar">
+							</picture>
+						</div>
+						<div class="reviewer-name" style="font-weight: bolder;">Nikki Smith</div>
+						<div class="reviewer-date">(May 13, 2020)</div>
 					</div>
-					<div class="reviewer-name" style="font-weight: bolder;">Nikki Smith</div>
-					<div class="reviewer-date">(May 13, 2020)</div>
-				</div>
-				<div class="reviewer-rating">
-					<i class="fa fa-star" aria-hidden="true"></i>
-					<i class="fa fa-star" aria-hidden="true"></i>
-					<i class="fa fa-star" aria-hidden="true"></i>
-					<i class="fa fa-star" aria-hidden="true"></i>
-				</div>
-				<div class="review-content"> The pictures looked nothing like the photos, I was so disappointed.
-					Also, there was an odd smell from across the street. I think there is a garbage dump nearby,
-					I wish I knew that before I went in to the viewing!
-				</div>
-			</div>
-			<div class="review">
-				<div class="reviewer-info">
-					<div class="avatar-image">
-						<picture>
-							<source media="(min-width: 1920px)" srcset="avatar-2x.png, avatar-2x.png 2x">
-							<img src="4WW3_project/assets/images/avatar-1x.png" alt="profile-avatar">
-						</picture>
+					<div class="reviewer-rating">
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
 					</div>
-					<div class="reviewer-name" style="font-weight: bolder;">Nikki Smith</div>
-					<div class="reviewer-date">(May 13, 2020)</div>
-				</div>
-				<div class="reviewer-rating">
-					<i class="fa fa-star" aria-hidden="true"></i>
-					<i class="fa fa-star" aria-hidden="true"></i>
-					<i class="fa fa-star" aria-hidden="true"></i>
-					<i class="fa fa-star" aria-hidden="true"></i>
-				</div>
-				<div class="review-content"> The pictures looked nothing like the photos, I was so disappointed.
-					Also, there was an odd smell from across the street. I think there is a garbage dump nearby,
-					I wish I knew that before I went in to the viewing!
-				</div>
-			</div>
-			<div class="review">
-				<div class="reviewer-info">
-					<div class="avatar-image">
-						<picture>
-							<source media="(min-width: 1920px)" srcset="avatar-2x.png, avatar-2x.png 2x">
-							<img src="4WW3_project/assets/images/avatar-1x.png" alt="profile-avatar">
-						</picture>
+					<div class="review-content"> The pictures looked nothing like the photos, I was so disappointed.
+						Also, there was an odd smell from across the street. I think there is a garbage dump nearby,
+						I wish I knew that before I went in to the viewing!
 					</div>
-					<div class="reviewer-name" style="font-weight: bolder;">Nikki Smith</div>
-					<div class="reviewer-date">(May 13, 2020)</div>
 				</div>
-				<div class="reviewer-rating">
-					<i class="fa fa-star" aria-hidden="true"></i>
-					<i class="fa fa-star" aria-hidden="true"></i>
-					<i class="fa fa-star" aria-hidden="true"></i>
-					<i class="fa fa-star" aria-hidden="true"></i>
-				</div>
-				<div class="review-content"> The pictures looked nothing like the photos, I was so disappointed.
-					Also, there was an odd smell from across the street. I think there is a garbage dump nearby,
-					I wish I knew that before I went in to the viewing!
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!--Footer-->
-	<footer>
-		<div class="footer-container">
-			<div class="row">
-				<div class="footer-col">
-					<h4>True Roofs</h4>
-					<ul>
-						<li><a href="#">We are here to provide</a></li>
-						<li><a href="#">honest reviews and give you the </a></li>
-						<li><a href="#">opportunity to share yours.</a></li>
-					</ul>
-				</div>
-				<div class="footer-col">
-					<h4>Get Help</h4>
-					<ul>
-						<li><a href="#">FAQ</a></li>
-						<li><a href="#">Privacy Policy</a></li>
-					</ul>
-				</div>
-				<div class="footer-col">
-					<h4>Links</h4>
-					<ul>
-						<li><a href="#">Home</a></li>
-						<li><a href="#">Search</a></li>
-						<li><a href="#">Review</a></li>
-						<li><a href="#">New Listing</a></li>
-						<li><a href="#">Login | Sign In</a></li>
-					</ul>
-				</div>
-				<div class="footer-col">
-					<h4>Contact us</h4>
-					<div class="social-links">
-						<a href="#"><i class="fab fa-github"></i></a>
-						<a href="#"><i class="fab fa-facebook-f"></i></a>
-						<a href="#"><i class="fab fa-twitter"></i></a>
-						<a href="#"><i class="fab fa-instagram"></i></a>
+				<div class="review">
+					<div class="reviewer-info">
+						<div class="avatar-image">
+							<picture>
+								<source media="(min-width: 1920px)" srcset="avatar-2x.png, avatar-2x.png 2x">
+								<img src="4WW3_project/assets/images/avatar-1x.png" alt="profile-avatar">
+							</picture>
+						</div>
+						<div class="reviewer-name" style="font-weight: bolder;">Nikki Smith</div>
+						<div class="reviewer-date">(May 13, 2020)</div>
 					</div>
-					<div class="copyright">
-						<p title="True Roofs" style="color: #ffffff; font-size:12px;"><i class="far fa-copyright"></i>
-							Updated October 2021</p>
+					<div class="reviewer-rating">
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+					</div>
+					<div class="review-content"> The pictures looked nothing like the photos, I was so disappointed.
+						Also, there was an odd smell from across the street. I think there is a garbage dump nearby,
+						I wish I knew that before I went in to the viewing!
+					</div>
+				</div>
+				<div class="review">
+					<div class="reviewer-info">
+						<div class="avatar-image">
+							<picture>
+								<source media="(min-width: 1920px)" srcset="avatar-2x.png, avatar-2x.png 2x">
+								<img src="4WW3_project/assets/images/avatar-1x.png" alt="profile-avatar">
+							</picture>
+						</div>
+						<div class="reviewer-name" style="font-weight: bolder;">Nikki Smith</div>
+						<div class="reviewer-date">(May 13, 2020)</div>
+					</div>
+					<div class="reviewer-rating">
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+						<i class="fa fa-star" aria-hidden="true"></i>
+					</div>
+					<div class="review-content"> The pictures looked nothing like the photos, I was so disappointed.
+						Also, there was an odd smell from across the street. I think there is a garbage dump nearby,
+						I wish I knew that before I went in to the viewing!
 					</div>
 				</div>
 			</div>
 		</div>
-	</footer>
-</body>
 
+		<!--Footer-->
+		<footer>
+			<div class="footer-container">
+				<div class="row">
+					<div class="footer-col">
+						<h4>True Roofs</h4>
+						<ul>
+							<li><a href="#">We are here to provide</a></li>
+							<li><a href="#">honest reviews and give you the </a></li>
+							<li><a href="#">opportunity to share yours.</a></li>
+						</ul>
+					</div>
+					<div class="footer-col">
+						<h4>Get Help</h4>
+						<ul>
+							<li><a href="#">FAQ</a></li>
+							<li><a href="#">Privacy Policy</a></li>
+						</ul>
+					</div>
+					<div class="footer-col">
+						<h4>Links</h4>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="submit.html">Review</a></li>
+							<li><a href="submitListing.html">New Listing</a></li>
+							<li><a href="profile.html">Profile</a></li>
+							<li><a href="userRegistration.html">Login | Sign In</a></li>
+						</ul>
+					</div>
+					<div class="footer-col">
+						<h4>Contact us</h4>
+						<div class="social-links">
+							<a title="github icon" href="https://github.com/A454545/4WW3_project"><i class="fab fa-github"></i></a>
+							<a title="Comming Soon facebook link" href="#"><i class="fab fa-facebook-f"></i></a>
+							<a title="Comming Soon twitter link" href="#"><i class="fab fa-twitter"></i></a>
+							<a title="Comming Soon instagram link" href="#"><i class="fab fa-instagram"></i></a>
+						</div>
+						<div class="copyright">
+							<p title="True Roofs Copyright" style="color: #ffffff; font-size:12px;"><i class="far fa-copyright"></i> Updated October 2021</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</body>
 </html>
