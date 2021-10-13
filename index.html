@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
 	<head>
+		<!-- Meta tag information on the page -->
 		<meta charset="UTF-8">
 		<meta name="description" content="Rviewing estate listings">
 		<meta name="keywords" content="4WW3">
@@ -18,9 +19,9 @@
 		<!--Navigation bar-->
 		<header>
 			<h1 class="logo">True Roofs</h1>
-			
+			<!--add a checkbox to have something we can click on for the toggle tabs for the mobile view-->
 			<input type="checkbox" id="nav-toggle" class="nav-toggle">
-			
+			<!--tabs for the nav bar as a list-->
 			<nav>
 				<ul>
 					<li><a href="#">Home</a></li>
@@ -30,24 +31,32 @@
 					<li><a href="userRegistration.html">Login | Sign In </a></li>
 				</ul>
 			</nav>
+			<!--to position the checkbox-->
 			<label for="nav-toggle" class="nav-toggle-label">
 				<span></span>
 			</label>
 		</header>
 
-		<!--Introduction to website-->
+		<!--Search bar of the estates-->
 		<div class="main-container">
-			<img src="4WW3_project/assets/images/house.jpg" alt="house" style="width:100%; height:100%; filter: blur(5px);">
-		
+			<!--background image of the div-->
+			<img src="4WW3_project/assets/images/house.jpg" alt="top view of estates" style="width:100%; height:100%; filter: blur(5px);">
+			<!--div section that have the search bar as a form-->
             <div class="search">
+					<!--title-->
                     <p class="search-title" id="search-title"><u>Search Reviews</u></p>
-                    <form class="search-bar" id="search-bar" action="result.html">
+					<!--form to pass the info use the get method because we want to allow bookmarks and ideal for search boxes-->
+                    <form class="search-bar" id="search-bar" method="get" action="result.html">
+						<!--bar of the search-->
                         <input type="text" placeholder="Enter address, postal code, or city" name="search">
+						<!--clickable button to send the input-->
                         <button type="submit"><i class="fa fa-search"></i></button>
                     </form>
             </div>      
         </div>		
+		<!--dynamic map section-->
 		<div class="map">
+			<!--map filters that filter the listings available on the map as icons-->
 			<div class="map-checks">
 				<h3>Filters</h3>
 				<form class="map-filter">
@@ -64,10 +73,14 @@
 					<button type="submit"><i class="fa fa-sync-alt"></i></button>
 				</form>
 			</div>
-			<img src="4WW3_project/assets/images/dummymap.png" alt="dummymap">
+			<!--placeholder for the comming soon dynamic mapping that positions map on user location and display clickable icons of the listings-->
+			<img src="4WW3_project/assets/images/dummymap.png" alt="dummymap as a placeholder for a comming soon dynamic map">
 		</div>
 		
+		<!--the footer of the webpage-->
 		<footer>
+			<!--styled into columns of sections that store the info and rows to style the sections at the same level -->
+			<!--most of the subsections are not used but they make the webpage look nice-->
 			<div class="footer-container">
 				<div class="row">
 					<div class="footer-col">
@@ -88,23 +101,23 @@
 					<div class="footer-col">
 						<h4>Links</h4>
 						<ul>
-							<li><a href="#">Home</a></li>
-							<li><a href="#">Search</a></li>
-							<li><a href="#">Review</a></li>
-							<li><a href="#">New Listing</a></li>
-							<li><a href="#">Login | Sign In</a></li>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="submit.html">Review</a></li>
+							<li><a href="submitListing.html">New Listing</a></li>
+							<li><a href="profile.html">Profile</a></li>
+							<li><a href="userRegistration.html">Login | Sign In</a></li>
 						</ul>
 					</div>
 					<div class="footer-col">
 						<h4>Contact us</h4>
 						<div class="social-links">
-							<a href="#"><i class="fab fa-github"></i></a>
-							<a href="#"><i class="fab fa-facebook-f"></i></a>
-							<a href="#"><i class="fab fa-twitter"></i></a>
-							<a href="#"><i class="fab fa-instagram"></i></a>
+							<a title="github icon" href="https://github.com/A454545/4WW3_project"><i class="fab fa-github"></i></a>
+							<a title="Comming Soon facebook link" href="#"><i class="fab fa-facebook-f"></i></a>
+							<a title="Comming Soon twitter link" href="#"><i class="fab fa-twitter"></i></a>
+							<a title="Comming Soon instagram link" href="#"><i class="fab fa-instagram"></i></a>
 						</div>
 						<div class="copyright">
-							<p title="True Roofs" style="color: #ffffff; font-size:12px;"><i class="far fa-copyright"></i> Updated October 2021</p>
+							<p title="True Roofs Copyright" style="color: #ffffff; font-size:12px;"><i class="far fa-copyright"></i> Updated October 2021</p>
 						</div>
 					</div>
 				</div>

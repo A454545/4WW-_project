@@ -1,3 +1,4 @@
+/*styling the image sizing and formating */
 .profile img {
 	border-radius: 50%;
 	width: 200px;
@@ -5,7 +6,7 @@
 	vertical-align: middle;
 	padding: 10px;
 }
-
+/*formating the info text */
 .profile {
 	text-align: center;
 	color: white;

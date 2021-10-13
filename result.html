@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
 <head>
+	<!--Meta tag info-->
 	<meta charset="UTF-8">
-	<meta name="description" content="Rviewing estate listings">
+	<meta name="description" content="Search results">
 	<meta name="keywords" content="4WW3">
 	<meta name="author" content="Lin Rozenszajn">
 	<!--To make the view fit to screen of the device-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Main Page</title>
+	<title>Search Results</title>
 	<!--styling to the main page-->
 	<link href="../assets/css/header_footer.css" rel="stylesheet" />
 	<link href="../assets/css/result.css" rel="stylesheet" />
@@ -20,6 +20,7 @@
 
 <body>
 	<!--Navigation bar-->
+	<!--same comments on the indext/html for nav bar-->
 	<header>
 		<h1 class="logo">True Roofs</h1>
 		<input type="checkbox" id="nav-toggle" class="nav-toggle">
@@ -28,6 +29,7 @@
 				<li><a href="index.html">Home</a></li>
 				<li><a href="submit.html">Review</a></li>
 				<li><a href="submit.Listing.html">New Listing</a></li>
+				<li><a href="profile.html">Profile</a></li>
 				<li><a href="userRegistration.html">Login | Sign In </a></li>
 			</ul>
 		</nav>
@@ -36,7 +38,7 @@
 		</label>
 	</header>
 
-	<!--Dropdown buttons bar, each button is a search filter-->>
+	<!--Dropdown buttons bar, each button is a search filter-->
 	<!--Script for dropdown button behaviour-->
 	<script>
 		/* When the user clicks on the button, 
@@ -60,13 +62,13 @@
 	<div class="content-container">
 		<!--Dynamic map-->
 		<div class="content-child" id="map">
-			<div class="map-image">
+			<div title="dummy map image as placeholder for coming dynamic map" class="map-image">
 			</div>
 		</div>
 		<!--Results display-->
 		<div class="content-child" id="results">
 			<div class="content-grandchild">
-				<div class="result-top-image-container">
+				<div title="image of the listing" class="result-top-image-container">
 				</div>
 				<div class="mls-number">
 					MLS#123456789
@@ -84,7 +86,7 @@
 				</div>
 			</div>
 			<div class="content-grandchild">
-				<div class="result-top-image-container">
+				<div title="image of the listing" class="result-top-image-container">
 				</div>
 				<div class="mls-number">
 					MLS#123456789
@@ -102,7 +104,7 @@
 				</div>
 			</div>
 			<div class="content-grandchild">
-				<div class="result-top-image-container">
+				<div title="image of the listing" class="result-top-image-container">
 				</div>
 				<div class="mls-number">
 					MLS#123456789
@@ -142,6 +144,7 @@
 		</div>
 	</div>
 	<!--Footer-->
+	<!--same comments on the indext/html for footer-->
 	<footer>
 		<div class="footer-container">
 			<div class="row">
@@ -163,23 +166,23 @@
 				<div class="footer-col">
 					<h4>Links</h4>
 					<ul>
-						<li><a href="#">Home</a></li>
-						<li><a href="#">Search</a></li>
-						<li><a href="#">Review</a></li>
-						<li><a href="#">New Listing</a></li>
-						<li><a href="#">Login | Sign In</a></li>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="submit.html">Review</a></li>
+						<li><a href="submitListing.html">New Listing</a></li>
+						<li><a href="profile.html">Profile</a></li>
+						<li><a href="userRegistration.html">Login | Sign In</a></li>
 					</ul>
 				</div>
 				<div class="footer-col">
 					<h4>Contact us</h4>
 					<div class="social-links">
-						<a href="#"><i class="fab fa-github"></i></a>
-						<a href="#"><i class="fab fa-facebook-f"></i></a>
-						<a href="#"><i class="fab fa-twitter"></i></a>
-						<a href="#"><i class="fab fa-instagram"></i></a>
+						<a title="github icon" href="https://github.com/A454545/4WW3_project"><i class="fab fa-github"></i></a>
+						<a title="Comming Soon facebook link" href="#"><i class="fab fa-facebook-f"></i></a>
+						<a title="Comming Soon twitter link" href="#"><i class="fab fa-twitter"></i></a>
+						<a title="Comming Soon instagram link" href="#"><i class="fab fa-instagram"></i></a>
 					</div>
 					<div class="copyright">
-						<p title="True Roofs" style="color: #ffffff; font-size:12px;"><i class="far fa-copyright"></i>
+						<p title="True Roofs Copyright" style="color: #ffffff; font-size:12px;"><i class="far fa-copyright"></i>
 							Updated October 2021</p>
 					</div>
 				</div>
