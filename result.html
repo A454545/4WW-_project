@@ -10,8 +10,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Main Page</title>
 	<!--styling to the main page-->
-	<link href="../assets/css/header_footer.css" rel="stylesheet" />
-	<link href="../assets/css/result.css" rel="stylesheet" />
+	<link href="4WW3_project/assets/css/header_footer.css" rel="stylesheet" />
+	<link href="4WW3_project/assets/css/result.css" rel="stylesheet" />
 	<!--load icon library for search bar-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css"
@@ -36,24 +36,20 @@
 		</label>
 	</header>
 
-	<!--Dropdown buttons bar, each button is a search filter-->
-	<div class="filter-bar">
-		<a href="#home" style="border-right:0px;">Beds & Baths</a>
-		<a href="#news">Max Rent</a>
-		<div class="dropdown">
-			<button class="dropbtn" onclick="myFunction()">Bedrooms
-				<i class="fa fa-caret-down"></i>
-			</button>
-			<div class="dropdown-content" id="myDropdown">
-				<div class="btn-group">
-					<button class="button">1</button>
-					<button class="button">2</button>
-					<button class="button">3</button>
-					<button class="button">4+</button>
-				</div>
-			</div>
-		</div>
-	</div>
+	<!--Dropdown buttons bar, each button is a search filter-->>
+		<ul class="filter-bar">
+			<li><a href="#">One</a></li>
+			<li><a href="#">Two</a>
+				<li class="dropdown">
+					<a href="javascript:void(0)" class="dropbtn">Dropdown</a>
+					<div class="dropdown-content">
+					  <a href="#">Link 1</a>
+					  <a href="#">Link 2</a>
+					  <a href="#">Link 3</a>
+					</div>
+				  </li>
+			<li><a href="#">Three</a></li>
+		  </ul>
 	<!--Script for dropdown button behaviour-->
 	<script>
 		/* When the user clicks on the button, 
@@ -84,72 +80,78 @@
 		<div class="content-child" id="results">
 			<div class="content-grandchild">
 				<div class="result-top-image-container">
-					<div class="result-top-image">
-					</div>
 				</div>
 				<div class="mls-number">
 					MLS#123456789
 				</div>
 				<div class="result-description">
-					<div class="address">123 Main Street West</div>
-					<div class="listing-desc">Cozy three-bedroom , 1 bathroom apartment in the Main Street West neighborhood.</div>
-					<p class="beds-baths"><i class="fa fa-bed"></i> 3 Bed <i class="fa fa-bath"></i> 1 Bath</p>
-					<a href="individualResult.html">
-							Check listing
-					</a>
+					<div class="address" style="font-size: larger; font-weight: bold; padding-bottom: 0.5vh;">123 Main
+						Street West</div>
+					<div class="listing-desc">Cozy three-bedroom , 1 bathroom apartment in the Main Street West
+						neighborhood.</div>
+					<p class="beds-baths" style="margin:0; padding: 0.75vh 0.5vw"><i class="fa fa-bed"></i> 3 Bed <i
+							class="fa fa-bath"></i> 1 Bath</p>
+				</div>
+				<div class="check-button">
+					<input type="submit" value="View listing" onclick="location.href = 'individualResult.html';">
 				</div>
 			</div>
 			<div class="content-grandchild">
 				<div class="result-top-image-container">
-					<div class="result-top-image">
-					</div>
 				</div>
 				<div class="mls-number">
 					MLS#123456789
 				</div>
 				<div class="result-description">
-					<div class="address">123 Main Street West</div>
-					<div class="listing-desc">Cozy three-bedroom , 1 bathroom apartment in the Main Street West neighborhood.</div>
-					<p class="beds-baths"><i class="fa fa-bed"></i> 3 Bed <i class="fa fa-bath"></i> 1 Bath</p>
-					<div class="check-button">
-						<input type="submit" value="View listing" onclick="location.href = 'individualResult.html';">
-					</div>
+					<div class="address" style="font-size: larger; font-weight: bold; padding-bottom: 0.5vh;">123 Main
+						Street West</div>
+					<div class="listing-desc">Cozy three-bedroom , 1 bathroom apartment in the Main Street West
+						neighborhood.</div>
+					<p class="beds-baths" style="margin:0; padding: 0.75vh 0.5vw"><i class="fa fa-bed"></i> 3 Bed <i
+							class="fa fa-bath"></i> 1 Bath</p>
+				</div>
+				<div class="check-button">
+					<input type="submit" value="View listing" onclick="location.href = 'individualResult.html';">
 				</div>
 			</div>
 			<div class="content-grandchild">
 				<div class="result-top-image-container">
-					<div class="result-top-image">
-					</div>
 				</div>
 				<div class="mls-number">
 					MLS#123456789
 				</div>
 				<div class="result-description">
-					<div class="address">123 Main Street West</div>
-					<div class="listing-desc">Cozy three-bedroom , 1 bathroom apartment in the Main Street West neighborhood.</div>
-					<p class="beds-baths"><i class="fa fa-bed"></i> 3 Bed <i class="fa fa-bath"></i> 1 Bath</p>
-					<a href="individualResult.html">
-							Check listing
-					</a>
+					<div class="address" style="font-size: larger; font-weight: bold; padding-bottom: 0.5vh;">123 Main
+						Street West</div>
+					<div class="listing-desc">Cozy three-bedroom , 1 bathroom apartment in the Main Street West
+						neighborhood.</div>
+					<p class="beds-baths" style="margin:0; padding: 0.75vh 0.5vw"><i class="fa fa-bed"></i> 3 Bed <i
+							class="fa fa-bath"></i> 1 Bath</p>
+				</div>
+				<div class="check-button">
+					<input type="submit" value="View listing" onclick="location.href = 'individualResult.html';">
 				</div>
 			</div>
 			<div class="content-grandchild">
 				<div class="result-top-image-container">
-					<div class="result-top-image">
-					</div>
 				</div>
 				<div class="mls-number">
 					MLS#123456789
 				</div>
 				<div class="result-description">
-					<div class="address">123 Main Street West</div>
-					<div class="listing-desc">Cozy three-bedroom , 1 bathroom apartment in the Main Street West neighborhood.</div>
-					<p class="beds-baths"><i class="fa fa-bed"></i> 3 Bed <i class="fa fa-bath"></i> 1 Bath</p>
-					<a href="individualResult.html">
-							Check listing
-					</a>
+					<div class="address" style="font-size: larger; font-weight: bold; padding-bottom: 0.5vh;">123 Main
+						Street West</div>
+					<div class="listing-desc">Cozy three-bedroom , 1 bathroom apartment in the Main Street West
+						neighborhood.</div>
+					<p class="beds-baths" style="margin:0; padding: 0.75vh 0.5vw"><i class="fa fa-bed"></i> 3 Bed <i
+							class="fa fa-bath"></i> 1 Bath</p>
+				</div>
+				<div class="check-button">
+					<input type="submit" value="View listing" onclick="location.href = 'individualResult.html';">
 				</div>
 			</div>
+
+
 		</div>
 	</div>
 	<!--Footer-->
