@@ -1,8 +1,8 @@
 # 4WW3_project  
 Course name: Web Computing and Web Systems  
 Group name: True Roofs  
-Member 1: Abeer Alyasiri  
-Member 2: Lin Rozenszajn  
+Member 1: Abeer Alyasiri, alyasira, 400198787  
+Member 2: Lin Rozenszajn, rozensl, xxxxxxxxx  
 <br>  
 _____________________________________________  
 ### Project Link  
