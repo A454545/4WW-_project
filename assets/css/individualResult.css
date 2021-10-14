@@ -2,7 +2,7 @@
 /* Dropdown buttons bar (filter-bar) container */
 
 .filter-bar {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('4WW3_project/images/buildings.png');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('../images/buildings.png');
   background-position: bottom;
   position: relative;
   width: 100%;
@@ -50,7 +50,7 @@
 
 .top-photo {
   grid-area: top-photo;
-  background-image: url('4WW3_project/images/top.jpg');
+  background-image: url('../images/top.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -58,7 +58,7 @@
 
 .bottom-photo {
   grid-area: bottom-photo;
-  background-image: url('4WW3_project/images/bottom.jpg');
+  background-image: url('../images/bottom.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

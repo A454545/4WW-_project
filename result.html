@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<meta name="description" content="Rviewing estate listings">
+	<meta name="description" content="Reviewing estate listings">
 	<meta name="keywords" content="4WW3">
 	<meta name="author" content="Lin Rozenszajn">
 	<!--To make the view fit to screen of the device-->
@@ -49,6 +49,27 @@
 		</div>
 		<!--Results display-->
 		<div class="content-child" id="results">
+			<!--Individual results card-->
+			<div class="content-grandchild">
+				<div class="result-top-image-container">
+				</div>
+				<div class="mls-number">
+					MLS#123456789
+				</div>
+				<div class="result-description">
+					<div class="address" style="font-size: larger; font-weight: bold; padding-bottom: 0.5vh;">123 Main
+						Street West</div>
+					<div class="listing-desc">Cozy three-bedroom , 1 bathroom apartment in the Main Street West
+						neighborhood.</div>
+					<p class="beds-baths" style="margin:0; padding: 0.75vh 0.5vw"><i class="fa fa-bed"></i> 3 Bed <i
+							class="fa fa-bath"></i> 1 Bath</p>
+				</div>
+				<!--Button leads to individual result page-->
+				<div class="check-button">
+					<input type="submit" value="View listing" onclick="location.href = 'individualResult.html';">
+				</div>
+			</div>
+			<!--Individual results card-->
 			<div class="content-grandchild">
 				<div class="result-top-image-container">
 				</div>
@@ -67,6 +88,7 @@
 					<input type="submit" value="View listing" onclick="location.href = 'individualResult.html';">
 				</div>
 			</div>
+			<!--Individual results card-->
 			<div class="content-grandchild">
 				<div class="result-top-image-container">
 				</div>
@@ -85,6 +107,7 @@
 					<input type="submit" value="View listing" onclick="location.href = 'individualResult.html';">
 				</div>
 			</div>
+			<!--Individual results card-->
 			<div class="content-grandchild">
 				<div class="result-top-image-container">
 				</div>
@@ -103,26 +126,6 @@
 					<input type="submit" value="View listing" onclick="location.href = 'individualResult.html';">
 				</div>
 			</div>
-			<div class="content-grandchild">
-				<div class="result-top-image-container">
-				</div>
-				<div class="mls-number">
-					MLS#123456789
-				</div>
-				<div class="result-description">
-					<div class="address" style="font-size: larger; font-weight: bold; padding-bottom: 0.5vh;">123 Main
-						Street West</div>
-					<div class="listing-desc">Cozy three-bedroom , 1 bathroom apartment in the Main Street West
-						neighborhood.</div>
-					<p class="beds-baths" style="margin:0; padding: 0.75vh 0.5vw"><i class="fa fa-bed"></i> 3 Bed <i
-							class="fa fa-bath"></i> 1 Bath</p>
-				</div>
-				<div class="check-button">
-					<input type="submit" value="View listing" onclick="location.href = 'individualResult.html';">
-				</div>
-			</div>
-
-
 		</div>
 	</div>
 	<!--Footer-->
