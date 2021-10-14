@@ -24,11 +24,11 @@ _____________________________________________
 ### Add-on #2 Answers
 1. Section 2(a) describes how to embed different versions (of different sizes and pixel densities) of an image in your html code. For example:
 <br>
-`<picture>
-	<source media="(max-width: 1000px)" srcset="../assets/images/main-1x.png, main-1x.png 1x">
-	<source media="(max-width: 2000px)" srcset="../assets/images/main-2x.png, main-2x.png 2x">
-	<img src="../assets/images/main.jpg" alt="main listing photo">
-</picture>`
+    <picture>
+    <source media="(max-width: 1000px)" srcset="../assets/images/main-1x.png, main-1x.png 1x">
+    <source media="(max-width: 2000px)" srcset="../assets/images/main-2x.png, main-2x.png 2x">
+    <img src="../assets/images/main.jpg" alt="main listing photo">
+    </picture>
 <br>
   The picture element contains source tags, srcset attributes and an element. The browser will look for the first source tag whose media query matches the width of the active viewport. The srcset attribute contains the file path of the image to be used if the media query returns true followed by an image descriptor which describes the pixel density of the image. If no media queries evaluate to true or the browser does not support the <picture> element, the url in the src attribute of the img element is used.
 3. Three positive goals that can be achieved through use of the <picture> and <source> attributes are:
