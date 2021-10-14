@@ -58,7 +58,7 @@
 
 .bottom-photo {
   grid-area: bottom-photo;
-  background-image: url('../images/bottom.jpg');
+  background-image: url('../images/dummymap.png');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
