@@ -33,8 +33,13 @@ _____________________________________________
     ```
 
   The picture element contains source tags, srcset attributes and an element. The browser will look for the first source tag whose media query matches the width of the active viewport. The srcset attribute contains the file path of the image to be used if the media query returns true followed by an image descriptor which describes the pixel density of the image. If no media queries evaluate to true or the browser does not support the <picture> element, the url in the src attribute of the img element is used.
+<br>
 3. Three positive goals that can be achieved through use of the <picture> and <source> attributes are:
+  <br>
   i. They can be used to offer alternative image formats, in case one is not supported by the browser.
+  <br>
   ii. They can optimize bandwidth and speed, by selectively loading images that are sized appropriately for the viewer's screen.
-  iii. Offering different images for different media conditions: ie. a cropped image for a smaller display, or a higher-resolution imager for a larger display. 
+    <br>
+  iii. Offering different images for different media conditions: ie. a cropped image for a smaller display, or a higher-resolution imager for a larger display.
+    <br>
 4. One negative to using picture and source attributes is that they might not be supported on certain browsers (for example, Internet Explorer). This can be mitigated by including an img element, which acts as a "fallback" option if none of the media queries evaluate to true/none of the image formats are supported/the picture element isn't supported. 
