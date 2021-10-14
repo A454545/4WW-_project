@@ -11,7 +11,7 @@ Check out the project page at [True Roofs](http://3.130.249.183/index.html)
 
 _____________________________________________  
 ### Demo Link  
-Check out the Youtube video at [page tour](https://youtube.com/)  
+Check out the Sharepoint video at [page tour link](https://mcmasteru365.sharepoint.com/:v:/s/working/EVOEF4e_waROgDby9UmYvzQBkv79yzR6MKXCIaFf4_I-QA?e=nacl4w)  
 <br>  
 
 _____________________________________________
@@ -19,6 +19,7 @@ _____________________________________________
 1. All resources used to build the project are under references.txt
 2. Most of the dropdowns will be later changed using JS.
 3. WCAG that was followed for the project is https://www.w3.org/WAI/WCAG21/quickref/#text-alternatives.
+4. Completed Add-on 1 and Add-on 2
 
 _____________________________________________
 ### Add-on #2 Answers
