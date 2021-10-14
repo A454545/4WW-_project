@@ -42,6 +42,7 @@
 
 	<body>
 		<!--Navigation bar-->
+		<!--same comments on the indext/html-->
 		<header>
 			<h1 class="logo">True Roofs</h1>
 
@@ -60,13 +61,15 @@
 				<span></span>
 			</label>
 		</header>
-		<!--Dropdown buttons bar, each button is a search filter-->>
+		<!--dropdown buttons bar, each button is a search filter-to be added later with Javascript-->>
 		<div class="filter-bar"></div>
 
-		<!--Individual result-object container-->
+		<!--page displaying information about an individual result-->
+		<!--includes two photos, an interactive map, a video, text description, link to original mls listing, and reviews-->
 		<div class="container">
 			<div class="object-photos">
 				<div class="main-photo">
+					<!--Task 2 in Add On 2: use <picture> and <source> tags to add customizable images-->
 					<picture>
 						<source media="(max-width: 600px)" srcset="4WW3_project/assets/images/main-0.5x.png, main-0.5x.png 0.5x">
 						<source media="(max-width: 450px)" srcset="4WW3_project/assets/images/main-0.25x.png, main-0.25x.png 0.25x">
@@ -80,6 +83,7 @@
 				</div>
 			</div>
 			<div class="object">
+				<!--Task 1 in Add On 2: add a video-->
 				<div class="object-video"><video controls>
 						<source src="4WW3_project/assets/images/apartment-tour.mp4" type="video/mp4">
 						Your browser does not support the video tag.
@@ -223,8 +227,8 @@
 					<div class="footer-col">
 						<h4>Get Help</h4>
 						<ul>
-							<li><a href="#">FAQ</a></li>
-							<li><a href="#">Privacy Policy</a></li>
+							<li title="Comming Soon"><a href="#">FAQ</a></li>
+							<li title="Comming Soon"><a href="#">Privacy Policy</a></li>
 						</ul>
 					</div>
 					<div class="footer-col">
