@@ -1,6 +1,7 @@
+/*google fonts*/
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:300,600');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
+/*same header and footer styling code that was used in mainstyle.css so refer to the commenting there*/
 :root {
 	--background: rgb(0, 214, 170);
 }
@@ -12,7 +13,7 @@
 .main {
 	margin: 0;
 }
-
+/*body is set the same way for all pages*/
 body {
     padding: 0;
 	margin: 0;
@@ -180,14 +181,14 @@ nav a:hover {
 	}
 }
 /*End of nav bar*/
-
+/*title section of the webpage to show beginning of the page*/
 .title {
 	position: relative;
 	width: 100%;
 	height: 25vh;
 	overflow: hidden;
 }
-
+/*formating the title*/
 .title h2 {
 	width: 80%;
     position:absolute;
