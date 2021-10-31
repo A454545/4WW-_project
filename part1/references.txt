@@ -1,0 +1,31 @@
+Resources:
+	Abeer -- search.html, signin.html, submit.html, submitListing.html, test.html, userRegisteration.html, header_footer.css, 
+		mainStyle.css, profile.css, userRegisteration.css
+			* https://www.codegrepper.com/code-examples/html/change+html+page+on+button+click
+			* https://www.w3schools.com/cssref/default.asp (many of the sections on this page)
+				** Ex: https://www.w3schools.com/cssref/pr_class_display.asp
+				** Ex: https://www.w3schools.com/css/css_form.asp
+				** Ex: https://www.w3schools.com/css/tryit.asp?filename=trycss_form_responsive
+			* https://www.w3schools.com/html/default.asp (many of the sections on this page)
+				** Ex: https://www.w3schools.com/html/html_form_input_types.asp
+			* https://www.youtube.com/watch?v=G3KxOexU8ds
+			* https://html-color.codes/
+			* https://www.w3schools.com/howto/default.asp (many of the sections on this page)
+				** Ex: https://www.w3schools.com/howto/howto_css_rounded_images.asp
+				** Ex: https://www.w3schools.com/howto/howto_css_signup_form.asp
+			* https://www.youtube.com/watch?v=3qmL-ebPYzw
+			* https://www.w3.org/Style/Examples/007/center.en.tmpl
+			* https://www.youtube.com/watch?v=O-QUBZuZlXM&list=LL&index=1&t=6s
+			* https://www.youtube.com/watch?v=L5WWrGMsnpw&list=LL&index=4&t=918s
+			* https://www.youtube.com/watch?v=YOb67OKw62s&list=LL&index=7
+			* https://www.youtube.com/watch?v=G3KxOexU8ds&t=277s
+			* https://www.youtube.com/watch?v=bn-DQCifeQQ
+			* https://www.youtube.com/watch?v=qJVVZYTYA9U&t=218s
+			* https://www.youtube.com/watch?v=FVH-tXVRErg
+			* https://www.youtube.com/watch?v=ijZEX6KltrQ&t=252s
+			* https://www.youtube.com/watch?v=TCheMkFuUQc&t=37s
+			* https://www.youtube.com/watch?v=DonxmmWW7Tk&t=109s
+			* https://www.youtube.com/watch?v=8QKOaTYvYUA&t=640s
+			* https://www.youtube.com/watch?v=FEmysQARWFU&t=1141s
+	Lin -- result.html, individualResult.html, result.css, individualResult.css
+			* https://www.youtube.com/watch?v=2nrwFysevXI&ab_channel=MonashUniversity
