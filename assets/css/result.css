@@ -8,7 +8,7 @@
 	position: relative;
 	width: 100%;
 	height: 15vh;
-	margin-bottom: 1vh;
+	margin-bottom: 0.25vh;
 	overflow: hidden;
 }
 
@@ -19,7 +19,6 @@
 	margin: 0;
 	width: 100%;
 	height: 110vh;
-	padding: 0 0.5vw;
 }
 
 /*General styling of child containers: left column contains interactive map, right column contains the results*/
@@ -30,39 +29,51 @@
 	max-width:50%;
 	max-height: 100%;
 	position: relative;
-	padding: 0 0.5vw;
 }
 
 /*Styling for interactive map*/
 #map.content-child{
+	padding: 0 0.5vw 0 0;
 	height:100%;
-}
-.map-image {
-	height:100%;
-	background-image: url("../images/dummymap.png");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size:cover;
+	max-width: 50%;
+	z-index: 0;
 }
 
 /*Styling for results display grid*/
 #results.content-child {
-	height:100%;
+	padding: 0 0.5vw 0 0.5vw;
 	--auto-grid-min-size: 48%;
+	height:100%;
   
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
-	grid-gap: 1rem;
-	overflow: hidden;
+	grid-template-rows: repeat(auto-fill, minmax(auto, 1fr));
+	grid-gap: 1vw;
+	overflow: scroll;
   }
+
 .content-grandchild {
 	background-color: #e8e8e8c9;
-	font-size:1.15vw;
+	font-size:1.30vw;
 	margin: 0;
 	padding: 5px;
-
 	display: grid;
-	grid-template-rows: 1fr 1fr min-content auto auto 1fr auto;
+	grid-template-rows: 1fr 1fr min-content auto auto 1fr 1fr;
+}
+
+.content-child .next-button {
+	grid-column-start: 1;
+	grid-column-end: 3;
+	text-align: center;
+}
+
+.content-child .next-button input{
+	background-color: #222;
+	color: white;
+	padding: 0.25vh 0.25vw;
+	border: none;
+	cursor: pointer;
+	text-decoration: underline;
 }
 
 /*Set the grid areas for result card image*/
@@ -72,21 +83,36 @@
 	min-height: 15vh;
 }
 
-/*Set the grid area and styling for the mls number on the result card*/
-.mls-number {
+/*Styling for individual result's ranking*/
+.result-ranking {
 	grid-row: 3 / 4;
 	background-color: #005c5c;
 	color: white;
-	font-weight: bolder;
 	padding: 1vh 0.25vw;
 }
+
+/*Styling for review stars*/
+.result-stars{
+	padding: 1vh 0.25vw;
+	grid-row: 4 / 5;
+}
+.result-stars span{
+	color: yellow;
+}
+.result-stars .text{
+	color:inherit;
+}
+
 
 /*Set the grid area and padding for the container of the result's description*/
 .result-description {
-	grid-row: 4 / 6;
-	padding: 1vh 0.25vw;
+	grid-row: 5 / 6;
+	padding: 0 0.25vw;
 }
 
+.result-description .address {
+	font-weight: bold;
+}
 /*Set the grid areas for the button navigating to the individual result page*/
 .check-button{
 	grid-row: 6 / 8;
@@ -95,14 +121,14 @@
 	text-align:center;
 }
 /*Center the button in the bottom quadrant of the card*/
-input[type=submit]{
+.check-button input[type=submit]{
 	font-size: inherit;
 	background-color: rgb(0, 214, 170);
 	color: white;
 	padding: 0.5vh 0.5vw;
 	border: none;
 	cursor: pointer;
-	transform: translateY(50%);
+	transform: translateY(70%);
 	height: 50%;
 	width: 60%;
 }
@@ -130,25 +156,47 @@ input[type=submit]:hover{
 @media screen and (max-width: 800px) {
 	/*Reduce height of main container for better aesthetic*/
 	.content-container {
-		max-height:80vh;
+		height: 165%;
 	}
 	/*Increase map and result card containers to full width of screen*/
 	#map.content-child {
 		min-width:100%;
-		max-height: 50%;
-		padding-bottom: 0.25rem;
-	}
-	.content-child {
-		min-width:100%;
-		max-height:50%;
-	}
+		max-height: 35%;
+		padding: 0.25vh 0.5vw 0.75vh 0.5vw;
+		}
 
 	#results.content-child {
-		grid-gap: 0.25rem;
-		overflow:scroll;
+		
+		grid-template-rows: 1fr 1fr auto;
+		margin-top: 0.5vh;
+		min-width: 100%;
+		max-height: 65%;
+		grid-gap: 0.5vw;
 	}
 
 	.content-grandchild{
-		max-height: 30vh;
+		font-size: 2vw;
+		grid-template-rows: 1fr 1fr min-content 1 fr 1fr auto auto;
+	}
+
+	.address{
+		font-size: 2.15vw; font-weight: bold; padding-bottom: 0.5vh;
+	}
+
+	.result-description {
+		white-space: nowrap;
+ 		 overflow: hidden;
+  		text-overflow: ellipsis;
+	}
+
+	input[type=submit]{
+		font-size: 2.15vw;
+		background-color: rgb(0, 214, 170);
+		color: white;
+		padding: 0.25vh 0.25vw;
+		border: none;
+		cursor: pointer;
+		height: 70%;
+		width: 70%;
 	}
 }
