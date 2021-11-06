@@ -156,7 +156,8 @@ input[type=submit]:hover{
 @media screen and (max-width: 800px) {
 	/*Reduce height of main container for better aesthetic*/
 	.content-container {
-		height: 165%;
+		height: 110vh;
+		width: 100%;
 	}
 	/*Increase map and result card containers to full width of screen*/
 	#map.content-child {
@@ -165,11 +166,15 @@ input[type=submit]:hover{
 		padding: 0.25vh 0.5vw 0.75vh 0.5vw;
 		}
 
+        .content-child{
+		width: 100%;
+		max-width: 100%;
+	}
+
 	#results.content-child {
 		
 		grid-template-rows: 1fr 1fr auto;
 		margin-top: 0.5vh;
-		min-width: 100%;
 		max-height: 65%;
 		grid-gap: 0.5vw;
 	}

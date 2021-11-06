@@ -245,6 +245,13 @@
     max-width: 100%;
     font-size: small;
   }
+
+   .empty {
+   display: none;
+}
+  .reviewGroup {
+    grid-column-end: 5;
+	}
   .avatar-image {
     transform: scale(0.75);
   }
@@ -260,6 +267,9 @@
       grid-template-rows: 1fr 1fr auto;
     }
 
+.main-photo img {
+    transform: scale(3.5, 3.5) translateY(2.5vh);
+  }
     .object-photos {
       height: auto;
     }
@@ -274,7 +284,7 @@
     .object > div {
       height: auto;
       width: 100%;
-      overflow: hidden;
+      overflow: scroll;
     }
 
     .reviewGroup{
