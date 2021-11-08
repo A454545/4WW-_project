@@ -27,5 +27,8 @@ Resources:
 			* https://www.youtube.com/watch?v=DonxmmWW7Tk&t=109s
 			* https://www.youtube.com/watch?v=8QKOaTYvYUA&t=640s
 			* https://www.youtube.com/watch?v=FEmysQARWFU&t=1141s
+			* https://www.w3resource.com/javascript/form/password-validation.php
+			* http://html5doctor.com/css3-pseudo-classes-and-html5-forms/
+			* https://www.javascripttutorial.net/javascript-dom/javascript-form/ 
 	Lin -- result.html, individualResult.html, result.css, individualResult.css
 			* https://www.youtube.com/watch?v=2nrwFysevXI&ab_channel=MonashUniversity
