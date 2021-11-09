@@ -9,11 +9,15 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>New Listing Page</title>
 		<!--styling to the main page-->
-		<link href="4WW3_project/assets/css/header_footer.css" rel="stylesheet"/>
-		<link type="text/css" href="4WW3_project/assets/css/submit.css" rel="stylesheet"/>
+		<!-- <link href="4WW3_project/assets/css/header_footer.css" rel="stylesheet"/> -->
+		<!-- <link type="text/css" href="4WW3_project/assets/css/submit.css" rel="stylesheet"/> -->
+		<link href="assets/css/header_footer.css" rel="stylesheet"/>
+		<link type="text/css" href="assets/css/submit.css" rel="stylesheet"/>
 		<!--load icon library for search bar-->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+		<!-- js script for geolocation and submit -->
+		<script type="text/javascript" src="assets/js/submit.js"></script>
 	</head>
 	<body>
 		<!--Navigation bar-->
@@ -44,7 +48,7 @@
 		<!--submission form for new object review with name, description, location as latitude longtitude coordinates, and upload-->
 		<!--this section is similar to what was used in submit.html so commenting would be the same the difference here is what is being asked to enter-->
 		<div class="submission-container">
-			<form class="submission-form" action="#">
+			<form class="submission-form" action="#" onsubmit="return validateSubmission(this)">
 				<div class="line-form">
 					<div class="title-line-form">
 						<label for="rname">Listing Name</label>
@@ -59,6 +63,15 @@
 					</div>
 					<div class="field-line-form">
 						<input type="text" id="address" name="address" placeholder="listing addrees..">
+					</div>
+				</div>
+				<!-- Add button for Geolocation API autofill coordinates -->
+				<div class="line-form">
+					<div class="title-line-form">
+						<label>Use Current Location</label>
+					</div>
+					<div class="field-line-form">
+						<p style="padding-left: 10px;" id="useLocation"><a class="useLocationBtn" onclick="getLocation()"><i class="fas fa-street-view">&nbsp My Location</i></a></p>
 					</div>
 				</div>
 				<div class="line-form">

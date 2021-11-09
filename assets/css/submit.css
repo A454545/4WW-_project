@@ -68,6 +68,14 @@ input[type=submit] {
 .line-form input[type=submit]:hover {
 	background-color: #008080;
 }
+/*hover action on the my location button*/
+.line-form .useLocationBtn:hover {
+	background-color: #008080;
+	border-radius: 10px;
+	cursor: pointer;
+	padding: 5px;
+	color: #ffffff;
+}
 
 /*responsive screen to stack rows and submit button when small screen*/
 @media screen and (max-width: 600px) {
