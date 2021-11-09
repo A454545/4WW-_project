@@ -30,5 +30,8 @@ Resources:
 			* https://www.w3resource.com/javascript/form/password-validation.php
 			* http://html5doctor.com/css3-pseudo-classes-and-html5-forms/
 			* https://www.javascripttutorial.net/javascript-dom/javascript-form/ 
+			* https://newbedev.com/regular-expression-for-matching-latitude-longitude-coordinates
+			* https://newbedev.com/regular-expression-for-address-field-validation
+			* https://www.w3schools.com/html/html5_geolocation.asp
 	Lin -- result.html, individualResult.html, result.css, individualResult.css
 			* https://www.youtube.com/watch?v=2nrwFysevXI&ab_channel=MonashUniversity
