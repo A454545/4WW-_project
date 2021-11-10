@@ -16,8 +16,8 @@
 /*Create main grid container, which will hold three flexibly-sized child subgrids: object-photos, object, and object-reviews*/
 .container {
   display: grid;
-  grid-template-columns: 1fr 0.9fr 1.1fr; /*fr unit is used to make the subgrids flexible*/
-  grid-template-rows: auto auto auto; /*auto is used to make the subgrids flexible*/
+  grid-template-columns: 1fr 1.5fr 1.1fr; /*fr unit is used to make the subgrids flexible*/
+  grid-template-rows: auto 2fr auto; /*auto is used to make the subgrids flexible*/
   gap: 0.4% 0%;
   grid-auto-flow: row;
   grid-template-areas: "object-photos object-photos object-photos" "object object object" "object-reviews object-reviews object-reviews";
@@ -28,7 +28,7 @@
   position: relative;
   margin: 0;
   width: 100%;
-  height: 60vh;
+  height: 70vh;
   padding: 0 0.5vw;
   display: grid;
   grid-template-columns: 1fr 1.5fr 0.5fr 1fr;
@@ -89,7 +89,7 @@
 .object-video {
   grid-area: object-video;
   background-color: #e8e8e831;
-  max-height: 50vh;
+  /*max-height: 50vh;*/
 }
 
 /*Ensure video takes up the whole space of its grid area*/
@@ -103,8 +103,12 @@
 .object-content {
   grid-area: object-content;
   background-color: #e8e8e8c9;
-  padding: 1vh 1vw;
-  height: 50vh;
+  padding: 0vh 1vw 3vh 1vw;
+}
+
+.listing-link{
+  margin: 0;
+  padding: 0vh 0 4vh 0;
 }
 
 /*Styling for the reviews area. Set height and width to match above content.*/
@@ -198,7 +202,7 @@
   }
 }
 
-@media screen and (max-height: 700px) {
+@media screen and (max-height: 500px) {
   .object-photos {
     height: 40vh;
   }
@@ -245,13 +249,6 @@
     max-width: 100%;
     font-size: small;
   }
-
-   .empty {
-   display: none;
-}
-  .reviewGroup {
-    grid-column-end: 5;
-	}
   .avatar-image {
     transform: scale(0.75);
   }
@@ -267,9 +264,6 @@
       grid-template-rows: 1fr 1fr auto;
     }
 
-.main-photo img {
-    transform: scale(3.5, 3.5) translateY(2.5vh);
-  }
     .object-photos {
       height: auto;
     }
@@ -284,7 +278,6 @@
     .object > div {
       height: auto;
       width: 100%;
-      overflow: scroll;
     }
 
     .reviewGroup{
@@ -310,6 +303,10 @@
       align-items:center;
       width: 60px;
       height: 60px;
+    }
+
+    .object-content {
+      overflow: scroll;
     }
   }
 }
