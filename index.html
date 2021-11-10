@@ -1,151 +1,214 @@
 <!DOCTYPE html>
 <html lang="en-US">
-	<head>
-		<!-- Meta tag information on the page -->
-		<meta charset="UTF-8">
-		<meta name="description" content="Rviewing estate listings">
-		<meta name="keywords" content="4WW3">
-		<meta name="author" content="Abeer Al Yasiri">
-		<!--To make the view fit to screen of the device-->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Main Page</title>
-		<!--styling to the main page-->
-		<!-- <link href="4WW3_project/assets/css/mainStyle.css" rel="stylesheet"/> -->
-		<link href="assets/css/mainStyle.css" rel="stylesheet"/>
-		<!--load icon library for search bar-->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-		<!-- Animation resource -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-	</head>
-	<body>
-		<!--Navigation bar-->
-		<header>
-			<h1 class="logo">True Roofs</h1>
-			<!--add a checkbox to have something we can click on for the toggle tabs for the mobile view-->
-			<input type="checkbox" id="nav-toggle" class="nav-toggle">
-			<!--tabs for the nav bar as a list-->
-			<nav>
-				<ul>
-					<li><a href="#">Home</a></li>
-					<li><a href="submit.html">Review</a></li>
-					<li><a href="submitListing.html">New Listing</a></li>
-					<li><a href="profile.html">Profile</a></li>
-					<li><a href="userRegistration.html">Login | Sign In </a></li>
-				</ul>
-			</nav>
-			<!--to position the checkbox-->
-			<label for="nav-toggle" class="nav-toggle-label">
-				<span></span>
-			</label>
-		</header>
 
-		<!--Search bar of the estates-->
-		<div class="main-container">
-			<!--background image of the div-->
-			<img src="4WW3_project/assets/images/house.jpg" alt="top view of estates" style="width:100%; height:100%; filter: blur(5px);">
-			<!--div section that have the search bar as a form-->
-            <div class="search">
-					<!--title-->
-                    <p class="search-title" id="search-title"><u>Search Reviews</u></p>
-					<!--form to pass the info use the get method because we want to allow bookmarks and ideal for search boxes-->
-                    <form class="search-bar" id="search-bar" method="get" action="result.html">
-						<!--bar of the search-->
-                        <input type="text" placeholder="Enter address, postal code, or city" name="search">
-						<!--clickable button to send the input-->
-                        <button type="submit"><i class="fa fa-search"></i></button>
-                    </form>
-            </div>      
-        </div>		
-		<!--dynamic map section-->
-		<div class="map">
-			<!--map filters that filter the listings available on the map as icons-->
-			<div class="map-checks">
-				<h3>Filters</h3>
-				<form class="map-filter">
-					<input type="checkbox" id="checkbox1">
-					<label for="checkbox1">House</label>
-					<input type="checkbox" id="checkbox2">
-					<label for="checkbox2">Apartment</label>
-					<input type="checkbox" id="checkbox3">
-					<label for="checkbox3">4+ BR</label>
-					<input type="checkbox" id="checkbox4">
-					<label for="checkbox4">Sale</label>
-					<input type="checkbox" id="checkbox5">
-					<label for="checkbox5">Lease</label>
-					<button type="submit"><i class="fa fa-sync-alt"></i></button>
-				</form>
-			</div>
-			<!--placeholder for the comming soon dynamic mapping that positions map on user location and display clickable icons of the listings-->
-			<img src="4WW3_project/assets/images/dummymap.png" alt="dummymap as a placeholder for a comming soon dynamic map">
+<head>
+	<!-- Meta tag information on the page -->
+	<meta charset="UTF-8">
+	<meta name="description" content="Rviewing estate listings">
+	<meta name="keywords" content="4WW3">
+	<meta name="author" content="Abeer Al Yasiri">
+	<!--To make the view fit to screen of the device-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Main Page</title>
+	<!--styling to the main page-->
+	<!-- <link href="4WW3_project/assets/css/mainStyle.css" rel="stylesheet"/> -->
+	<link href="assets/css/mainStyle.css" rel="stylesheet" />
+	<!--load icon library for search bar-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+	<!-- Animation resource -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+</head>
+
+<body>
+	<!--Navigation bar-->
+	<header>
+		<h1 class="logo">True Roofs</h1>
+		<!--add a checkbox to have something we can click on for the toggle tabs for the mobile view-->
+		<input type="checkbox" id="nav-toggle" class="nav-toggle">
+		<!--tabs for the nav bar as a list-->
+		<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="submit.html">Review</a></li>
+				<li><a href="submitListing.html">New Listing</a></li>
+				<li><a href="profile.html">Profile</a></li>
+				<li><a href="userRegistration.html">Login | Sign In </a></li>
+			</ul>
+		</nav>
+		<!--to position the checkbox-->
+		<label for="nav-toggle" class="nav-toggle-label">
+			<span></span>
+		</label>
+	</header>
+
+	<!--Search bar of the estates-->
+	<div class="main-container">
+		<!--background image of the div-->
+		<img src="assets/images/house.jpg" alt="top view of estates"
+			style="width:100%; height:100%; filter: blur(5px);">
+		<!--div section that have the search bar as a form-->
+		<div class="search">
+			<!--title-->
+			<p class="search-title" id="search-title"><u>Search Reviews</u></p>
+			<!--form to pass the info use the get method because we want to allow bookmarks and ideal for search boxes-->
+			<form class="search-bar" id="search-bar" method="get" action="result.html">
+				<!--bar of the search-->
+				<input type="text" placeholder="Enter address, postal code, or city" name="search">
+				<!--clickable button to send the input-->
+				<button type="submit"><i class="fa fa-search"></i></button>
+			</form>
 		</div>
-		
-		<!--the footer of the webpage-->
-		<footer>
-			<!--styled into columns of sections that store the info and rows to style the sections at the same level -->
-			<!--most of the subsections are not used but they make the webpage look nice-->
-			<div class="footer-container">
-				<div class="row">
-					<div class="footer-col">
-						<h4>True Roofs</h4>
-						<ul>
-							<li><a href="#">We are here to provide</a></li>
-							<li><a href="#">honest reviews and give you the </a></li>
-							<li><a href="#">opportunity to share yours.</a></li>
-						</ul>
+	</div>
+	<!--dynamic map section-->
+	<div class="map">
+		<!--map filters that filter the listings available on the map as icons-->
+		<div class="map-checks">
+			<h3>Filters</h3>
+			<form class="map-filter">
+				<input type="checkbox" id="checkbox1">
+				<label for="checkbox1">House</label>
+				<input type="checkbox" id="checkbox2">
+				<label for="checkbox2">Apartment</label>
+				<input type="checkbox" id="checkbox3">
+				<label for="checkbox3">4+ BR</label>
+				<input type="checkbox" id="checkbox4">
+				<label for="checkbox4">Sale</label>
+				<input type="checkbox" id="checkbox5">
+				<label for="checkbox5">Lease</label>
+				<button type="submit"><i class="fa fa-sync-alt"></i></button>
+			</form>
+		</div>
+		<!--placeholder for the comming soon dynamic mapping that positions map on user location and display clickable icons of the listings-->
+		<div id="mapholder">
+		</div>
+	</div>
+
+	<!--the footer of the webpage-->
+	<footer>
+		<!--styled into columns of sections that store the info and rows to style the sections at the same level -->
+		<!--most of the subsections are not used but they make the webpage look nice-->
+		<div class="footer-container">
+			<div class="row">
+				<div class="footer-col">
+					<h4>True Roofs</h4>
+					<ul>
+						<li><a href="#">We are here to provide</a></li>
+						<li><a href="#">honest reviews and give you the </a></li>
+						<li><a href="#">opportunity to share yours.</a></li>
+					</ul>
+				</div>
+				<div class="footer-col">
+					<h4>Get Help</h4>
+					<ul>
+						<li><a href="#">FAQ</a></li>
+						<li><a href="#">Privacy Policy</a></li>
+					</ul>
+				</div>
+				<div class="footer-col">
+					<h4>Links</h4>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="submit.html">Review</a></li>
+						<li><a href="submitListing.html">New Listing</a></li>
+						<li><a href="profile.html">Profile</a></li>
+						<li><a href="userRegistration.html">Login | Sign In</a></li>
+					</ul>
+				</div>
+				<div class="footer-col">
+					<h4>Contact us</h4>
+					<div class="social-links">
+						<a title="github icon" href="https://github.com/A454545/4WW3_project"><i
+								class="fab fa-github"></i></a>
+						<a title="Comming Soon facebook link" href="#"><i class="fab fa-facebook-f"></i></a>
+						<a title="Comming Soon twitter link" href="#"><i class="fab fa-twitter"></i></a>
+						<a title="Comming Soon instagram link" href="#"><i class="fab fa-instagram"></i></a>
 					</div>
-					<div class="footer-col">
-						<h4>Get Help</h4>
-						<ul>
-							<li><a href="#">FAQ</a></li>
-							<li><a href="#">Privacy Policy</a></li>
-						</ul>
-					</div>
-					<div class="footer-col">
-						<h4>Links</h4>
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="submit.html">Review</a></li>
-							<li><a href="submitListing.html">New Listing</a></li>
-							<li><a href="profile.html">Profile</a></li>
-							<li><a href="userRegistration.html">Login | Sign In</a></li>
-						</ul>
-					</div>
-					<div class="footer-col">
-						<h4>Contact us</h4>
-						<div class="social-links">
-							<a title="github icon" href="https://github.com/A454545/4WW3_project"><i class="fab fa-github"></i></a>
-							<a title="Comming Soon facebook link" href="#"><i class="fab fa-facebook-f"></i></a>
-							<a title="Comming Soon twitter link" href="#"><i class="fab fa-twitter"></i></a>
-							<a title="Comming Soon instagram link" href="#"><i class="fab fa-instagram"></i></a>
-						</div>
-						<div class="copyright">
-							<p title="True Roofs Copyright" style="color: #ffffff; font-size:12px;"><i class="far fa-copyright"></i> Updated October 2021</p>
-						</div>
+					<div class="copyright">
+						<p title="True Roofs Copyright" style="color: #ffffff; font-size:12px;"><i
+								class="far fa-copyright"></i> Updated October 2021</p>
 					</div>
 				</div>
 			</div>
-		</footer>
-		<script type="text/javascript">
-			// Wrap every letter in a span
-			var textWrapper = document.querySelector('.logo');
-			textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+		</div>
+	</footer>
+	<script type="text/javascript">
+		// Wrap every letter in a span
+		var textWrapper = document.querySelector('.logo');
+		textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-			anime.timeline({loop: true})
-			  .add({
+		anime.timeline({ loop: true })
+			.add({
 				targets: '.logo .letter',
-				opacity: [0,1],
+				opacity: [0, 1],
 				easing: "easeInOutQuad",
 				duration: 2250,
-				delay: (el, i) => 150 * (i+1)
-			  }).add({
+				delay: (el, i) => 150 * (i + 1)
+			}).add({
 				targets: '.logo',
 				opacity: 0,
 				duration: 1000,
 				easing: "easeOutExpo",
 				delay: 2000
-			  });
-		</script>
-	</body>
+			});
+
+		// Geolocation code: retrieves user's current position and displays it as a marker on a map
+		let latitude = 0.0;
+		let longitude = 0.0;
+		let map_holder = document.getElementById("mapholder");
+		map_holder.innerHTML = "boop";
+
+		function getLocation() {
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(showPosition, errorHandler);
+				map_holder.style.height = '1000px';
+				map_holder.style.color = 'red';
+				map_holder.innerHTML = "bap";
+			}
+			else {
+				map_holder.innerHTML = "Geolocation is not supported by this browser.";
+			}
+		}
+
+		function errorHandler(error) {
+			switch (error.code) {
+				case error.PERMISSION_DENIED:
+					map_holder.innerHTML = "User denied the request for Geolocation."
+				break;
+				case error.POSITION_UNAVAILABLE:
+					map_holder.innerHTML = "Location information is unavailable."
+					break;
+				case error.TIMEOUT:
+					map_holder.innerHTML = "The request to get user location timed out."
+					break;
+				case error.UNKNOWN_ERROR:
+					map_holder.innerHTML = "An unknown error occurred."
+					break;
+			}
+		}
+
+		function showPosition(position) {
+			latitude = position.coords.latitude;
+			longitude = position.coords.longitude;
+		}
+
+		//Interactive map generation
+		let myMap = L.map('mapholder').setView([latitude, longitude], 13)
+		L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+			attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+			maxZoom: 18,
+			id: 'mapbox/streets-v11',
+			tileSize: 512,
+			zoomOffset: -1,
+			accessToken: 'pk.eyJ1IjoibWlrbG92ZXI4OSIsImEiOiJja3ZjeHh1ejkwcm9jMm9ueWpibzFjaTRtIn0.H8R3XwTyGWRGskV7WVnnYg'
+		}).addTo(myMap);
+
+		let marker = L.marker([latitude, longitude]).addTo(myMap);
+		var popup = L.popup();
+		marker.bindPopup("Your location").openPopup();
+	</script>
+</body>
+
 </html>
