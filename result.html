@@ -24,6 +24,8 @@
 	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
 		integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
 		crossorigin=""></script>
+	<!-- Animation resource -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 
 <body>
@@ -54,10 +56,10 @@
 	<!--the address, mls listing number and synopsis of each result, along with a button to access its individual result page-->
 	<div class="content-container">
 		<!--Dynamic map-->
-		<div class="content-child" id="map">
+		<div class="content-child animate__animated animate__zoomInLeft" id="map">
 		</div>
 		<!--Results display-->
-		<div class="content-child" id="results">
+		<div class="content-child animate__animated animate__zoomInRight" id="results">
 			<!--Individual results card-->
 			<div class="content-grandchild">
 				<div class="result-top-image-container">

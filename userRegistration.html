@@ -19,6 +19,9 @@
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 		<!-- js script for registration -->
 		<script type="text/javascript" src="assets/js/registration.js"></script>
+		<!-- Animation resource -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 	</head>
 	<body>
 		<!--Navigation bar-->
@@ -51,10 +54,10 @@
 			<!--using a form to pass the info-->
 			<form class="reg-form" id="Reg-login" onsubmit="return validateLogIn(this)" action="profile.html" method="POST">
 				<!--what type of registration is it-->
-				<div class="reg-type">
+				<div class="reg-type animate__animated animate__rubberBand">
 					<p>Log In</p>
 				</div>
-				<div class="message">
+				<div class="message animate__animated animate__flip">
 					<p>Welcome Back!</p>
 				</div>
 				<!--what fields needs to be filed-->
@@ -80,7 +83,7 @@
 					<input type="submit" value="Log In">
 				</div>
 				<!--to switch to the sign in page instead-->
-				<div class="switch-type">
+				<div class="switch-type animate__animated animate__pulse">
 					<a href="signin.html">New to True Roofs? Sign in newbie!</a>
 				</div>
 			</form>
@@ -129,5 +132,25 @@
 				</div>
 			</div>
 		</footer>
+		<script type="text/javascript">
+			// Wrap every letter in a span
+			var textWrapper = document.querySelector('.logo');
+			textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+			anime.timeline({loop: true})
+			  .add({
+				targets: '.logo .letter',
+				opacity: [0,1],
+				easing: "easeInOutQuad",
+				duration: 2250,
+				delay: (el, i) => 150 * (i+1)
+			  }).add({
+				targets: '.logo',
+				opacity: 0,
+				duration: 1000,
+				easing: "easeOutExpo",
+				delay: 2000
+			  });
+		</script>
 	</body>
 </html>

@@ -19,6 +19,8 @@
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 		<!-- js script for geolocation and submit -->
 		<script type="text/javascript" src="assets/js/submit.js"></script>
+		<!-- Animation resource -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 	</head>
 	<body>
 		<!--Navigation bar-->
@@ -51,7 +53,7 @@
 		<div class="submission-container">
 			<form class="submission-form" method="post" action="#" onsubmit="return validateSubmission(this)">
 				<!--each line form div form will represent a row in the form-->
-				<div class="line-form">
+				<div class="line-form animate__animated animate__fadeInDown">
 					<!--what we need to enter-->
 					<div class="title-line-form">
 						<label for="rname">Review Name</label>
@@ -61,7 +63,7 @@
 						<input type="text" id="rname" name="reviewname" placeholder="review title.." required>
 					</div>
 				</div>
-				<div class="line-form">
+				<div class="line-form animate__animated animate__fadeInDown animate__delay-1s">
 					<div class="title-line-form">
 						<label for="address">Address</label>
 					</div>
@@ -70,7 +72,7 @@
 					</div>
 				</div>
 				<!-- Add button for Geolocation API autofill coordinates -->
-				<div class="line-form">
+				<div class="line-form animate__animated animate__fadeInDown animate__delay-2s">
 					<div class="title-line-form">
 						<label>Use Current Location</label>
 					</div>
@@ -78,7 +80,7 @@
 						<p style="padding-left: 10px;" id="useLocation"><a class="useLocationBtn" onclick="getLocation()"><i class="fas fa-street-view">&nbsp My Location</i></a></p>
 					</div>
 				</div>
-				<div class="line-form">
+				<div class="line-form animate__animated animate__fadeInDown animate__delay-2s">
 					<div class="title-line-form">
 						<label for="locationl">Location Latitude</label>
 					</div>
@@ -86,7 +88,7 @@
 						<input type="text" id="locationl" name="latitude" placeholder="float to 4 decimals.." required>
 					</div>
 				</div>
-				<div class="line-form">
+				<div class="line-form animate__animated animate__fadeInDown animate__delay-2s">
 					<div class="title-line-form">
 						<label for="locationlo">Location Longtitde</label>
 					</div>
@@ -94,7 +96,7 @@
 						<input type="text" id="locationlo" name="longtitude" placeholder="float to 4 decimals.." required>
 					</div>
 				</div>
-				<div class="line-form">
+				<div class="line-form animate__animated animate__fadeInDown animate__delay-3s">
 					<div class="title-line-form">
 						<label for="rate" title="will be a dynamic rating in part 2">Rating Score</label>
 					</div>
@@ -108,7 +110,7 @@
 						</select>
 					</div>
 				</div>
-				<div class="line-form">
+				<div class="line-form animate__animated animate__fadeInDown animate__delay-3s">
 					<div class="title-line-form">
 						<label for="description">Description</label>
 					</div>
@@ -117,7 +119,7 @@
 						<textarea id="description" name="description" placeholder="what do you think??" style="height:5em" required></textarea>
 					</div>
 				</div>
-				<div class="line-form">
+				<div class="line-form animate__animated animate__fadeInDown animate__delay-4s">
 					<div class="title-line-form">
 						<label for="pictures">Upload Images</label>
 					</div>
@@ -126,7 +128,7 @@
 					</div>
 				</div>
 				<!--Task 1 in Add On 2: upload a video-->
-				<div class="line-form">
+				<div class="line-form animate__animated animate__fadeInDown animate__delay-4s">
 					<div class="title-line-form">
 						<label for="video">Upload video</label>
 					</div>
@@ -136,7 +138,7 @@
 				</div>
 				<br>
 				<!--submit button-->
-				<div class="line-form">
+				<div class="line-form animate__animated animate__fadeInDown animate__delay-5s">
 					<input type="submit" value="Submit">
 				</div>
 			</form>

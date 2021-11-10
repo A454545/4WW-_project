@@ -10,10 +10,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Main Page</title>
 		<!--styling to the main page-->
-		<link href="4WW3_project/assets/css/mainStyle.css" rel="stylesheet"/>
+		<!-- <link href="4WW3_project/assets/css/mainStyle.css" rel="stylesheet"/> -->
+		<link href="assets/css/mainStyle.css" rel="stylesheet"/>
 		<!--load icon library for search bar-->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+		<!-- Animation resource -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 	</head>
 	<body>
 		<!--Navigation bar-->
@@ -123,5 +127,25 @@
 				</div>
 			</div>
 		</footer>
+		<script type="text/javascript">
+			// Wrap every letter in a span
+			var textWrapper = document.querySelector('.logo');
+			textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+			anime.timeline({loop: true})
+			  .add({
+				targets: '.logo .letter',
+				opacity: [0,1],
+				easing: "easeInOutQuad",
+				duration: 2250,
+				delay: (el, i) => 150 * (i+1)
+			  }).add({
+				targets: '.logo',
+				opacity: 0,
+				duration: 1000,
+				easing: "easeOutExpo",
+				delay: 2000
+			  });
+		</script>
 	</body>
 </html>

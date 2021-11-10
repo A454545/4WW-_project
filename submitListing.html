@@ -18,6 +18,8 @@
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 		<!-- js script for geolocation and submit -->
 		<script type="text/javascript" src="assets/js/submit.js"></script>
+		<!-- Animation resource -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 	</head>
 	<body>
 		<!--Navigation bar-->
@@ -48,7 +50,7 @@
 		<!--submission form for new object review with name, description, location as latitude longtitude coordinates, and upload-->
 		<!--this section is similar to what was used in submit.html so commenting would be the same the difference here is what is being asked to enter-->
 		<div class="submission-container">
-			<form class="submission-form" action="#" onsubmit="return validateSubmission(this)">
+			<form class="submission-form animate__animated animate__lightSpeedInRight" action="#" onsubmit="return validateSubmission(this)">
 				<div class="line-form">
 					<div class="title-line-form">
 						<label for="rname">Listing Name</label>

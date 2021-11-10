@@ -11,3 +11,8 @@
 	text-align: center;
 	color: white;
 }
+/*formating animation for hovering over the button */
+.profile button:hover {
+	animation: shakeX;
+	animation-duration: 2s;
+}

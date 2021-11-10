@@ -67,6 +67,8 @@ input[type=submit] {
 /*hover action on the submit button*/
 .line-form input[type=submit]:hover {
 	background-color: #008080;
+	animation: heartBeat;
+	animation-duration: 2s;
 }
 /*hover action on the my location button*/
 .line-form .useLocationBtn:hover {
