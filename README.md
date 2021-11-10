@@ -17,12 +17,23 @@ Check out the Sharepoint video at [page tour link](https://mcmasteru365.sharepoi
 _____________________________________________
 ### Notes  
 1. All resources used to build the project are under references.txt
-2. Most of the dropdowns will be later changed using JS.
-3. WCAG that was followed for the project is https://www.w3.org/WAI/WCAG21/quickref/#text-alternatives.
-4. Completed Add-on 1 and Add-on 2
+2. WCAG that was followed for the project is https://www.w3.org/WAI/WCAG21/quickref/#text-alternatives.
+3. Completed animation Add-on PART 2
+    1. On Profile page --> Content bounce in
+	2. On Profile page --> button shake when hovered
+	3. On submit page --> content fade in 
+	4. On submit page --> button heartbeat when hovered
+	5. On submutListing page --> content slide in 
+	6. On submitLisitng page --> button heartbeat when hovered
+	7. On Login page --> title animation
+	8. On Login page --> message animation
+	9. On login page --> switch pulse animation
+	10. On results page --> zoom in animation
+	11. Header title -->  lettering animation for index page and userReg
+
 
 _____________________________________________
-### Add-on #2 Answers
+### Add-on #2 Answers - PART 1
 1. Section 2(a) describes how to embed different versions (of different sizes and pixel densities) of an image in your html code. For example:
 
     ```
