@@ -33,5 +33,7 @@ Resources:
 			* https://newbedev.com/regular-expression-for-matching-latitude-longitude-coordinates
 			* https://newbedev.com/regular-expression-for-address-field-validation
 			* https://www.w3schools.com/html/html5_geolocation.asp
+			* https://animate.style/#javascript
+			* https://tobiasahlin.com/moving-letters/#3
 	Lin -- result.html, individualResult.html, result.css, individualResult.css
 			* https://www.youtube.com/watch?v=2nrwFysevXI&ab_channel=MonashUniversity
