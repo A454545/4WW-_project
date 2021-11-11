@@ -12,7 +12,7 @@
 	<title>Main Page</title>
 	<!--styling to the main page-->
 	<!-- <link href="4WW3_project/assets/css/mainStyle.css" rel="stylesheet"/> -->
-	<link href="assets/css/mainStyle.css" rel="stylesheet" />
+	<link href="4WW3_project/assets/css/mainStyle.css" rel="stylesheet" />
 	<!--load icon library for search bar-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css"
@@ -54,7 +54,7 @@
 	<!--Search bar of the estates-->
 	<div class="main-container">
 		<!--background image of the div-->
-		<img src="assets/images/house.jpg" alt="top view of estates"
+		<img src="4WW3_project/assets/images/house.jpg" alt="top view of estates"
 			style="width:100%; height:100%; filter: blur(5px);">
 		<!--div section that have the search bar as a form-->
 		<div class="search">
@@ -89,6 +89,8 @@
 			</form>
 		</div>
 		<!--placeholder for the comming soon dynamic mapping that positions map on user location and display clickable icons of the listings-->
+		<div class="map_button" style="height:10vh; color:white">
+<a class="useLocationBtn" onclick="getLocation()">Click here!</div>
 		<div id="mapholder" style="height: 60vh; margin: 0 1vw;">
 		</div>
 	</div>
@@ -164,12 +166,14 @@
 		// Geolocation code: retrieves user's current position and displays it as a marker on a map
 		let map_holder = document.getElementById("mapholder");
 		map_holder.style.zIndex = '0';
-		// map_holder.innerHTML = "boop";
+		let longitude = 0.0;
+		let latitude = 0.0;
+		map_holder.innerHTML = "boop";
 		let markerText = "Geolocation is not supported by this browser."
 
 		function getLocation() {
 			if (navigator.geolocation) {
-				//map_holder.innerHTML = "baap";
+				map_holder.innerHTML = "baap";
 				markerText = "Your location";
 				navigator.geolocation.getCurrentPosition(showPosition, errorHandler);
 			}
@@ -196,8 +200,9 @@
 		}
 
 		function showPosition(position) {
-			var latitude = position.coords.latitude;
-			var longitude = position.coords.longitude;
+			latitude = position.coords.latitude;
+			longitude = position.coords.longitude;
+		}
 
 		// Generate interactive map
 		let myMap = L.map('mapholder').setView([latitude, longitude], 13)
@@ -214,7 +219,6 @@
 		let marker = L.marker([latitude, longitude]).addTo(myMap);
 		var popup = L.popup();
 		marker.bindPopup(markerText).openPopup();
-	}
 	</script>
 </body>
 
