@@ -11,8 +11,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Main Page</title>
 	<!--styling to the main page-->
-	<!-- <link href="4WW3_project/assets/css/mainStyle.css" rel="stylesheet"/> -->
-	<link href="4WW3_project/assets/css/mainStyle.css" rel="stylesheet" />
+	<!-- <link href="assets/css/mainStyle.css" rel="stylesheet"/> -->
+	<link href="assets/css/mainStyle.css" rel="stylesheet" />
 	<!--load icon library for search bar-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css"
@@ -20,7 +20,7 @@
 	<!-- Animation resource -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-	<!--add Leaflet CSS and Javascript-->
+		<!--add Leaflet CSS and Javascript-->
 		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
 		integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
 		crossorigin="" />
@@ -54,7 +54,7 @@
 	<!--Search bar of the estates-->
 	<div class="main-container">
 		<!--background image of the div-->
-		<img src="4WW3_project/assets/images/house.jpg" alt="top view of estates"
+		<img src="assets/images/house.jpg" alt="top view of estates"
 			style="width:100%; height:100%; filter: blur(5px);">
 		<!--div section that have the search bar as a form-->
 		<div class="search">
@@ -89,9 +89,10 @@
 			</form>
 		</div>
 		<!--placeholder for the comming soon dynamic mapping that positions map on user location and display clickable icons of the listings-->
-		<div class="map_button" style="height:10vh; color:white">
-<a class="useLocationBtn" onclick="getLocation()">Click here!</div>
-		<div id="mapholder" style="height: 60vh; margin: 0 1vw;">
+		<div id="map_button">
+			<a class="useLocationBtn" onclick="getLocation()">Search by location
+		</div>
+					<div id="mapholder" style="height: 60vh; margin: 0 1vw;">
 		</div>
 	</div>
 
@@ -137,7 +138,7 @@
 					</div>
 					<div class="copyright">
 						<p title="True Roofs Copyright" style="color: #ffffff; font-size:12px;"><i
-								class="far fa-copyright"></i> Updated November 2021</p>
+								class="far fa-copyright"></i> Updated October 2021</p>
 					</div>
 				</div>
 			</div>
@@ -166,15 +167,15 @@
 		// Geolocation code: retrieves user's current position and displays it as a marker on a map
 		let map_holder = document.getElementById("mapholder");
 		map_holder.style.zIndex = '0';
-		let longitude = 0.0;
-		let latitude = 0.0;
+		var latitude = 0.0;
+		var longitude = 0.0;
+		var useUserLocation = false;
 		map_holder.innerHTML = "boop";
 		let markerText = "Geolocation is not supported by this browser."
 
 		function getLocation() {
 			if (navigator.geolocation) {
-				map_holder.innerHTML = "baap";
-				markerText = "Your location";
+				markerText = "Your location!";
 				navigator.geolocation.getCurrentPosition(showPosition, errorHandler);
 			}
 			else {
@@ -202,10 +203,15 @@
 		function showPosition(position) {
 			latitude = position.coords.latitude;
 			longitude = position.coords.longitude;
+			myMap.setView([latitude, longitude]);
+			// Create marker and popup
+			let marker = L.marker([latitude, longitude]).addTo(myMap);
+			var popup = L.popup();
+			marker.bindPopup(markerText).openPopup();
 		}
 
 		// Generate interactive map
-		let myMap = L.map('mapholder').setView([latitude, longitude], 13)
+		let myMap = L.map('mapholder').setView([0, 0], 13, true);
 		L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
 			attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
 			maxZoom: 18,
@@ -213,12 +219,7 @@
 			tileSize: 512,
 			zoomOffset: -1,
 			accessToken: 'pk.eyJ1IjoibWlrbG92ZXI4OSIsImEiOiJja3ZjeHh1ejkwcm9jMm9ueWpibzFjaTRtIn0.H8R3XwTyGWRGskV7WVnnYg'
-		}).addTo(myMap);
-
-		// Create marker and popup
-		let marker = L.marker([latitude, longitude]).addTo(myMap);
-		var popup = L.popup();
-		marker.bindPopup(markerText).openPopup();
+			}).addTo(myMap);
 	</script>
 </body>
 
