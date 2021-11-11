@@ -20,13 +20,13 @@
 	<!-- Animation resource -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-	<!--Add Leaflet CSS and Javascript-->
-	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-	integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-	crossorigin="" />
+	<!--add Leaflet CSS and Javascript-->
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+		integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+		crossorigin="" />
 	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-	integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-	crossorigin=""></script>
+		integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+		crossorigin=""></script>
 </head>
 
 <body>
@@ -162,14 +162,14 @@
 			});
 
 		// Geolocation code: retrieves user's current position and displays it as a marker on a map
-		let latitude = 0.0;
-		let longitude = 0.0;
 		let map_holder = document.getElementById("mapholder");
 		map_holder.style.zIndex = '0';
+		// map_holder.innerHTML = "boop";
 		let markerText = "Geolocation is not supported by this browser."
 
 		function getLocation() {
 			if (navigator.geolocation) {
+				//map_holder.innerHTML = "baap";
 				markerText = "Your location";
 				navigator.geolocation.getCurrentPosition(showPosition, errorHandler);
 			}
@@ -196,11 +196,10 @@
 		}
 
 		function showPosition(position) {
-			latitude = position.coords.latitude;
-			longitude = position.coords.longitude;
-		}
+			var latitude = position.coords.latitude;
+			var longitude = position.coords.longitude;
 
-		//Interactive map generation
+		// Generate interactive map
 		let myMap = L.map('mapholder').setView([latitude, longitude], 13)
 		L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
 			attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -211,9 +210,11 @@
 			accessToken: 'pk.eyJ1IjoibWlrbG92ZXI4OSIsImEiOiJja3ZjeHh1ejkwcm9jMm9ueWpibzFjaTRtIn0.H8R3XwTyGWRGskV7WVnnYg'
 		}).addTo(myMap);
 
+		// Create marker and popup
 		let marker = L.marker([latitude, longitude]).addTo(myMap);
 		var popup = L.popup();
 		marker.bindPopup(markerText).openPopup();
+	}
 	</script>
 </body>
 
