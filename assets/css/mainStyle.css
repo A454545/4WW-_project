@@ -289,8 +289,6 @@ form.search-bar button:hover {
 
 @media screen and (max-width: 600px) {
 	.map {
-		width: 50%;
-		max-width: 50%;
 		padding-top: 0%;
 	}
 	.search-title {
@@ -375,18 +373,18 @@ form.map-filter button:hover{
 
 /*position fake map*/
 
-.map img {
-	width: 100%;
-	height: 100%;
+#mapholder {
+	height: 60vh; 
+	margin: 0 1vw;
 	z-index: 0;
 }
 
 /*small screen styling*/
 
 @media screen and (max-width: 600px) {
-	.map img {
-		width: 100vw;
-		height: 100%;
+	#mapholder {
+		height: 40vh;
+		max-width: 100%;
 		z-index: 0;
 	}
 	.map-checks {
