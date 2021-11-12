@@ -100,6 +100,10 @@
 			<a class="next" onclick="plusSlides(1)">&#10095;</a>
 		</div>
 		<div class="object">
+			<div id="map2">
+				<div class="locationOnMap" itemscope itemtype="https://schema.org/Place">
+				</div>
+			</div>
 			<!--Task 1 in Add On 2: add a video-->
 			<div class="object-video"><video controls>
 					<source src="assets/images/apartment-tour.mp4" type="video/mp4">
@@ -281,21 +285,17 @@
 		let latitude = 43.653225;
 		let longitude = -79.383186;
 		//Create interactive map
-		let myMap = L.map('map').setView([latitude, longitude], 14)
-		L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-			attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-			maxZoom: 18,
-			id: 'mapbox/streets-v11',
-			tileSize: 512,
-			zoomOffset: -1,
-			accessToken: 'pk.eyJ1IjoibWlrbG92ZXI4OSIsImEiOiJja3ZjeHh1ejkwcm9jMm9ueWpibzFjaTRtIn0.H8R3XwTyGWRGskV7WVnnYg'
-		}).addTo(myMap);
-		//Create a marker
-		L.marker([latitude, longitude]).addTo(myMap);
 
 		/* Image gallery code*/
-		
+
 		var slideIndex = 1;
+		var prev = document.getElementsByClassName("prev");
+		var next = document.getElementsByClassName("next");
+		var slides = document.getElementsByClassName("mySlides");
+		// Interactive map spaces (myMap2 is activated in screens under 700px)
+		let myMap2 = undefined;
+		let myMap = undefined;
+
 		// Next/previous controls
 		function plusSlides(n) {
 			showSlides(slideIndex += n);
@@ -304,31 +304,67 @@
 		function currentSlide(n) {
 			showSlides(slideIndex = n);
 		}
-		// 
+
+		// Image gallery function (cycles through slides)
 		function showSlides(n) {
 			var i;
-			var prev = document.getElementsByClassName("prev");
-			var next = document.getElementsByClassName("next");
-			var slides = document.getElementsByClassName("mySlides");
-			if (n > slides.length){ 
-				slideIndex = 1; }
-			if (n < 1){ 
-				slideIndex = slides.length; }
+			prev[0].style.display = "block";
+			next[0].style.display = "block";
+			if (n > slides.length) {
+				slideIndex = 1;
+			}
+			if (n < 1) {
+				slideIndex = slides.length;
+			}
 			for (i = 0; i < slides.length; i++) {
 				slides[i].style.display = "none";
 			}
-			slides[slideIndex - 1].style.display = "block";
-			prev[0].style.display = "block";
-			next[0].style.display = "block";
+			// A new map is defined in myMap2
+			slides[slideIndex - 1].style.display = "flex";
+			myMap2 = L.map('map2').setView([latitude, longitude], 14);
+			L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+					attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+					maxZoom: 18,
+					id: 'mapbox/streets-v11',
+					tileSize: 512,
+					zoomOffset: -1,
+					accessToken: 'pk.eyJ1IjoibWlrbG92ZXI4OSIsImEiOiJja3ZjeHh1ejkwcm9jMm9ueWpibzFjaTRtIn0.H8R3XwTyGWRGskV7WVnnYg'
+				}).addTo(myMap2);
 		}
 
 		//Responsive media gallery. Only called when window width < 700px.
-		function myFunction(x) {
+		function myFunction(x, myMap) {
 			if (window.matchMedia("(max-width: 700px)").matches) {
+				// If a map instance already exists, remove it
+				if (typeof myMap !== undefined){
+					myMap.remove();
+				}
 				showSlides(slideIndex);
+			}
+			else if (!(window.matchMedia("(max-width: 700px)").matches)) {
+				// If a map instance already exists, remove it
+				if (typeof myMap2 !== undefined){
+					myMap2.remove();
+				}
+				prev[0].style.display = "none";
+				next[0].style.display = "none";
+				slides[0].style.display = "flex";
+				slides[1].style.display = "flex";
+				L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+					attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+					maxZoom: 18,
+					id: 'mapbox/streets-v11',
+					tileSize: 512,
+					zoomOffset: -1,
+					accessToken: 'pk.eyJ1IjoibWlrbG92ZXI4OSIsImEiOiJja3ZjeHh1ejkwcm9jMm9ueWpibzFjaTRtIn0.H8R3XwTyGWRGskV7WVnnYg'
+				}).addTo(myMap);
+				//Create a marker
+				L.marker([latitude, longitude]).addTo(myMap);
 			}
 		}
 
+		// Initialize main map
+		myMap = L.map('map').setView([latitude, longitude], 14);
 		var x = window.matchMedia("(max-width: 700px)")
 		myFunction(x) // Call listener function at run time
 		x.addListener(myFunction) // Attach listener function on state changes
