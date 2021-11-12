@@ -48,9 +48,11 @@
 	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
 		integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
 		crossorigin=""></script>
+	<!-- javascript file -->
+	<script type="text/javascript" src="assets/js/individualResult.js"></script> 
 </head>
 
-<body>
+<body onload="generateMap();">
 	<!--Navigation bar-->
 	<!--same comments on the indext/html-->
 	<header>
@@ -274,58 +276,11 @@
 					</div>
 					<div class="copyright">
 						<p title="True Roofs Copyright" style="color: #ffffff; font-size:12px;"><i
-								class="far fa-copyright"></i> Updated October 2021</p>
+								class="far fa-copyright"></i> Updated Novemeber 2021</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</footer>
-	<script>
-		//Get longitude and longitude
-		let latitude = 43.653225;
-		let longitude = -79.383186;
-
-		//Create interactive map
-		myMap = L.map('map').setView([latitude, longitude], 14);
-		L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-			attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-			maxZoom: 18,
-			id: 'mapbox/streets-v11',
-			tileSize: 512,
-			zoomOffset: -1,
-			accessToken: 'pk.eyJ1IjoibWlrbG92ZXI4OSIsImEiOiJja3ZjeHh1ejkwcm9jMm9ueWpibzFjaTRtIn0.H8R3XwTyGWRGskV7WVnnYg'
-		}).addTo(myMap);
-		//Create a marker
-		L.marker([latitude, longitude]).addTo(myMap);
-		/* Image gallery code*/
-
-		var slideIndex = 1;
-		showSlides(slideIndex);
-
-		// Next/previous controls
-		function plusSlides(n) {
-			showSlides(slideIndex += n);
-		}
-		// Thumbnail image controls
-		function currentSlide(n) {
-			showSlides(slideIndex = n);
-		}
-
-		// Image gallery function (cycles through slides)
-		function showSlides(n) {
-			var i;
-			var slides = document.getElementsByClassName("mySlides");
-			if (n > slides.length) {
-				slideIndex = 1;
-			}
-			if (n < 1) {
-				slideIndex = slides.length;
-			}
-			for (i = 0; i < slides.length; i++) {
-				slides[i].style.display = "none";
-			}
-			slides[slideIndex - 1].style.display = "flex";
-		}
-	</script>
 </body>
 </html>
