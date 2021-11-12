@@ -77,8 +77,9 @@
 	<!--page displaying information about an individual result-->
 	<!--includes two photos, an interactive map, a video, text description, link to original mls listing, and reviews-->
 	<div class="container">
-		<div class="object-photos">
-			<div class="main-photo">
+		<!--Slideshow container-->
+		<div class="slideshow-container">
+			<div class="mySlides fade" id="main">
 				<!--Task 2 in Add On 2: use <picture> and <source> tags to add customizable images-->
 				<picture>
 					<source media="(max-width: 600px)" srcset="assets/images/main-0.5x.png, main-0.5x.png 0.5x">
@@ -86,12 +87,17 @@
 					<img src="assets/images/main-1x.jpg" alt="main listing photo">
 				</picture>
 			</div>
-			<div class="top-photo"></div>
+			<div class="mySlides fade" id="top-photo">
+				<img src="assets/images/top.jpg">
+			</div>
 			<!--Addon 1 Task 3-->
 			<div id="map">
 				<div class="locationOnMap" itemscope itemtype="https://schema.org/Place">
 				</div>
 			</div>
+			<!-- Next and previous buttons -->
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
 		</div>
 		<div class="object">
 			<!--Task 1 in Add On 2: add a video-->
@@ -285,7 +291,48 @@
 			accessToken: 'pk.eyJ1IjoibWlrbG92ZXI4OSIsImEiOiJja3ZjeHh1ejkwcm9jMm9ueWpibzFjaTRtIn0.H8R3XwTyGWRGskV7WVnnYg'
 		}).addTo(myMap);
 		//Create a marker
-		L.marker([latitude, longitude]).addTo(myMap);		
+		L.marker([latitude, longitude]).addTo(myMap);
+
+		/* Image gallery code*/
+		
+		var slideIndex = 1;
+		// Next/previous controls
+		function plusSlides(n) {
+			showSlides(slideIndex += n);
+		}
+		// Thumbnail image controls
+		function currentSlide(n) {
+			showSlides(slideIndex = n);
+		}
+		// 
+		function showSlides(n) {
+			var i;
+			var prev = document.getElementsByClassName("prev");
+			var next = document.getElementsByClassName("next");
+			var slides = document.getElementsByClassName("mySlides");
+			if (n > slides.length){ 
+				slideIndex = 1; }
+			if (n < 1){ 
+				slideIndex = slides.length; }
+			for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";
+			}
+			slides[slideIndex - 1].style.display = "block";
+			prev[0].style.display = "block";
+			next[0].style.display = "block";
+		}
+
+		//Responsive media gallery. Only called when window width < 700px.
+		function myFunction(x) {
+			if (window.matchMedia("(max-width: 700px)").matches) {
+				showSlides(slideIndex);
+			}
+		}
+
+		var x = window.matchMedia("(max-width: 700px)")
+		myFunction(x) // Call listener function at run time
+		x.addListener(myFunction) // Attach listener function on state changes
+
 	</script>
 </body>
 
