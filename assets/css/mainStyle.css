@@ -521,6 +521,12 @@ form.map-filter button:hover{
 	}
 }
 
+@media screen and (max-width: 1000px) {
+	.main-container {
+		height: 100%;
+	}
+}
+
 /*end footer*/
 
 © 2021 GitHub, Inc. Terms
