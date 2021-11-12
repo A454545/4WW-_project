@@ -3,7 +3,6 @@
 
 /* Dropdown buttons bar (filter-bar) container. Full functionality to be implemented with Javascript.*/
 .filter-bar {
-	background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.7)),url('../images/buildings.png');
 	background-position: bottom;
 	position: relative;
 	width: 100%;
