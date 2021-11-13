@@ -21,7 +21,7 @@ function generateMap() {
 	showSlides(slideIndex);
 
 	// Next/previous controls
-	function plusSlides(n) {
+	function plusSlide(n) {
 		showSlides(slideIndex += n);
 	}
 	// Thumbnail image controls
