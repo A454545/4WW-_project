@@ -4,7 +4,7 @@
 	
 	// variables to connect 
 	$servername = "localhost";
-	$dbname = "trueroofs"
+	$dbname = "trueroofs";
 	$user = "root";
 	$passwd = "";
 	
