@@ -19,14 +19,16 @@
 					$stmt->execute();
 					
 					if ($stmt->rowCount() != 0) {
-						$record = $stmt->fetchAll(PDO::FETCH_ASSOC);
+						$record = $stmt->fetch(PDO::FETCH_ASSOC);
 						$_SESSION['userfullname'] = $enteredUsername;
 						$_SESSION['userid'] = $record['userID'];
 						$_SESSION['useremail'] = $record['email'];
 						$_SESSION['userinterest'] = $record['interest'];
 						$_SESSION['validlogin'] = true;
 						
-						// check rememberme
+						$pdo = null; // close the connection
+						
+						// check rememberme and set cookies
 						$lblrememberme = '0';
 						if (isset($_POST['rem'])){
 							if (!empty($_POST['rem'])){
@@ -44,7 +46,7 @@
 						//once we are logged in display the profile
 						$url = "http://localhost/4ww3_project/profile.php";
 						header('location: ' . $url);
-					} else {
+					} else { // error messages 
 						$_SESSION['status_message'] = 'invalid';
 						$url = "http://localhost/4ww3_project/userregistration.php";
 						header('location: ' . $url);
