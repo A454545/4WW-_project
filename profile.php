@@ -1,3 +1,9 @@
+<?php
+	session_start(); 
+	// echo "<pre>";
+	// print_r($_SESSION);
+	// exit();
+?>
 <!DOCTYPE html>
 <html lang="en-US">
 	<head>
@@ -25,6 +31,14 @@
 		<!--same comments on the indext/html for nav bar-->
 		<?php
 			include "assets/php/header.php";
+			
+			// check if the person is logged in to display the page
+			if (isset($_SESSION['validlogin']) && ($_SESSION['validlogin'] == true)) {
+				// start displaying the page for the logged user
+				$loggeduser = $_SESSION['userfullname'];
+				$loggedemail = $_SESSION['useremail'];
+				$loggedReason = $_SESSION['userinterest'];
+				$loggedID = $_SESSION['userid'];
 		?>	
 		<!--title section on the webpage-->
 		<div class="title">
@@ -35,14 +49,20 @@
 		<div class="profile animate__animated animate__bounceIn">
 			<!--this image is used just to make the picture nice it is not a placeholder-->
 			<img src="assets/images/avatar.png" alt="Avatar profile icon">
-			<h3>Some Username</h3>
-			<h3>Some Email</h3>
-			<h3>Number of Reviews</h3>
-			<button>Log out</button>
+			<h3><?php echo $loggeduser . ", #" . $loggedID; ?> </h3>
+			<h3><?php echo $loggedemail; ?></h3>
+			<h3><?php echo "Looking to <i>".$loggedReason."</i>!"; ?></h3>
+			<button><a href="assets/php/logout.php">Log out</button>
 		</div>
 		
 	<!--include the footer of the webpage-->
 	<?php
+			} else {
+				echo "<div class='profile'>
+						<img >
+						<h3>Please log in or sign in to see profile.</h3>
+					</div>";
+			}
 		include "assets/php/footer.php";
 	?>
 	</body>

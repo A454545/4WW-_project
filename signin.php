@@ -1,3 +1,9 @@
+<?php
+	session_start(); 
+	// echo "<pre>";
+	// print_r($_SESSION);
+	// exit();
+?>
 <!DOCTYPE html>
 <html lang="en-US">
 	<head>
@@ -25,6 +31,9 @@
 		<!--same comments on the indext/html for nav bar-->
 		<?php
 			include "assets/php/header.php";
+			
+			// check if the person is logged in
+			if (!isset($_SESSION['validlogin']) && !($_SESSION['validlogin'] == true)) {
 		?>
 		<!--title section on the webpage with background-image-->
 		<div class="title" style="background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('assets/images/buildings.png'); background-position: bottom;">
@@ -34,12 +43,36 @@
 		<!--beginning of the registration login part similar to the registration.html but the difference is the here we are signing in and have more input fields-->
 		<!--comments here are the same as registration.html section of registration-->
 		<div class="registration">
-			<form class="reg-form" id="reg-signin" onsubmit="return validateSignIn(this)" action="profile.php" method="POST">
+			<form class="reg-form" id="reg-signin" onsubmit="return validateSignIn(this)" action="assets/php/signinAdd.php" method="POST">
 				<div class="reg-type">
 					<p>Sign In</p>
 				</div>
 				<div class="message">
 					<p>Create New Account!</p>
+					<?php
+					if(isset($_SESSION['status_message'])){
+						if(!empty($_SESSION['status_message'])){
+							$msg = '';
+							if($_SESSION['status_message'] == 'invalid'){
+								$msg = "Invalid credentials.";
+								$_SESSION['status_message'] = '';
+							}
+							if($_SESSION['status_message'] == 'empty'){
+								$msg = "fill the fields";
+								$_SESSION['status_message'] = '';
+							}
+							if($_SESSION['status_message'] == 'wrong'){
+								$msg = "Failed submisssion please try again.";
+								$_SESSION['status_message'] = '';
+							}
+							if($_SESSION['status_message'] == 'exist'){
+								$msg = "Username already exists, please try another username.";
+								$_SESSION['status_message'] = '';
+							}
+							echo '<p style="background-color: Tomato;">'.$msg.'</p>';
+						}
+					}
+				?>
 				</div>
 				<div class="title-label">
 					<label for="username">Username</label>
@@ -73,7 +106,7 @@
 				
 				
 				<div class="submit-button">
-					<input type="submit" value="Sign In"> <!-- onclick="location.href = 'profile.html';"> -->
+					<input type="submit" name="signinClick" value="Sign In"> <!-- onclick="location.href = 'profile.html';"> -->
 				</div>
 				<div class="switch-type">
 					<a href="userRegistration.php">Already have an account? Log in!</a>
@@ -83,6 +116,12 @@
 		
 		<!--include the footer of the webpage-->
 		<?php
+			} else {
+				echo "
+				<div class='registration'>
+					<h3 class='reg-form'>You are already logged in as ". $_SESSION['userfullname'] . ". Navigate to <a href='profile.php'>Profile</a> to logout.</h3>
+				</div>";
+			}
 			include "assets/php/footer.php";
 		?>
 		

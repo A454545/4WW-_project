@@ -1,3 +1,10 @@
+<?php
+	// begin the session to access the variables 
+	session_start(); 
+	// echo "<pre>";
+	// print_r($_SESSION);
+	// exit();
+?>
 <!DOCTYPE html>
 <html lang="en-US">
 	<head>
@@ -25,6 +32,10 @@
 		<!--include header-->
 		<?php
 			include "assets/php/header.php";
+			
+			// check if the person is logged in to display the submission page
+			if (isset($_SESSION['validlogin']) && ($_SESSION['validlogin'] == true)) {
+				// start displaying the page
 		?>	
 		
 		<div class="title">
@@ -35,7 +46,7 @@
 		<!--this section is similar to what was used in submit.html so commenting would be the same the difference here is what is being asked to enter-->
 		<!-- animation is added using the css animate library -->
 		<div class="submission-container">
-			<form class="submission-form animate__animated animate__lightSpeedInRight" action="#" onsubmit="return validateSubmission(this)">
+			<form class="submission-form animate__animated animate__lightSpeedInRight" method="post" action="assets/php/uploadListing.php" onsubmit="return validateSubmission(this)">
 				<div class="line-form">
 					<div class="title-line-form">
 						<label for="rname">Listing Name</label>
@@ -107,6 +118,17 @@
 				</div>
 			</form>
 		</div>
+		<?php
+				// end of displaying the page
+			} else { // DISPLAY A MESSAGE TO TELL THE USER WHY THEY CAN'T USE THE PAGE 
+				echo "<div class='title'>
+						<h2><u>Submit Listing</u></h2>
+					</div>";
+				echo "<div class='submission-container'>
+						<h3>YOU MUST BE LOGGED IN TO MAKE A SUBMISSION. PLEASE USE THE <a href='userRegistration.php'>LOGIN PAGE</a>! </h3>
+					</div>";
+			}
+		?>
 		
 		<!--include the footer of the webpage-->
 		<?php

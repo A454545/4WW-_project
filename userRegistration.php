@@ -1,3 +1,9 @@
+<?php
+	session_start(); 
+	// echo "<pre>";
+	// print_r($_SESSION);
+	// exit();
+?>
 <!DOCTYPE html>
 <html lang="en-US">
 	<head>
@@ -27,6 +33,8 @@
 		<!--include header-->
 		<?php
 			include "assets/php/header.php";
+			
+			if (!isset($_SESSION['validlogin']) && !($_SESSION['validlogin'] == true)) {
 		?>	
 		<!--title section on the webpage with background-image-->
 		<div class="title" title="buildings up view image" style="background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('assets/images/buildings.png'); background-position: bottom;">
@@ -36,20 +44,55 @@
 		<!--beginning of the registration login part-->
 		<div class="registration">
 			<!--using a form to pass the info-->
-			<form class="reg-form" id="Reg-login" onsubmit="return validateLogIn(this)" action="profile.php" method="POST">
+			<form class="reg-form" id="Reg-login" onsubmit="return validateLogIn(this)" action="assets/php/loginVerify.php" method="POST">
 				<!--what type of registration is it-->
 				<div class="reg-type animate__animated animate__rubberBand">
 					<p>Log In</p>
 				</div>
 				<div class="message animate__animated animate__flip">
 					<p>Welcome Back!</p>
+					<?php
+					if(isset($_SESSION['status_message'])){
+						if(!empty($_SESSION['status_message'])){
+							$msg = '';
+							if($_SESSION['status_message'] == 'invalid'){
+								$msg = "Invalid credentials.";
+								$_SESSION['status_message'] = '';
+							}
+							if($_SESSION['status_message'] == 'empty'){
+								$msg = "fill the fields";
+								$_SESSION['status_message'] = '';
+							}
+							if($_SESSION['status_message'] == 'wrong'){
+								$msg = "Failed submisssion please try again.";
+								$_SESSION['status_message'] = '';
+							}
+							echo '<p style="background-color: Tomato;">'.$msg.'</p>';
+						}
+					}
+				?>
 				</div>
 				<!--what fields needs to be filed-->
 				<div class="title-label">
 					<label for="username">Username</label>
 				</div>
 				<div class="field-input">
-					<input type="text" id="username" name="username" placeholder="username" required>
+					<?php
+						$username_remembered = 0;
+						$username = '';
+						if(isset($_COOKIE['rememberme'])){
+							if(!empty($_COOKIE['rememberme'])){
+								if(isset($_COOKIE['uname'])){
+									if(!empty($_COOKIE['uname'])){
+										$username_remembered = 1;
+										$username = $_COOKIE['uname'];
+									}
+								}
+							}
+						}
+					?>
+					<input type="text" id="username" name="username" placeholder="username" value="<?php if($username_remembered == 1){ echo 
+							$_COOKIE['uname']; } ?>" required>
 				</div>
 				<div class="title-label">
 					<label for="password">Password</label>
@@ -60,11 +103,11 @@
 				<!--placeholder to remember the password of the page-->
 				<div class="remember">
 					<label for="rem">Remember me?</label>
-					<input id="rem" name="rem" type="checkbox">
+					<input id="rem" name="rem" type="checkbox" <?php if($username_remembered == 1){ echo 'checked="checked"';} ?>>
 				</div>
 				<!--submit button will send to the profile page when clicked-->
 				<div class="submit-button">
-					<input type="submit" value="Log In">
+					<input type="submit" name="logInClick" value="Log In">
 				</div>
 				<!--to switch to the sign in page instead-->
 				<div class="switch-type animate__animated animate__pulse">
@@ -75,6 +118,12 @@
 		
 		<!--include the footer of the webpage-->
 		<?php
+			} else { 
+				echo "
+				<div class='registration'>
+					<h3 class='reg-form'>You are already logged in as ". $_SESSION['userfullname'] . ". Navigate to <a href='profile.php'>Profile</a> to logout.</h3>
+				</div>";
+			}
 			include "assets/php/footer.php";
 		?>
 	
