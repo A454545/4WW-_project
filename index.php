@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
@@ -46,11 +49,11 @@
 			<!--title-->
 			<p class="search-title" id="search-title"><u>Search Reviews</u></p>
 			<!--form to pass the info use the get method because we want to allow bookmarks and ideal for search boxes-->
-			<form class="search-bar" id="search-bar" method="get" action="result.php">
+			<form class="search-bar" id="search-bar" method="POST" action="assets/php/retrieveResults.php">
 				<!--bar of the search-->
-				<input type="text" placeholder="Enter address, postal code, or city" name="search">
+				<input type="text" placeholder="Enter a city name" name="search">
 				<!--clickable button to send the input-->
-				<button type="submit" aria-label="submit address search"><i class="fa fa-search"></i></button>
+				<button type="submit" name="submitSearch" value="searchSubmitted" aria-label="submit address search"><i class="fa fa-search"></i></button>
 			</form>
 		</div>
 	</div>
