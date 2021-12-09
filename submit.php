@@ -4,6 +4,8 @@
 	// echo "<pre>";
 	// print_r($_SESSION);
 	// exit();
+	// connection
+	include 'assets/php/pdoConnect.php';
 ?>
 <!DOCTYPE html>
 <html lang="en-US">
@@ -60,21 +62,35 @@
 								<input type="text" id="rname" name="reviewname" placeholder="review title.." required>
 							</div>
 						</div>
-						<div class="line-form animate__animated animate__fadeInDown animate__delay-1s">
-							<div class="title-line-form">
-								<label for="address">Address</label>
-							</div>
-							<div class="field-line-form">
-								<input type="text" id="address" name="address" placeholder="listing addrees (if known)">
-							</div>
-						</div>
 						<!-- Add button for Geolocation API autofill coordinates -->
-						<div class="line-form animate__animated animate__fadeInDown animate__delay-2s">
+						<div class="line-form animate__animated animate__fadeInDown animate__delay-1s">
 							<div class="title-line-form">
 								<label>Use Current Location</label>
 							</div>
 							<div class="field-line-form">
 								<p style="padding-left: 10px;" id="useLocation"><a class="useLocationBtn" onclick="getLocation()"><i class="fas fa-street-view">&nbsp My Location</i></a></p>
+							</div>
+						</div>
+						<div class="line-form animate__animated animate__fadeInDown animate__delay-1s">
+							<div class="title-line-form">
+								<label for="list">Listing to review</label>
+							</div>
+							<div class="field-line-form">
+								<select id="list" name="list" onchange="selectedList()">
+									<option value='' disabled selected></option>
+									<?php
+									// get the name of the listings available
+									$query = "SELECT * FROM listing WHERE 1=1";
+									$stmt = $pdo->prepare($query);
+									$stmt->execute();
+									$records = $stmt->fetchAll(PDO::FETCH_ASSOC);
+									foreach ($records as $record) {
+										echo '<option value="'.$record['id'].';'.$record['dlat'].';'.$record['dlong'].
+										';'.$record['address'].'">'.$record['name'].'</option>';
+									}
+									$pdo = null; // close the connection
+									?>
+								</select>
 							</div>
 						</div>
 						<div class="line-form animate__animated animate__fadeInDown animate__delay-2s">
@@ -91,6 +107,14 @@
 							</div>
 							<div class="field-line-form">
 								<input type="text" id="locationlo" name="longtitude" placeholder="float to 4 decimals.." required>
+							</div>
+						</div>
+						<div class="line-form animate__animated animate__fadeInDown animate__delay-2s">
+							<div class="title-line-form">
+								<label for="address">Address</label>
+							</div>
+							<div class="field-line-form">
+								<input type="text" id="address" name="address" placeholder="listing addrees (if known)">
 							</div>
 						</div>
 						<div class="line-form animate__animated animate__fadeInDown animate__delay-3s">
@@ -121,16 +145,16 @@
 								<label for="pictures">Upload Images</label>
 							</div>
 							<div class="field-line-form">
-								<input type="file" id="pictures" name="pictures" accept="image/*" multiple required>
+								<input type="file" id="pictures" name="pictures" accept="image/*" required>
 							</div>
 						</div>
-						<!-- Task 1 in Add On 2: upload a video-->
+						<!-- Task 1 in Add On 2: upload a video this is not updated with part 3 as it is not mentioned in the specifications of the posted document -->
 						<div class="line-form animate__animated animate__fadeInDown animate__delay-4s">
 							<div class="title-line-form">
 								<label for="video">Upload video</label>
 							</div>
 							<div class="field-line-form">
-								<input type="file" id="video" name="video" accept="video/*" required>
+								<input type="file" id="video" name="video" accept="video/*">
 							</div>
 						</div>
 						<br>

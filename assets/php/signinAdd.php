@@ -40,7 +40,7 @@
 						if ($add->execute() === TRUE) {
 							// set the session parameters 
 							$querys = "SELECT * FROM user WHERE userName = :username";
-							$stmt2 = $pdo->prepare($query);
+							$stmt2 = $pdo->prepare($querys);
 							$stmt2-> bindParam(':username', $enteredUsername);
 							$stmt2->execute();
 							if ($stmt2->rowCount() != 0) {
@@ -57,8 +57,10 @@
 							} else {
 								echo "session can't be set";
 							}
+							$pdo = null; // close the connection
 						} else {
 							echo "ERROR WITH adding user". $queryi . "<br/>" . $pdo->error;
+							$pdo = null; // close the connection
 						}
 					}
 					
