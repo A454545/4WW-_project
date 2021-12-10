@@ -32,6 +32,10 @@ _____________________________________________
 	9. On login page --> switch pulse animation
 	10. On results page --> zoom in animation
 	11. Header title -->  lettering animation for index page and userReg
+4. For part 3
+    1. video upload functionality not required by specs.
+    2. get files from s3 not required by specs only upload was implemented.
+    3. 2 files were left out from the github for security info. 
 
 
 _____________________________________________
