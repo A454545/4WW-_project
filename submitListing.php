@@ -91,7 +91,7 @@
 						<label for="address">Address</label>
 					</div>
 					<div class="field-line-form">
-						<input type="text" id="address" name="address" placeholder="listing addrees..">
+						<input type="text" id="address" name="address" placeholder="listing addrees.." required>
 					</div>
 				</div>
 				<!-- Add button for Geolocation API autofill coordinates -->
@@ -126,6 +126,22 @@
 					<div class="field-line-form">
 						<!--use textarea instead of input becuase we want a larger box-->
 						<textarea id="description" name="description" placeholder="what is so great about it" style="height:5em" required></textarea>
+					</div>
+				</div>
+				<div class="line-form">
+					<div class="title-line-form">
+						<label for="bedrooms"># of Bedrooms</label>
+					</div>
+					<div class="field-line-form">
+						<input type="text" id="bedrooms" name="bedrooms" placeholder="integer..1.5 not allowed" required>
+					</div>
+				</div>
+				<div class="line-form">
+					<div class="title-line-form">
+						<label for="bathrooms"># of Bathrooms</label>
+					</div>
+					<div class="field-line-form">
+						<input type="text" id="bathrooms" name="bathrooms" placeholder="integer..1.5 not allowed" required>
 					</div>
 				</div>
 				<div class="line-form">

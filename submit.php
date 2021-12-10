@@ -37,6 +37,7 @@
 				var longitude = document.getElementById("locationlo");
 				var latitude = document.getElementById("locationl");
 				var address = document.getElementById("address");
+				var locID = document.getElementById("locationID");
 				
 				// what did we select
 				var selected = document.getElementById("list");
@@ -48,8 +49,9 @@
 				longitude.value = updates[2];
 				latitude.value = updates[1];
 				address.value = updates[3];
+				locID.value = updates[0];
 				
-				//alert(selected.value);
+				alert(locID.value);
 				//return false;
 			}
 		</script>
@@ -63,6 +65,37 @@
 			// check if the person is logged in to display the submission page
 			if (isset($_SESSION['validlogin']) && ($_SESSION['validlogin'] == true)) {
 				// start displaying the page
+				if (isset($_SESSION['submissionStatus'])) {
+					echo "HERE";
+					if ($_SESSION['submissionStatus'] == "true") {
+						$_SESSION['submissionStatus'] = "";
+						echo '<script>alert("New review was submitted successfully!")</script>';
+					}
+					elseif ($_SESSION['submissionStatus'] == "picture") {
+						$_SESSION['submissionStatus'] = "";
+						echo '<script>alert("Picture upload fail. Please try again by uploading an image file and renaming the file.")</script>';
+					}
+					elseif ($_SESSION['submissionStatus'] == "exist") {
+						$_SESSION['submissionStatus'] = "";
+						echo '<script>alert("Review is not for an existing listing. Please check your coordinates or select a listing from the dropdown.")</script>';
+					}
+					elseif ($_SESSION['submissionStatus'] == "empty") {
+						$_SESSION['submissionStatus'] = "";
+						echo '<script>alert("Please fill in all the fields to submit a new review.")</script>';
+					}
+					elseif ($_SESSION['submissionStatus'] == "submit") {
+						$_SESSION['submissionStatus'] = "";
+						echo '<script>alert("Something wrong with the submit button, try again.")</script>';
+					}
+					elseif ($_SESSION['submissionStatus'] == "form") {
+						$_SESSION['submissionStatus'] = "";
+						echo '<script>alert("Something wrong with form submission, try again.")</script>';
+					}
+					elseif ($_SESSION['submissionStatus'] == "false") {
+						$_SESSION['submissionStatus'] = "";
+						echo '<script>alert("New review fail to submit.")</script>';
+					}
+				}
 		?>
 				<!--page title-->
 				<div class="title">
@@ -73,7 +106,7 @@
 				<!--this submission form is for a review-->
 				<!-- animation is added using the css animate library -->
 				<div class="submission-container">
-					<form class="submission-form" method="post" action="#" onsubmit="return validateSubmission(this)">
+					<form class="submission-form" method="post" action="uploadReview.php" onsubmit="return validateSubmission(this)">
 						<!--each line form div form will represent a row in the form-->
 						<div class="line-form animate__animated animate__fadeInDown">
 							<!--what we need to enter-->
@@ -116,6 +149,14 @@
 								</select>
 							</div>
 						</div>
+						<div type="hidden" class="line-form">
+							<div type="hidden" class="title-line-form">
+								<label type="hidden" for="locationID"></label>
+							</div>
+							<div type="hidden" class="field-line-form">
+								<input type="hidden" id="locationID" name="locationID">
+							</div>
+						</div>
 						<div class="line-form animate__animated animate__fadeInDown animate__delay-2s">
 							<div class="title-line-form">
 								<label for="locationl">Location Latitude</label>
@@ -129,7 +170,7 @@
 								<label for="locationlo">Location Longtitde</label>
 							</div>
 							<div class="field-line-form">
-								<input type="text" id="locationlo" name="longtitude" placeholder="float to 4 decimals.." required>
+								<input type="text" id="locationlo" name="longitude" placeholder="float to 4 decimals.." required>
 							</div>
 						</div>
 						<div class="line-form animate__animated animate__fadeInDown animate__delay-2s">
@@ -183,7 +224,7 @@
 						<br>
 						<!--submit button-->
 						<div class="line-form animate__animated animate__fadeInDown animate__delay-5s">
-							<input type="submit" value="Submit">
+							<input type="submit" name="submit" value="Submit">
 						</div>
 					</form>
 				</div>
