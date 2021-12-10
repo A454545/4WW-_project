@@ -25,7 +25,7 @@
 					// check if user exits
 					if ($stmt->rowCount() != 0) {
 						$_SESSION['status_message'] = 'exist';
-						$url = "http://localhost/4ww3_project/signin.php";
+						$url = "https://www.trueroofs.live/signin.php";
 						header('location: ' . $url);
 					} else { //if user does not exit then insert into database
 						$queryi = "INSERT INTO user (userName, password, email, interest) 
@@ -52,7 +52,7 @@
 								$_SESSION['validlogin'] = true;
 								
 								//once we are logged in display the profile
-								$url = "http://localhost/4ww3_project/profile.php";
+								$url = "https://www.trueroofs.live/profile.php";
 								header('location: ' . $url);
 							} else {
 								echo "session can't be set";
@@ -67,25 +67,25 @@
 				} else {
 					//echo 'invalid_request please fill the fields';
 					$_SESSION['status_message'] = 'empty';
-					$url = "http://localhost/4WW3_project/userRegistration.php";
+					$url = "https://www.trueroofs.live/userRegistration.php";
 					header('Location: ' . $url);
 				}
 			} else {
 				//echo 'invalid_request please fill the fields';
 				$_SESSION['status_message'] = 'empty';
-				$url = "http://localhost/4WW3_project/userRegistration.php";
+				$url = "https://www.trueroofs.live/userRegistration.php";
 				header('Location: ' . $url);
 			}
 		} else {
 			//echo 'invalid_request';
 			$_SESSION['status_message'] = 'wrong';
-			$url = "http://localhost/4WW3_project/userRegistration.php";
+			$url = "https://www.trueroofs.live/userRegistration.php";
 			header('Location: ' . $url);
 		}
 	} else {
 		//echo 'invalid_request';
 		$_SESSION['status_message'] = 'wrong';
-		$url = "http://localhost/4WW3_project/userRegistration.php";
+		$url = "https://www.trueroofs.live/userRegistration.php";
 		header('Location: ' . $url);
 	}
 ?>

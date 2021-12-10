@@ -44,36 +44,36 @@
 						}
 						
 						//once we are logged in display the profile
-						$url = "http://localhost/4ww3_project/profile.php";
+						$url = "https://www.trueroofs.live/profile.php";
 						header('location: ' . $url);
 					} else { // error messages 
 						$_SESSION['status_message'] = 'invalid';
-						$url = "http://localhost/4ww3_project/userregistration.php";
+						$url = "https://www.trueroofs.live/userRegistration.php";
 						header('location: ' . $url);
 					}
 					
 				} else {
 					//echo 'invalid_request please fill the fields';
 					$_SESSION['status_message'] = 'empty';
-					$url = "http://localhost/4WW3_project/userRegistration.php";
+					$url = "https://www.trueroofs.live/userRegistration.php";
 					header('Location: ' . $url);
 				}
 			} else {
 				//echo 'invalid_request please fill the fields';
 				$_SESSION['status_message'] = 'empty';
-				$url = "http://localhost/4WW3_project/userRegistration.php";
+				$url = "https://www.trueroofs.live/userRegistration.php";
 				header('Location: ' . $url);
 			}
 		} else {
 			//echo 'invalid_request';
 			$_SESSION['status_message'] = 'wrong';
-			$url = "http://localhost/4WW3_project/userRegistration.php";
+			$url = "https://www.trueroofs.live/userRegistration.php";
 			header('Location: ' . $url);
 		}
 	} else {
 		//echo 'invalid_request';
 		$_SESSION['status_message'] = 'wrong';
-		$url = "http://localhost/4WW3_project/userRegistration.php";
+		$url = "https://www.trueroofs.live/userRegistration.php";
 		header('Location: ' . $url);
 	}
 ?>

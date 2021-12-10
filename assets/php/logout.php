@@ -5,7 +5,7 @@
 	
 	session_destroy();
 	
-	$url = "http://localhost/4WW3_project/";
+	$url = "https://www.trueroofs.live/";
 	
 	header('Location: ' . $url);
 ?>
