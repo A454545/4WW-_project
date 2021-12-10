@@ -28,25 +28,6 @@ function generateMap() {
 		let marker = L.marker([lat, long]).addTo(myMap);
 		var popup = L.popup();
 		marker.bindPopup(address + '<br></br>' + '<a href="individualResult.html"> Go</a>').openPopup();
-		
-		// Generate card content: addresses
-		var selector = "" + (i+1); // Grab the right card
-		var address_field = document.getElementById(selector).innerHTML;
-		// Insert the listing address into the address field
-		address_field = address;
-	}
-
-	//Random rank, street address and marker generation
-	for (let i = 1; i < 5; i++){
-		// code to make it random
-		selector = ".result-ranking #ranking-" + i;
-		let rank = document.querySelector(selector);
-		let stars = document.getElementsByClassName('result-stars')[i-1];
-		 	for (let j = 1; j < 5; j++) {
-			var icn = document.createElement("span");
-			icn.innerHTML = '<i class="fa fa-star"></i>';
-			stars.appendChild(icn);
-		} 
 	}
 	
 	// related to satellite view and location

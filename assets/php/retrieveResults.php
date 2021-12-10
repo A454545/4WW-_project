@@ -1,6 +1,5 @@
 <?php
 	session_start();
-
     function test_input($data) {
         $data = trim($data);
         $data = stripslashes($data);
@@ -35,7 +34,7 @@
                         $distance = 50;
 
                         // Query database for listings within certain radius of target listing
-                        $query = "SELECT id, name, description, address, dlat, dlong, price, bedroom, bathroom, 
+                        $query = "SELECT id, name, description, address, dlat, dlong, price, bedroom, bathroom, source,
                             (  3959 * acos( cos( radians($mapCenterLat) ) * cos( radians(`dlat`) ) * 
                             cos ( radians(`dlong`) - radians($mapCenterLong) ) + sin( radians($mapCenterLat) )* 
                             sin( radians(`dlat`) ) )  )
@@ -43,7 +42,10 @@
                         $stmt = $pdo->prepare($query);
                         $stmt->execute();
 
-                        $query = "SELECT cast(review.rating as int) as rating, v.id FROM review, v WHERE review.locationID = v.id";
+                        $query = "SELECT distanceListing.id, review.locationID, review.rating FROM (SELECT listing.id, 
+                        ( 3959*acos(cos (radians(43))*cos(radians(`dlat`)) * cos(radians(`dlong`)- radians(-79)) +
+                         sin(radians(43))* sin(radians(`dlat`)) ) ) AS distance FROM `listing` HAVING distance < 100 
+                         ORDER BY distance ) as distanceListing, review WHERE distanceListing.id = review.locationID";
                         $stmt2 = $pdo->prepare($query);
                         $stmt2->execute();
 
@@ -54,8 +56,7 @@
                         foreach ($stmt2 as $row){
                             $columns2[$row['id']] = $row['rating'];
                         }
-                        //print_r($columns2);
-                        print("---------------------------------------------------------");
+
                         foreach ($stmt as $row) {
                             $rating = 0;
                             foreach ($columns2 as $key => $value){
@@ -63,7 +64,9 @@
                                     $rating = $value;
                                 }
                             }
-                            $columns = array($row['name'], $row['address'], $row['dlat'], $row['dlong'], $row['description'], $row['price'], $row['id'], $row['bedroom'], $row['bathroom']);
+
+                            $columns = array($row['name'], $row['address'], $row['dlat'], $row['dlong'], $row['description'], $row['price'], $row['id'], $row['bedroom'], $row['bathroom'], $row['source']);
+                            $columns[] = $rating;
                             $row = "result_" . $i;
                             $search_results[$row] = $columns;
                             $i = $i + 1;
@@ -73,25 +76,27 @@
                        // close the connection                    
 						$pdo = null; 
                         // Redirect to Result page
-                        $url = "http://localhost/html/4WW3_project/result.php";
+                        $url = "http://3.130.249.183/result.php";
                        header('location: ' . $url);
                     }
                     else {
-                        echo 'results not found';
+                        $_SESSION['searchError']= 1;
+                        $url = "http://3.130.249.183/index.php";
+                        header('location: ' . $url);
                     }                    
                 }
                 else{
-                $url = "http://localhost/html/4WW3_project/index.php";
+                $url = "http://3.130.249.183/index.php";
                 header('location: ' . $url);
                 }
             }
             else{
-            $url = "http://localhost/html/4WW3_project/index.php";
+            $url = "http://3.130.249.183/index.php";
             header('location: ' . $url);
             }
         }
         else{
-        $url = "http://localhost/html/4WW3_project/index.php";
+        $url = "http://3.130.249.183/index.php";
         header('location: ' . $url);
         }
     }
