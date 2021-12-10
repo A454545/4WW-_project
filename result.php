@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en-US">
 
@@ -39,7 +41,23 @@
 
 	<!--Dropdown buttons bar, each button is a search filter (to be added later with JavaScript-->>
 	<div class="filter-bar"></div>
+<?php
 
+echo '<section class="searchResults" id="searchResults" style="display:none; visibility: hidden;">';
+	foreach ($_SESSION['searchResults'] as $row => $columns){
+		echo '<div id="' . $row . '"><span class="name">' . $columns[0] .
+			'</span> <span class="description">' . $columns[4] . 
+			'</span> <span class="address">' . $columns[1] .
+			'</span> <span class="dlat">' . $columns[2] .
+			'</span> <span class="dlong">' . $columns[3] .
+			'</span> <span class="price">' . $columns[5] .
+			'</span></div>';
+	}
+echo '</section>';
+
+	// Create the markers
+	//echo ("addMarker($dlat, $dlong,'<b>$name</b><br/>$description');\n");
+?>
 	<!--page containing the results of a search-->
 	<!--contains a dynamic map showing location of each result, as well as a card displaying-->
 	<!--the address, mls listing number and synopsis of each result, along with a button to access its individual result page-->
@@ -58,7 +76,7 @@
 				<div class="result-ranking">
 					Ranked # <span id="ranking-1">1256</span>
 				</div>
-				<!-- -->
+				<!-- Stars -->
 				<div class="result-stars">
 					    <i class="fas fa-star"></i>
 						<i class="fas fa-star"></i>
@@ -67,6 +85,7 @@
 				</div>
 				<div class="result-description">
 					<div class="address" id="1"></div>
+				<!-- Description! -->
 					<div class="listing-desc">Cozy three-bedroom , 1 bathroom apartment in the Main Street West
 						neighborhood.</div>
 					<p class="beds-baths" style="margin:0; padding: 1vh 0.5vw 0 0.5vw"><i class="fa fa-bed"></i> 3 Bed
