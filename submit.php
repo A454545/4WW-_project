@@ -30,6 +30,29 @@
 		<script type="text/javascript" src="assets/js/submit.js"></script>
 		<!-- Animation resource -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+		<script>
+			//when the listing is selected update the other fields 
+			function selectedList() {
+				// variables to be updated
+				var longitude = document.getElementById("locationlo");
+				var latitude = document.getElementById("locationl");
+				var address = document.getElementById("address");
+				
+				// what did we select
+				var selected = document.getElementById("list");
+				var selectedValues = selected.value;
+				
+				const updates = selectedValues.split(';');
+				
+				// make the filling
+				longitude.value = updates[2];
+				latitude.value = updates[1];
+				address.value = updates[3];
+				
+				//alert(selected.value);
+				//return false;
+			}
+		</script>
 	</head>
 	<body>
 		<!-- beginning to see if logged in -->
@@ -76,7 +99,7 @@
 								<label for="list">Listing to review</label>
 							</div>
 							<div class="field-line-form">
-								<select id="list" name="list" onchange="selectedList()">
+								<select id="list" name="list" onchange="selectedList();">
 									<option value='' disabled selected></option>
 									<?php
 									// get the name of the listings available
@@ -151,7 +174,7 @@
 						<!-- Task 1 in Add On 2: upload a video this is not updated with part 3 as it is not mentioned in the specifications of the posted document -->
 						<div class="line-form animate__animated animate__fadeInDown animate__delay-4s">
 							<div class="title-line-form">
-								<label for="video">Upload video</label>
+								<label for="video">Upload video (!P3)</label>
 							</div>
 							<div class="field-line-form">
 								<input type="file" id="video" name="video" accept="video/*">
