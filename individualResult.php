@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en-US">
 
@@ -52,7 +54,7 @@
 	<script type="text/javascript" src="assets/js/individualResult.js"></script> 
 </head>
 
-<body onload="generateMap();">
+<body onload="generateMap2();">
 	<!--include header-->
 	<!--same comments on the index.php-->
 	<?php
@@ -60,7 +62,18 @@
 	?>
 	<!--dropdown buttons bar, each button is a search filter-to be added later with Javascript-->>
 	<div class="filter-bar"></div>
-
+	<?php
+		// Transfer SESSION data into hidden fields, used to pass SESSION data to Javascript file
+		$j = $_SESSION['chosenID'];
+		$result = $_SESSION['searchResults']["result_$j"];
+			echo '<section class="searchResults" id="searchResults" style="display:none; visibility: hidden;">';
+			echo '<div id="1"> <span class="address">' . $result[1] .
+				'</span> <span class="dlat">' . $result[2] .
+				'</span> <span class="dlong">' . $result[3] .
+				'</span> <span class="RANK">' . $result[9] .
+				'</span></div>';
+			echo '</section>';
+	?>
 	<!--page displaying information about an individual result-->
 	<!--includes two photos, an interactive map, a video, text description, link to original mls listing, and reviews-->
 	<div class="container">
@@ -99,7 +112,7 @@
 			<div class="object-content">
 				<!--Addon 1 Task 3-->
 				<div class="locationOnMap" itemscope itemtype="https://schema.org/Place">
-					<h2 class="address">123 Main Street West, Toronto </h2>
+					<h2 class="address"> <?php echo $result[1]; ?></h2>
 
 					<div class="geographicCoordinate" itemscope itemtype="https://schema.org/GeoCoordinates">
 						<h2 class="coordinates" style="display:none; visibility:hidden"> 44.5W 70N</h2>
@@ -107,117 +120,47 @@
 						<meta itemprop="longtitude" content="70N" />
 					</div>
 				</div>
-				<p class="listing-link"><a href='//realtor.ca'> Link to original listing </a></p>
-				Welcome To This Gorgeous Condo Townhouse Located In Tridal Built Gated Community. Spacious 2+1
-				Bedroom Town With 2 Full Bathrooms And Extra Powder room (Without Toilet), 1 Car Attached Garage,
-				$$$ Spent On Renos & Upgrades, Brand New Hardwood Floor On Main Level, Freshly Painted, Pot Lights
-				Through-Out, New Granite Counter Top In Kitchen, Bathroom And Powder Room, Backsplash, New Porcelain
-				Floor In Kitchen, Backsplash, Foyer And Basement Landing, Pets Permitted, Conveniently Located Near
-				401,Shopping, Grocery Stores, Schools And In Proximity To Uoft (Scarborough Campus), New Electric
-				Range-hood, Fridge, Stove, Dishwasher, New Washer & Dryer, Light Fixtures, Window Coverings, Hot
-				Water Tank Is Rental (63903719)
+				<p class="listing-link"><a href=<?php echo $result[9];?>> Link to original listing </a></p>
+				<?php echo $result[4];?>
 			</div>
 		</div>
 		<div class="object-reviews">
-			<!--addon1 task 4 review microdata-->
-			<div class="reviewGroup" itemscope itemtype="https://schema.org/Review">
-				<div itemprop="author" itemscope itemtype="https://schema.org/Person">
-					<meta itemprop="name" content="Nikki Smith">
-				</div>
-				<div class="review">
-					<div class="reviewer-info">
-						<div class="avatar-image">
-							<picture>
-								<source media="(min-width: 1920px)" srcset="avatar-2x.png, avatar-2x.png 2x">
-								<img src="assets/images/avatar-1x.png" alt="profile-avatar">
-							</picture>
-						</div>
-						<div class="reviewer-name" style="font-weight: bolder;">Nikki Smith</div>
-						<div class="reviewer-date">(May 13, 2020)</div>
+			<?php
+			//Dynamically generate page content
+			for ($i = 0; $i < count($_SESSION['reviewResults']); $i++){
+				$result = $_SESSION['reviewResults']["reviewResult_$i"];
+			echo '<div class="reviewGroup" itemscope itemtype="https://schema.org/Review">
+			<div itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<meta itemprop="name" content="Nikki Smith">
+			</div>
+			<div class="review">
+				<div class="reviewer-info">
+					<div class="avatar-image">
+						<picture>
+							<source media="(min-width: 1920px)" srcset="avatar-2x.png, avatar-2x.png 2x">
+							<img src="assets/images/avatar-1x.png" alt="profile-avatar">
+						</picture>
 					</div>
-					<div class="reviewer-rating">
-						<i class="fa fa-star" aria-hidden="true"></i>
-						<i class="fa fa-star" aria-hidden="true"></i>
-						<i class="fa fa-star" aria-hidden="true"></i>
-						<i class="fa fa-star" aria-hidden="true"></i>
+					<div class="reviewer-name" style="font-weight: bolder;">Nikki Smith</div>
+					<div class="reviewer-date">(' . $result[2] .')</div>
 					</div>
-					<meta itemprop="reviewRating" content="4">
-					<meta itemprop="reviewBody" content="The pictures looked nothing like the photos, I was so disappointed.
-						Also, there was an odd smell from across the street. I think there is a garbage dump nearby,
-						I wish I knew that before I went in to the viewing!">
-					<div class="review-content"> The pictures looked nothing like the photos, I was so disappointed.
-						Also, there was an odd smell from across the street. I think there is a garbage dump nearby,
-						I wish I knew that before I went in to the viewing!
-					</div>
+					<div class="reviewer-rating">';
+			for ($j = 0; $j < $result[3]; $j++){
+				echo '<i class="fa fa-star" aria-hidden="true"></i>';
+			}
+			echo '</div><meta itemprop="reviewRating" content="4">
+					<meta itemprop="reviewBody" content="' . $result[4] .
+					'<div class="review-content">' . $result[4] . '</div>
 				</div>
 			</div>
-			<div class="empty"></div>
-			<!--addon1 task 4 review microdata-->
-			<div class="reviewGroup" itemscope itemtype="https://schema.org/Review">
-				<div itemprop="author" itemscope itemtype="https://schema.org/Person">
-					<meta itemprop="name" content="Nikki Smith">
-				</div>
-				<div class="review">
-					<div class="reviewer-info">
-						<div class="avatar-image">
-							<picture>
-								<source media="(min-width: 1920px)" srcset="avatar-2x.png, avatar-2x.png 2x">
-								<img src="assets/images/avatar-1x.png" alt="profile-avatar">
-							</picture>
-						</div>
-						<div class="reviewer-name" style="font-weight: bolder;">Nikki Smith</div>
-						<div class="reviewer-date">(May 13, 2020)</div>
-					</div>
-					<div class="reviewer-rating">
-						<i class="fa fa-star" aria-hidden="true"></i>
-						<i class="fa fa-star" aria-hidden="true"></i>
-						<i class="fa fa-star" aria-hidden="true"></i>
-						<i class="fa fa-star" aria-hidden="true"></i>
-					</div>
-					<meta itemprop="reviewRating" content="4">
-					<meta itemprop="reviewBody" content="The pictures looked nothing like the photos, I was so disappointed.
-						Also, there was an odd smell from across the street. I think there is a garbage dump nearby,
-						I wish I knew that before I went in to the viewing!">
-					<div class="review-content"> The pictures looked nothing like the photos, I was so disappointed.
-						Also, there was an odd smell from across the street. I think there is a garbage dump nearby,
-						I wish I knew that before I went in to the viewing!
-					</div>
-				</div>
-			</div>
-			<div class="empty"></div>
-			<!--addon1 task 4 review microdata-->
-			<div class="reviewGroup" itemscope itemtype="https://schema.org/Review">
-				<div itemprop="author" itemscope itemtype="https://schema.org/Person">
-					<meta itemprop="name" content="Nikki Smith">
-				</div>
-				<div class="review">
-					<div class="reviewer-info">
-						<div class="avatar-image">
-							<picture>
-								<source media="(min-width: 1920px)" srcset="avatar-2x.png, avatar-2x.png 2x">
-								<img src="assets/images/avatar-1x.png" alt="profile-avatar">
-							</picture>
-						</div>
-						<div class="reviewer-name" style="font-weight: bolder;">Nikki Smith</div>
-						<div class="reviewer-date">(May 13, 2020)</div>
-					</div>
-					<div class="reviewer-rating">
-						<i class="fa fa-star" aria-hidden="true"></i>
-						<i class="fa fa-star" aria-hidden="true"></i>
-						<i class="fa fa-star" aria-hidden="true"></i>
-						<i class="fa fa-star" aria-hidden="true"></i>
-					</div>
-					<meta itemprop="reviewRating" content="4">
-					<meta itemprop="reviewBody" content="The pictures looked nothing like the photos, I was so disappointed.
-						Also, there was an odd smell from across the street. I think there is a garbage dump nearby,
-						I wish I knew that before I went in to the viewing!">
-					<div class="review-content"> The pictures looked nothing like the photos, I was so disappointed.
-						Also, there was an odd smell from across the street. I think there is a garbage dump nearby,
-						I wish I knew that before I went in to the viewing!
-					</div>
-				</div>
-			</div>
-			<div class="empty"></div>
+			<div class="empty"></div>';
+			}
+						 /*$_SESSION['reviewerName_'.$i] = $row['reviewerName'];
+							$_SESSION['reviewName_'.$i] = $row['name'];
+							$_SESSION['reviewDate_'.$i] = $row['created'];
+							$_SESSION['reviewRating_'.$i] = $row['rating'];
+							$_SESSION['reviewContent_'.$i] = $row['content']; */
+			?>
 		</div>
 	</div>
 

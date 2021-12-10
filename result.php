@@ -87,11 +87,12 @@
 					echo '<i class="fa fa-bed"></i> ';
 				echo $result[7] . " Bed ";
 					echo '<i class="fa fa-bath"></i> ';
-				echo  $result[8] . ' Bath </p></div>';			 
-
-				echo '<div class="check-button"> <input type="submit" value="View listing" onclick="location.href=' . '\'individualResult.php;\'' . 
-				'"></div>';
-				echo ' </div>';
+				echo  $result[8] . ' Bath </p></div>';
+				echo '<form class="submit" method="POST" action="assets/php/checkResult.php">
+				<input type="hidden" id="chosenID" name="chosenID" value="' . $j . '">';		 
+				echo '<div class="check-button"><input type="submit" name="submitSearch" value="View listing" 
+				></div>';
+				echo ' </form></div>';
 			}
 
 		?>

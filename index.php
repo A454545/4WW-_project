@@ -51,7 +51,8 @@ session_start();
 			<!--form to pass the info use the get method because we want to allow bookmarks and ideal for search boxes-->
 			<form class="search-bar" id="search-bar" method="POST" action="assets/php/retrieveResults.php">
 				<!--bar of the search-->
-				<input type="text" placeholder="Enter a city name" name="search">
+				<input type="text" placeholder= <?php if (!isset($_SESSION['searchError']))
+				 {echo '"Enter a city name"';} else {echo '"No results found."';} ?> name="search">
 				<!--clickable button to send the input-->
 				<button type="submit" name="submitSearch" value="searchSubmitted" aria-label="submit address search"><i class="fa fa-search"></i></button>
 			</form>
