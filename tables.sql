@@ -17,7 +17,9 @@ CREATE TABLE `trueroofs`.`listing` (
 `dlat` VARCHAR(15) NOT NULL ,  
 `dlong` VARCHAR(15) NOT NULL ,  
 `source` VARCHAR(250) NOT NULL ,  
-`price` FLOAT NOT NULL ,  
+`price` FLOAT NOT NULL , 
+`bedroom` INT(5) NOT NULL,
+`bathroom` INT(5) NOT NULL, 
 `imagePath` VARCHAR(250) NOT NULL ,  
 `imageURL` VARCHAR(250) NOT NULL ,    
 PRIMARY KEY  (`id`)
