@@ -36,6 +36,37 @@
 			// check if the person is logged in to display the submission page
 			if (isset($_SESSION['validlogin']) && ($_SESSION['validlogin'] == true)) {
 				// start displaying the page
+				if (isset($_SESSION['submmissionStatus'])) {
+					echo "HERE";
+					if ($_SESSION['submmissionStatus'] == "true") {
+						$_SESSION['submmissionStatus'] = "";
+						echo '<script>alert("New listing was submitted successfully!")</script>';
+					}
+					elseif ($_SESSION['submmissionStatus'] == "picture") {
+						$_SESSION['submmissionStatus'] = "";
+						echo '<script>alert("Picture upload fail. Please try again by uploading an image file and renaming the file.")</script>';
+					}
+					elseif ($_SESSION['submmissionStatus'] == "exist") {
+						$_SESSION['submmissionStatus'] = "";
+						echo '<script>alert("Listing is already up on the website.")</script>';
+					}
+					elseif ($_SESSION['submmissionStatus'] == "empty") {
+						$_SESSION['submmissionStatus'] = "";
+						echo '<script>alert("Please fill in all the fields to submit a new listing.")</script>';
+					}
+					elseif ($_SESSION['submmissionStatus'] == "submit") {
+						$_SESSION['submmissionStatus'] = "";
+						echo '<script>alert("Something wrong with the submit button, try again.")</script>';
+					}
+					elseif ($_SESSION['submmissionStatus'] == "form") {
+						$_SESSION['submmissionStatus'] = "";
+						echo '<script>alert("Something wrong with form submission, try again.")</script>';
+					}
+					elseif ($_SESSION['submmissionStatus'] == "false") {
+						$_SESSION['submmissionStatus'] = "";
+						echo '<script>alert("New listing fail to submit.")</script>';
+					}
+				}
 		?>	
 		
 		<div class="title">
@@ -46,7 +77,7 @@
 		<!--this section is similar to what was used in submit.html so commenting would be the same the difference here is what is being asked to enter-->
 		<!-- animation is added using the css animate library -->
 		<div class="submission-container">
-			<form class="submission-form animate__animated animate__lightSpeedInRight" method="post" action="assets/php/uploadListing.php" onsubmit="return validateSubmission(this)">
+			<form class="submission-form animate__animated animate__lightSpeedInRight" method="POST" action="uploadListing.php" onsubmit="return validateSubmission(this)" enctype="multipart/form-data">
 				<div class="line-form">
 					<div class="title-line-form">
 						<label for="rname">Listing Name</label>
@@ -85,7 +116,16 @@
 						<label for="locationlo">Location Longtitde</label>
 					</div>
 					<div class="field-line-form">
-						<input type="text" id="locationlo" name="longtitude" placeholder="float to 4 decimals.." required>
+						<input type="text" id="locationlo" name="longitude" placeholder="float to 4 decimals.." required>
+					</div>
+				</div>
+				<div class="line-form">
+					<div class="title-line-form">
+						<label for="description">Description</label>
+					</div>
+					<div class="field-line-form">
+						<!--use textarea instead of input becuase we want a larger box-->
+						<textarea id="description" name="description" placeholder="what is so great about it" style="height:5em" required></textarea>
 					</div>
 				</div>
 				<div class="line-form">
@@ -109,12 +149,12 @@
 						<label for="picture">Upload Image</label>
 					</div>
 					<div class="field-line-form">
-						<input type="file" id="picture" name="picture" accept="image/*" multiple required>
+						<input type="file" id="picture" name="picture" accept="image/*" required>
 					</div>
 				</div>
 				<br>
 				<div class="line-form">
-					<input type="submit" value="Submit">
+					<input type="submit" name="submit" value="Submit">
 				</div>
 			</form>
 		</div>
