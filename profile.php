@@ -18,8 +18,8 @@
 		<!--styling to the main page-->
 		<!-- <link href="4WW3_project/assets/css/header_footer.css" rel="stylesheet"/> -->
 		<!-- <link href="4WW3_project/assets/css/profile.css" rel="stylesheet"/> -->
-		<link href="assets/css/header_footer.css" rel="stylesheet"/>
-		<link href="assets/css/profile.css" rel="stylesheet"/>
+		<link href="4WW3_project/assets/css/header_footer.css" rel="stylesheet"/>
+		<link href="4WW3_project/assets/css/profile.css" rel="stylesheet"/>
 		<!--load icon library for search bar-->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -30,7 +30,7 @@
 		<!--include header-->
 		<!--same comments on the indext/html for nav bar-->
 		<?php
-			include "assets/php/header.php";
+			include "4WW3_project/assets/php/header.php";
 			
 			// check if the person is logged in to display the page
 			if (isset($_SESSION['validlogin']) && ($_SESSION['validlogin'] == true)) {
@@ -48,11 +48,11 @@
 		<!-- animation is added using the css animate library -->
 		<div class="profile animate__animated animate__bounceIn">
 			<!--this image is used just to make the picture nice it is not a placeholder-->
-			<img src="assets/images/avatar.png" alt="Avatar profile icon">
+			<img src="4WW3_project/assets/images/avatar.png" alt="Avatar profile icon">
 			<h3><?php echo $loggeduser . ", #" . $loggedID; ?> </h3>
 			<h3><?php echo $loggedemail; ?></h3>
 			<h3><?php echo "Looking to <i>".$loggedReason."</i>!"; ?></h3>
-			<button><a href="assets/php/logout.php">Log out</button>
+			<button><a href="4WW3_project/assets/php/logout.php">Log out</button>
 		</div>
 		
 	<!--include the footer of the webpage-->
@@ -63,7 +63,7 @@
 						<h3>Please log in or sign in to see profile.</h3>
 					</div>";
 			}
-		include "assets/php/footer.php";
+		include "4WW3_project/assets/php/footer.php";
 	?>
 	</body>
 </html>

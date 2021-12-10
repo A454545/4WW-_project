@@ -18,19 +18,19 @@
 		<!--styling to the main page-->
 		<!-- <link href="4WW3_project/assets/css/header_footer.css" rel="stylesheet"/> -->
 		<!-- <link href="4WW3_project/assets/css/userRegisteration.css" rel="stylesheet"/> -->
-		<link href="assets/css/header_footer.css" rel="stylesheet"/>
-		<link href="assets/css/userRegisteration.css" rel="stylesheet"/>
+		<link href="4WW3_project/assets/css/header_footer.css" rel="stylesheet"/>
+		<link href="4WW3_project/assets/css/userRegisteration.css" rel="stylesheet"/>
 		<!--load icon library for search bar-->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 		<!-- js script for registration -->
-		<script type="text/javascript" src="assets/js/registration.js"></script>
+		<script type="text/javascript" src="4WW3_project/assets/js/registration.js"></script>
 	</head>
 	<body>
 		<!-- include header -->
 		<!--same comments on the indext/html for nav bar-->
 		<?php
-			include "assets/php/header.php";
+			include "4WW3_project/assets/php/header.php";
 			
 			// check if the person is logged in
 			if (!isset($_SESSION['validlogin']) && !($_SESSION['validlogin'] == true)) {
@@ -43,7 +43,7 @@
 		<!--beginning of the registration login part similar to the registration.html but the difference is the here we are signing in and have more input fields-->
 		<!--comments here are the same as registration.html section of registration-->
 		<div class="registration">
-			<form class="reg-form" id="reg-signin" onsubmit="return validateSignIn(this)" action="assets/php/signinAdd.php" method="POST">
+			<form class="reg-form" id="reg-signin" onsubmit="return validateSignIn(this)" action="4WW3_project/assets/php/signinAdd.php" method="POST">
 				<div class="reg-type">
 					<p>Sign In</p>
 				</div>
@@ -122,7 +122,7 @@
 					<h3 class='reg-form'>You are already logged in as ". $_SESSION['userfullname'] . ". Navigate to <a href='profile.php'>Profile</a> to logout.</h3>
 				</div>";
 			}
-			include "assets/php/footer.php";
+			include "4WW3_project/assets/php/footer.php";
 		?>
 		
 		<!-- animation for the title of the page - lettering of the title in a loop -->

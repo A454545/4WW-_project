@@ -25,17 +25,19 @@ function selectedList() {
 	var longitude = document.getElementById("locationlo");
 	var latitude = document.getElementById("locationl");
 	var address = document.getElementById("address");
-	
+	var locID = document.getElementById("locationID");
+		
 	// what did we select
 	var selected = document.getElementById("list");
 	var selectedValues = selected.value;
-	
+
 	const updates = selectedValues.split(';');
 	
 	// make the filling
 	longitude.value = updates[2];
 	latitude.value = updates[1];
 	address.value = updates[3];
+	locID.value = updates[0];
 	
 	//alert(selected.value);
 	//return false;

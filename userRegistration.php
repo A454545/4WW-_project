@@ -18,13 +18,13 @@
 		<!--styling to the main page-->
 		<!-- <link href="4WW3_project/assets/css/header_footer.css" rel="stylesheet"/> -->
 		<!-- <link href="4WW3_project/assets/css/userRegisteration.css" rel="stylesheet"/> -->
-		<link href="assets/css/header_footer.css" rel="stylesheet"/>
-		<link href="assets/css/userRegisteration.css" rel="stylesheet"/>
+		<link href="4WW3_project/assets/css/header_footer.css" rel="stylesheet"/>
+		<link href="4WW3_project/assets/css/userRegisteration.css" rel="stylesheet"/>
 		<!--load icon library for search bar-->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 		<!-- js script for registration -->
-		<script type="text/javascript" src="assets/js/registration.js"></script>
+		<script type="text/javascript" src="4WW3_project/assets/js/registration.js"></script>
 		<!-- Animation resource -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
@@ -32,7 +32,7 @@
 	<body>
 		<!--include header-->
 		<?php
-			include "assets/php/header.php";
+			include "4WW3_project/assets/php/header.php";
 			
 			if (!isset($_SESSION['validlogin']) && !($_SESSION['validlogin'] == true)) {
 		?>	
@@ -44,7 +44,7 @@
 		<!--beginning of the registration login part-->
 		<div class="registration">
 			<!--using a form to pass the info-->
-			<form class="reg-form" id="Reg-login" onsubmit="return validateLogIn(this)" action="assets/php/loginVerify.php" method="POST">
+			<form class="reg-form" id="Reg-login" onsubmit="return validateLogIn(this)" action="4WW3_project/assets/php/loginVerify.php" method="POST">
 				<!--what type of registration is it-->
 				<div class="reg-type animate__animated animate__rubberBand">
 					<p>Log In</p>
@@ -124,7 +124,7 @@
 					<h3 class='reg-form'>You are already logged in as ". $_SESSION['userfullname'] . ". Navigate to <a href='profile.php'>Profile</a> to logout.</h3>
 				</div>";
 			}
-			include "assets/php/footer.php";
+			include "4WW3_project/assets/php/footer.php";
 		?>
 	
 		<!-- animation for the title of the page - lettering of the title in a loop -->

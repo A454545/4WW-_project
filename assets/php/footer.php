@@ -40,7 +40,7 @@
 					</div>
 					<div class="copyright">
 						<p title="True Roofs Copyright" style="color: #ffffff; font-size:12px;"><i
-								class="far fa-copyright"></i> Updated November 2021</p>
+								class="far fa-copyright"></i> Updated December 2021</p>
 					</div>
 				</div>
 			</div>
