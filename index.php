@@ -13,8 +13,8 @@ session_start();
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Main Page</title>
 	<!--styling to the main page-->
-	<!-- <link href="assets/css/mainStyle.css" rel="stylesheet"/> -->
-	<link href="assets/css/mainStyle.css" rel="stylesheet" />
+	<!-- <link href="4WW3_project/assets/css/mainStyle.css" rel="stylesheet"/> -->
+	<link href="4WW3_project/assets/css/mainStyle.css" rel="stylesheet" />
 	<!--load icon library for search bar-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css"
@@ -30,26 +30,26 @@ session_start();
 		integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
 		crossorigin="" async></script>
 	<!-- javascript file -->
-	<script type="text/javascript" src="assets/js/main.js" async></script> 
+	<script type="text/javascript" src="4WW3_project/assets/js/main.js" async></script> 
 </head>
 
 <body onload="generateMap();">
 	<!--include header-->
 	<?php
-		include "assets/php/header.php";
+		include "4WW3_project/assets/php/header.php";
 	?>
 
 	<!--Search bar of the estates-->
 	<div class="main-container">
 		<!--background image of the div-->
-		<img src="assets/images/house.jpg" alt="top view of estates"
+		<img src="4WW3_project/assets/images/house.jpg" alt="top view of estates"
 			style="width:100%; filter: blur(5px); padding-top: 80px;">
 		<!--div section that have the search bar as a form-->
 		<div class="search">
 			<!--title-->
 			<p class="search-title" id="search-title"><u>Search Reviews</u></p>
 			<!--form to pass the info use the get method because we want to allow bookmarks and ideal for search boxes-->
-			<form class="search-bar" id="search-bar" method="POST" action="assets/php/retrieveResults.php">
+			<form class="search-bar" id="search-bar" method="POST" action="4WW3_project/assets/php/retrieveResults.php">
 				<!--bar of the search-->
 				<input type="text" placeholder= <?php if (!isset($_SESSION['searchError']))
 				 {echo '"Enter a city name"';} else {echo '"No results found."';} ?> name="search">
@@ -87,7 +87,7 @@ session_start();
 
 	<!--include the footer of the webpage-->
 	<?php
-		include "assets/php/footer.php";
+		include "4WW3_project/assets/php/footer.php";
 	?>
 	
 	<script type="text/javascript">
