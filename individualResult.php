@@ -13,8 +13,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Individual Object</title>
 	<!--styling to the main page-->
-	<link href="assets/css/header_footer.css" rel="stylesheet" />
-	<link href="assets/css/individualResult.css" rel="stylesheet" />
+	<link href="4WW3_project/assets/css/header_footer.css" rel="stylesheet" />
+	<link href="4WW3_project/assets/css/individualResult.css" rel="stylesheet" />
 	<!--load icon library for search bar-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css"
@@ -37,7 +37,7 @@
 	<meta property="twitter:image" content="http://18.222.242.154/home/images/kingwestbooks.jpg">
 	<!--Task 5: mobile saving page to home screen-->
 	<!--IOS-->
-	<link rel="apple-touch-icon-precomposed" href="assets/images/avatar.png" />
+	<link rel="apple-touch-icon-precomposed" href="4WW3_project/assets/images/avatar.png" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 	<meta name="viewport" content="width = device-width, initial-scale = 1.0, minimum-scale = 1.0, maximum-scale = 5" />
@@ -51,14 +51,14 @@
 		integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
 		crossorigin=""></script>
 	<!-- javascript file -->
-	<script type="text/javascript" src="assets/js/individualResult.js"></script> 
+	<script type="text/javascript" src="4WW3_project/assets/js/individualResult.js"></script> 
 </head>
 
 <body onload="generateMap2();">
 	<!--include header-->
 	<!--same comments on the index.php-->
 	<?php
-		include "assets/php/header.php";
+		include "4WW3_project/assets/php/header.php";
 	?>
 	<!--dropdown buttons bar, each button is a search filter-to be added later with Javascript-->>
 	<div class="filter-bar"></div>
@@ -87,12 +87,12 @@
 				<div class="mySlides fade" id="main">
 					<!--Task 2 in Add On 2: use <picture> and <source> tags to add customizable images-->
 					<picture>
-						<source media="(max-width: 450px)" srcset="assets/images/main-0.25x.png, main-0.25x.png 0.25x">
-						<img src="assets/images/main-0.5x.png" alt="main listing photo">
+						<source media="(max-width: 450px)" srcset="4WW3_project/assets/images/main-0.25x.png, main-0.25x.png 0.25x">
+						<img src="4WW3_project/assets/images/main-0.5x.png" alt="main listing photo">
 					</picture>
 				</div>
 				<div class="mySlides fade" id="top-photo">
-					<img src="assets/images/top.jpg">
+					<img src="4WW3_project/assets/images/top.jpg">
 				</div>
 				<!--Addon 1 Task 3-->
 				<!-- Next and previous buttons -->
@@ -106,7 +106,7 @@
 		<div class="object">
 			<!--Task 1 in Add On 2: add a video-->
 			<div class="object-video"><video controls>
-					<source src="assets/images/apartment-tour.mp4" type="video/mp4">
+					<source src="4WW3_project/assets/images/apartment-tour.mp4" type="video/mp4">
 					Your browser does not support the video tag.
 				</video></div>
 			<div class="object-content">
@@ -138,7 +138,7 @@
 					<div class="avatar-image">
 						<picture>
 							<source media="(min-width: 1920px)" srcset="avatar-2x.png, avatar-2x.png 2x">
-							<img src="assets/images/avatar-1x.png" alt="profile-avatar">
+							<img src="4WW3_project/assets/images/avatar-1x.png" alt="profile-avatar">
 						</picture>
 					</div>
 					<div class="reviewer-name" style="font-weight: bolder;">Nikki Smith</div>
@@ -166,7 +166,7 @@
 
 	<!--include the footer of the webpage-->
 	<?php
-		include "assets/php/footer.php";
+		include "4WW3_project/assets/php/footer.php";
 	?>
 </body>
 </html>

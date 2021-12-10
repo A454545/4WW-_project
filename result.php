@@ -13,8 +13,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Result Page</title>
 	<!--styling to the main page-->
-	<link href="assets/css/header_footer.css" rel="stylesheet" />
-	<link href="assets/css/result.css" rel="stylesheet" />
+	<link href="4WW3_project/assets/css/header_footer.css" rel="stylesheet" />
+	<link href="4WW3_project/assets/css/result.css" rel="stylesheet" />
 	<!--load icon library for search bar-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css"
@@ -29,14 +29,14 @@
 	<!-- Animation resource -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 	<!-- javascript file -->
-	<script type="text/javascript" src="assets/js/result.js"></script> 
+	<script type="text/javascript" src="4WW3_project/assets/js/result.js"></script> 
 </head>
 
 <body onload="generateMap();">
 	<!--include header-->
 	<!--same comments on the indext/html-->
 	<?php
-		include "assets/php/header.php";
+		include "4WW3_project/assets/php/header.php";
 	?>
 
 	<!--Dropdown buttons bar, each button is a search filter (to be added later with JavaScript-->>
@@ -100,7 +100,7 @@
 	</div>
 	<!--include the footer of the webpage-->
 	<?php
-		include "assets/php/footer.php";
+		include "4WW3_project/assets/php/footer.php";
 	?>
 </body>
 </html>
