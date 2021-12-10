@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:300,600');
 
-
+div.searchResults {
+	display:none ;
+	visibility: hidden;
+}
 /* Dropdown buttons bar (filter-bar) container. Full functionality to be implemented with Javascript.*/
 .filter-bar {
 	background-position: bottom;
