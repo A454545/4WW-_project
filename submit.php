@@ -51,7 +51,7 @@
 				address.value = updates[3];
 				locID.value = updates[0];
 				
-				alert(locID.value);
+				//alert(locID.value);
 				//return false;
 			}
 		</script>
@@ -106,7 +106,7 @@
 				<!--this submission form is for a review-->
 				<!-- animation is added using the css animate library -->
 				<div class="submission-container">
-					<form class="submission-form" method="post" action="uploadReview.php" onsubmit="return validateSubmission(this)">
+					<form class="submission-form" method="post" action="uploadReview.php" onsubmit="return validateSubmission(this)" enctype="multipart/form-data">
 						<!--each line form div form will represent a row in the form-->
 						<div class="line-form animate__animated animate__fadeInDown">
 							<!--what we need to enter-->
@@ -206,10 +206,10 @@
 						</div>
 						<div class="line-form animate__animated animate__fadeInDown animate__delay-4s">
 							<div class="title-line-form">
-								<label for="pictures">Upload Images</label>
+								<label for="picture">Upload Image</label>
 							</div>
 							<div class="field-line-form">
-								<input type="file" id="pictures" name="pictures" accept="image/*" required>
+								<input type="file" id="picture" name="picture" accept="image/*" required>
 							</div>
 						</div>
 						<!-- Task 1 in Add On 2: upload a video this is not updated with part 3 as it is not mentioned in the specifications of the posted document -->
