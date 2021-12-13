@@ -1,8 +1,44 @@
 <?php
 	session_start();
 	
+	require '4WW3_project/vendor/autoload.php';
+	
+	// to use s3 client
+	use Aws\S3\S3Client;
+	use Aws\S3\Exception\S3Exception;
+
+	// AWS Info for S3 set up
+	$bucketName = 'true-images';
+	$IAM_KEY = 'AKIA5OZP4ROFTR2XMW6J';
+	$IAM_SECRET = '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';
+
+	// Connect to AWS
+	try {
+		// create the s3 client 
+		$s3 = S3Client::factory(
+			array(
+				'credentials' => array(
+					'key' => $IAM_KEY,
+					'secret' => $IAM_SECRET
+				),
+				'version' => 'latest',
+				'region'  => 'us-east-2'
+			)
+		);
+		echo 'Done1';
+	} catch (Exception $e) {
+		// We use a die, so if this fails. It stops here. Typically this is a REST call so this would
+		// return a json object.
+		die("Error: " . $e->getMessage());
+	}
+
+	// bucket info to save the file upload
+	// create a folder in the bucket test_example and use the image name of the selected file
+	$keyName = 'test_example-two/' . basename($_FILES["picture"]['name']);
+	$pathInS3 = 'https://s3.us-east-2.amazonaws.com/' . $bucketName . '/' . $keyName;
+	
 	// variables to track
-	$uploadOK = 1; 
+	$uploadOK = 0; 
 	$_SESSION['submissionStatus'] = "false";
 	
 	// variables to be inserted 
@@ -11,7 +47,7 @@
 	$review = "";    // content
 	$rlat = "";        // dlat
 	$rlong = "";       // dlong
-	// $imagePath = $keyName;      // image
+	$imagePath = $keyName;      // image
 	// $imageURL = $pathInS3;       // imageURL
 	$score = "";      // rating
 	$reviewerID = $_SESSION['userid'];;      // reviewerID
@@ -41,40 +77,40 @@
 					include '4WW3_project/assets/php/pdoConnect.php';
 					
 					// check if the entered pic has same name as another
-					// $checkQuery = "SELECT * FROM listing WHERE imagePath = :path";
-					// $check = $pdo->prepare($checkQuery);
-					// $check->bindParam(':path', $imagePath);
-					// $check->execute();
+					$checkQuery = "SELECT * FROM review WHERE imagePath = :path";
+					$check = $pdo->prepare($checkQuery);
+					$check->bindParam(':path', $imagePath);
+					$check->execute();
 					
-					// if (isset($_FILES["picture"]) && $check->rowCount() == 0) {
+					if (isset($_FILES["picture"]) && $check->rowCount() == 0) {
 						// Add it to S3 once the form is submitted 
 						// echo 'Done3';
-						// try {
-							// echo 'Done4';
+						try {
+							echo 'Done4';
 							// Uploaded:
-							// $file = $_FILES["picture"]['tmp_name'];
+							$file = $_FILES["picture"]['tmp_name'];
 
-							// $s3->putObject(
-								// array(
-									// 'Bucket'=>$bucketName,
-									// 'Key' =>  $keyName,
-									// 'SourceFile' => $file,
-									// 'StorageClass' => 'REDUCED_REDUNDANCY'
-								// )
-							// );
-							// $uploadOK = 1;
-							// echo 'Done5';
+							$s3->putObject(
+								array(
+									'Bucket'=>$bucketName,
+									'Key' =>  $keyName,
+									'SourceFile' => $file,
+									'StorageClass' => 'REDUCED_REDUNDANCY'
+								)
+							);
+							$uploadOK = 1;
+							echo 'Done5';
 
-						// } catch (S3Exception $e) {
-							// die('Error:' . $e->getMessage());
-						// } catch (Exception $e) {
-							// die('Error:' . $e->getMessage());
-						// }
-					// } else {
-						// $_SESSION['submissionStatus'] = "picture";
-						// $url = "https://3.130.249.183/submit.php";
-						// header('location: ' . $url);
-					// }
+						} catch (S3Exception $e) {
+							die('Error:' . $e->getMessage());
+						} catch (Exception $e) {
+							die('Error:' . $e->getMessage());
+						}
+					} else {
+						$_SESSION['submissionStatus'] = "picture";
+						$url = "https://www.trueroofs.live/submit.php";
+						header('location: ' . $url);
+					}
 					
 					
 					echo 'Done6';
@@ -90,7 +126,7 @@
 						// close connection
 						$pdo = null;
 						$_SESSION['submissionStatus'] = "exist";
-						$url = "httpss://3.130.249.183/submit.php";
+						$url = "https://www.trueroofs.live/submit.php";
 						header('location: ' . $url);
 					}
 					
@@ -113,39 +149,39 @@
 							// close connection
 							$pdo = null;
 							$_SESSION['submissionStatus'] = "true";
-							$url = "https://3.130.249.183/submit.php";
+							$url = "https://www.trueroofs.live/submit.php";
 							header('location: ' . $url);
 						} else {
 							// close connection
 							$pdo = null;
 							$_SESSION['submissionStatus'] = "false";
-							$url = "https://3.130.249.183/submit.php";
+							$url = "https://www.trueroofs.live/submit.php";
 							header('location: ' . $url);
 						}
 					} else {
 						$pdo = null;
 						$_SESSION['submissionStatus'] = "picture";
-						$url = "https://3.130.249.183/submit.php";
+						$url = "https://www.trueroofs.live/submit.php";
 						header('location: ' . $url);
 					}
 				} else {
 					$_SESSION['submissionStatus'] = "empty";
-					$url = "https://3.130.249.183/submit.php";
+					$url = "https://www.trueroofs.live/submit.php";
 					header('location: ' . $url);
 				}
 			} else {
 				$_SESSION['submissionStatus'] = "empty";
-				$url = "https://3.130.249.183/submit.php";
+				$url = "https://www.trueroofs.live/submit.php";
 				header('location: ' . $url);
 			}
 		} else {
 			$_SESSION['submissionStatus'] = "submit";
-			$url = "https://3.130.249.183/submit.php";
+			$url = "https://www.trueroofs.live/submit.php";
 			header('location: ' . $url);
 		}
 	} else {
 		$_SESSION['submissionStatus'] = "form";
-		$url = "https://3.130.249.183/submit.php";
+		$url = "https://www.trueroofs.live/submit.php";
 		header('location: ' . $url);
 	}
 		
