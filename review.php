@@ -22,5 +22,5 @@
 	
 	if ($_POST['dropdownValue']) {
 		// call the function
-		listingSelected($_POST['dropdownValue']);
+		listingSelected($_POST['dropdownValue']);}
 ?>

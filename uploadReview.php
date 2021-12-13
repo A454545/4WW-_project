@@ -38,7 +38,7 @@
 					
 					
 					// start querying
-					include 'assets/php/pdoConnect.php';
+					include '4WW3_project/assets/php/pdoConnect.php';
 					
 					// check if the entered pic has same name as another
 					// $checkQuery = "SELECT * FROM listing WHERE imagePath = :path";
@@ -72,7 +72,7 @@
 						// }
 					// } else {
 						// $_SESSION['submissionStatus'] = "picture";
-						// $url = "http://localhost/4ww3_project/submit.php";
+						// $url = "https://3.130.249.183/submit.php";
 						// header('location: ' . $url);
 					// }
 					
@@ -90,7 +90,7 @@
 						// close connection
 						$pdo = null;
 						$_SESSION['submissionStatus'] = "exist";
-						$url = "http://localhost/4ww3_project/submit.php";
+						$url = "httpss://3.130.249.183/submit.php";
 						header('location: ' . $url);
 					}
 					
@@ -113,39 +113,39 @@
 							// close connection
 							$pdo = null;
 							$_SESSION['submissionStatus'] = "true";
-							$url = "http://localhost/4ww3_project/submit.php";
+							$url = "https://3.130.249.183/submit.php";
 							header('location: ' . $url);
 						} else {
 							// close connection
 							$pdo = null;
 							$_SESSION['submissionStatus'] = "false";
-							$url = "http://localhost/4ww3_project/submit.php";
+							$url = "https://3.130.249.183/submit.php";
 							header('location: ' . $url);
 						}
 					} else {
 						$pdo = null;
 						$_SESSION['submissionStatus'] = "picture";
-						$url = "http://localhost/4ww3_project/submit.php";
+						$url = "https://3.130.249.183/submit.php";
 						header('location: ' . $url);
 					}
 				} else {
 					$_SESSION['submissionStatus'] = "empty";
-					$url = "http://localhost/4ww3_project/submit.php";
+					$url = "https://3.130.249.183/submit.php";
 					header('location: ' . $url);
 				}
 			} else {
 				$_SESSION['submissionStatus'] = "empty";
-				$url = "http://localhost/4ww3_project/submit.php";
+				$url = "https://3.130.249.183/submit.php";
 				header('location: ' . $url);
 			}
 		} else {
 			$_SESSION['submissionStatus'] = "submit";
-			$url = "http://localhost/4ww3_project/submit.php";
+			$url = "https://3.130.249.183/submit.php";
 			header('location: ' . $url);
 		}
 	} else {
 		$_SESSION['submissionStatus'] = "form";
-		$url = "http://localhost/4ww3_project/submit.php";
+		$url = "https://3.130.249.183/submit.php";
 		header('location: ' . $url);
 	}
 		
