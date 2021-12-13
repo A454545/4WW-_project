@@ -92,14 +92,16 @@
 					include '4WW3_project/assets/php/pdoConnect.php';
 					
 					// check if the entered pic has same name as another
-					$checkQuery = "SELECT * FROM listing WHERE imagePath = :path";
+/* 					$checkQuery = "SELECT * FROM listing WHERE imagePath = :path";
 					$check = $pdo->prepare($checkQuery);
 					$check->bindParam(':path', $imagePath);
-					$check->execute();
+					$check->execute(); */
 					
 					
-					if (isset($_FILES["picture"]) && $check->rowCount() == 0) {
-						// Add it to S3 once the form is submitted 
+/* 					if (isset($_FILES["picture"]) && $check->rowCount() == 0) {
+						// Add it to S3 once the form is submitted
+						echo $_FILES["picture"];
+						echo "<br>/<br>";
 						echo 'Done3';
 						try {
 							echo 'Done4';
@@ -126,7 +128,7 @@
 						$_SESSION['submmissionStatus'] = "picture";
 						$url = "https://www.trueroofs.live/submitListing.php";
 						header('location: ' . $url);
-					}
+					} */
 					
 					
 					echo 'Done6';
