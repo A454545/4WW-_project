@@ -7,7 +7,7 @@ Member 2: Lin Rozenszajn, rozensl, 000123400
 _____________________________________________  
 ### Project Link  
 Check out the project page at AWS IP address (not https) [True Roofs](http://3.130.249.183/index.html)      
-Or using the domain name link: https://www.trueroofs.live/     
+Or using the domain name link: https://www.trueroofs.live/index.php    
 <br>  
 
 _____________________________________________  
